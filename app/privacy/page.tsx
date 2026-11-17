@@ -25,7 +25,7 @@ No client name, birth chart details, personal questions, or consultation notes a
     body: `During booking and consultation, TrueVedic receives:
 
 - Exact birth details (date, time, and location of birth)
-- Questions or life topics you wish to explore with Astrologer Ranjith Kumar
+- Questions or life topics you wish to explore with Acharya Ved Prakash
 - Contact details (phone / WhatsApp / email) for scheduling the consultation call
 
 We never request or store sensitive financial card numbers or government identity cards.`,
@@ -42,7 +42,7 @@ We never request or store sensitive financial card numbers or government identit
   {
     number: '04',
     title: 'Data Security & Storage',
-    body: `Client information is stored in secure, password-protected systems accessible only to Astrologer Ranjith Kumar and his direct scheduling coordinator.`,
+    body: `Client information is stored in secure, password-protected systems accessible only to Acharya Ved Prakash and his direct scheduling coordinator.`,
   },
   {
     number: '05',

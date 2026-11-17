@@ -42,7 +42,7 @@ function PageHero() {
                   marginBottom: '1.25rem',
                 }}
               >
-                100% Certified Vedic Gemstones &amp; Sacred Rudraksha
+                Vedic gemstones and Rudraksha
               </h1>
               <p
                 style={{
@@ -54,7 +54,7 @@ function PageHero() {
                   marginBottom: '2rem',
                 }}
               >
-                Wearing the right gemstone prescribed for your birth chart can enhance your luck, career, and vitality. Every gem is lab-certified natural, untreated, and energized with Vedic mantras.
+                Learn about gemstones traditionally linked to your birth chart, along with natural Rudraksha beads. We can explain the options and what to check before you choose.
               </p>
               <div className="flex flex-wrap gap-3">
                 <CTAButton label="Get Gemstone Recommendation" size="lg" />
@@ -74,8 +74,8 @@ function PageHero() {
               style={{ border: '1px solid rgba(184,134,11,0.2)' }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80"
-                alt="Natural certified Vedic gemstones"
+                src="/service-gems.jpg"
+                alt="Vedic gemstones in several colors"
                 fill
                 className="object-cover"
               />
@@ -87,10 +87,10 @@ function PageHero() {
               />
               <div className="absolute bottom-4 left-5 right-5 text-white">
                 <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.3rem' }}>
-                  Authentic &amp; Lab-Certified
+                  Know what you are choosing
                 </p>
                 <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.72rem', color: '#D4AF37' }}>
-                  Government-approved Gemological Lab Testing Certificate with every stone
+                  Ask about each stone, its source, and its certificate
                 </p>
               </div>
             </div>

@@ -15,7 +15,7 @@ const sections = [
   {
     number: '01',
     title: 'Scope of Astrological Advisory',
-    body: `TrueVedic provides astrological interpretations and Vedic guidance based on traditional Parashari, Jaimini, and Vastu principles through Astrologer Ranjith Kumar. 
+    body: `TrueVedic provides astrological interpretations and Vedic guidance based on traditional Parashari, Jaimini, and Vastu principles through Acharya Ved Prakash. 
 
 Astrology is an advisory discipline designed to provide perspective, self-awareness, and supportive spiritual remedies. It does not replace licensed medical diagnosis, legal counsel, or certified financial advisory.`,
   },

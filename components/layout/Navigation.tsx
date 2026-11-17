@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useCallback, useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -8,6 +9,8 @@ import { useModal } from '@/components/modal/ModalProvider'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
 
 const NAV_LINKS = [
+  { label: 'About Acharya', href: '/about' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Kundali Reading', href: '/diagnostics' },
   { label: 'Puja & Remedies', href: '/pacification' },
   { label: 'Sacred Gems', href: '/installations' },
@@ -66,30 +69,7 @@ function SocialBar() {
 function TrueVedicLogo() {
   return (
     <Link href="/" aria-label="TrueVedic — Home" className="flex items-center gap-2.5 group">
-      <svg width="36" height="36" viewBox="0 0 38 38" fill="none" aria-hidden="true">
-        <circle cx="15" cy="19" r="12" stroke="#B8860B" strokeWidth="1" fill="none" />
-        <circle cx="23" cy="19" r="12" stroke="rgba(184,134,11,0.4)" strokeWidth="1" fill="none" />
-        <line x1="15" y1="7" x2="15" y2="31" stroke="#B8860B" strokeWidth="0.75" />
-        <line x1="3" y1="19" x2="27" y2="19" stroke="#B8860B" strokeWidth="0.75" />
-        <circle cx="15" cy="19" r="2" fill="#C4600A" />
-      </svg>
-      <div>
-        <span style={{
-          fontFamily: 'var(--font-cormorant), Georgia, serif',
-          fontSize: '1.4rem', fontWeight: 500,
-          color: '#1E1208', lineHeight: 1, display: 'block',
-        }}>
-          TrueVedic
-        </span>
-        <span style={{
-          fontFamily: 'var(--font-geist), system-ui, sans-serif',
-          fontSize: '0.45rem', letterSpacing: '0.3em',
-          color: '#B8860B', textTransform: 'uppercase',
-          display: 'block', marginTop: '2px',
-        }}>
-          KĀLA · KARMA · SAMYOGA
-        </span>
-      </div>
+      <Image src="/TrueVedic Golden Lotus Logo.png" alt="TrueVedic" width={142} height={64} priority className="h-12 w-auto" />
     </Link>
   )
 }
@@ -182,19 +162,6 @@ export function Navigation() {
             {NAV_LINKS.map((link) => (
               <NavLink key={link.href} href={link.href} label={link.label} active={pathname === link.href} />
             ))}
-            <Link
-              href="/consultation"
-              style={{
-                fontFamily: 'var(--font-geist), system-ui, sans-serif',
-                fontSize: '0.72rem', letterSpacing: '0.08em',
-                color: pathname === '/consultation' ? '#B8860B' : '#5A4A36',
-                textDecoration: 'none', transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = '#B8860B' }}
-              onMouseLeave={(e) => { if (pathname !== '/consultation') e.currentTarget.style.color = '#5A4A36' }}
-            >
-              Meet Ranjit Kumar
-            </Link>
           </nav>
 
           {/* Desktop CTA */}
@@ -278,7 +245,7 @@ export function Navigation() {
             <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '1.5rem clamp(1.25rem, 4vw, 2.5rem) 2rem' }}>
               {/* Mobile links */}
               <nav className="flex flex-col gap-0 mb-6">
-                {[...NAV_LINKS, { label: 'Meet Ranjit Kumar', href: '/consultation' }].map((link, i) => (
+                {NAV_LINKS.map((link, i) => (
                   <motion.div
                     key={link.href}
                     initial={{ opacity: 0, x: -12 }}

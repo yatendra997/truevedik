@@ -1,53 +1,67 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { ChevronLeft, ChevronRight, Flame, Gem, House, Telescope } from 'lucide-react'
+
+const HERO_SLIDES = [
+  { src: '/Astrologer in a Warm Study.png', alt: 'Acharya Ved Prakash in his study' },
+  { src: '/India Excellence Awards Ceremony.png', alt: 'Acharya Ved Prakash at the India Excellence Awards 2025' },
+  { src: '/Global Vedic Astrologer Award 2025.png', alt: 'Acharya Ved Prakash receiving the Global Vedic Astrologer award' },
+] as const
 
 export function Hero() {
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % HERO_SLIDES.length)
+    }, 6500)
+
+    return () => window.clearInterval(timer)
+  }, [])
+
   return (
     <section className="relative overflow-hidden" style={{ background: '#FFFDF8' }}>
-      {/* Hero image — full width */}
-      <div className="relative w-full" style={{ height: 'min(92vh, 780px)', minHeight: '560px' }}>
+      <div className="relative w-full" style={{ height: 'min(88vh, 760px)', minHeight: '560px' }}>
         <Image
-          src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=1600&q=80"
-          alt="Spiritual cosmic sky — TrueVedic Vedic astrology guidance"
+          key={HERO_SLIDES[activeSlide].src}
+          src={HERO_SLIDES[activeSlide].src}
+          alt={HERO_SLIDES[activeSlide].alt}
           fill
           priority
           className="object-cover"
-          style={{ objectPosition: 'center 30%' }}
+          sizes="100vw"
+          style={{ objectPosition: activeSlide === 0 ? 'center 30%' : 'center 42%' }}
         />
-        {/* Warm overlay */}
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(135deg, rgba(30,18,8,0.75) 0%, rgba(30,18,8,0.4) 50%, rgba(30,18,8,0.6) 100%)' }}
+          style={{ background: 'linear-gradient(90deg, rgba(24,17,13,0.9) 0%, rgba(24,17,13,0.68) 48%, rgba(24,17,13,0.38) 100%), linear-gradient(0deg, rgba(24,17,13,0.25), transparent 35%, rgba(24,17,13,0.12))' }}
           aria-hidden="true"
         />
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-40"
-          style={{ background: 'linear-gradient(to top, #FFFDF8, transparent)' }} aria-hidden="true" />
 
-        {/* Hero content */}
-        <div className="absolute inset-0 flex items-center">
+        <div className="absolute inset-0 z-10 flex items-center">
           <div className="mx-auto w-full" style={{ maxWidth: '1400px', padding: '0 clamp(1.5rem, 4vw, 3rem)' }}>
-            <div style={{ maxWidth: '680px' }}>
-              {/* Badge */}
+            <div style={{ maxWidth: '690px' }}>
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="inline-flex items-center gap-2 mb-5 px-4 py-1.5"
-                style={{ background: 'rgba(184,134,11,0.2)', border: '1px solid rgba(184,134,11,0.4)', borderRadius: '20px' }}
+                style={{ background: 'rgba(184,134,11,0.18)', border: '1px solid rgba(212,175,55,0.42)', borderRadius: '20px' }}
               >
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#D4AF37', display: 'inline-block' }} />
                 <span style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#D4AF37' }}>
-                  Ancient Vedic Wisdom for Modern Life
+                  Personal Vedic guidance for everyday decisions
                 </span>
               </motion.div>
 
-              {/* H1 */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -59,12 +73,9 @@ export function Hero() {
                   color: '#FFFFFF', marginBottom: '1.25rem',
                 }}
               >
-                Get Clarity for Life&apos;s<br />
-                <em style={{ fontStyle: 'italic', color: '#D4AF37' }}>Most Important</em><br />
-                Decisions
+                Clear guidance for the decisions that matter
               </motion.h1>
 
-              {/* Body */}
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -76,12 +87,10 @@ export function Hero() {
                   marginBottom: '2rem', maxWidth: '520px',
                 }}
               >
-                Whether it&apos;s career, marriage, business or family — Jyotish Ranjit Kumar
-                guides you with precise Vedic insights trusted by thousands of clients
-                across India, UAE, USA, UK, Canada and beyond.
+                Speak with Acharya Ved Prakash about work, relationships, family, or what comes next.
+                Get a thoughtful reading explained in simple, everyday language.
               </motion.p>
 
-              {/* CTAs */}
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -92,37 +101,44 @@ export function Hero() {
                 <CTAButton label="Chat on WhatsApp" size="lg" variant="whatsapp" href={SOCIAL_LINKS.whatsapp} />
               </motion.div>
 
-              {/* Trust badges */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.6 }}
                 className="flex flex-wrap gap-5 mt-6"
               >
-                {[
-                  { value: '20+', label: 'Years Experience' },
-                  { value: '10,000+', label: 'Happy Clients' },
-                  { value: '15+', label: 'Countries Served' },
-                ].map((stat) => (
-                  <div key={stat.label} className="flex items-center gap-2">
-                    <span style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '1.4rem', fontWeight: 600, color: '#D4AF37' }}>{stat.value}</span>
-                    <span style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.7rem', color: 'rgba(255,255,255,0.6)', letterSpacing: '0.05em' }}>{stat.label}</span>
-                  </div>
-                ))}
+                <div className="flex items-center gap-2">
+                  <span style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '1.4rem', fontWeight: 600, color: '#D4AF37' }}>12+</span>
+                  <span style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.7rem', color: 'rgba(255,255,255,0.82)', letterSpacing: '0.05em' }}>Years of experience</span>
+                </div>
+                <span style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.7rem', color: 'rgba(255,255,255,0.82)', letterSpacing: '0.05em', alignSelf: 'center' }}>Private one-to-one consultations</span>
               </motion.div>
             </div>
           </div>
         </div>
+
+        <div className="absolute bottom-6 right-6 z-20 flex items-center gap-2 sm:bottom-8 sm:right-10" aria-label="Hero image controls">
+          <button type="button" onClick={() => setActiveSlide((activeSlide - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)} aria-label="Show previous image" className="flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:bg-white/20 focus-visible:outline-white" style={{ border: '1px solid rgba(255,255,255,0.55)', background: 'rgba(24,17,13,0.28)' }}>
+            <ChevronLeft size={18} aria-hidden="true" />
+          </button>
+          <div className="flex items-center gap-1.5 px-2" aria-label={`Image ${activeSlide + 1} of ${HERO_SLIDES.length}`}>
+            {HERO_SLIDES.map((slide, index) => (
+              <button key={slide.src} type="button" onClick={() => setActiveSlide(index)} aria-label={`Show image ${index + 1}`} aria-current={activeSlide === index ? 'true' : undefined} className="h-2 rounded-full transition-all" style={{ width: activeSlide === index ? '24px' : '8px', background: activeSlide === index ? '#D4AF37' : 'rgba(255,255,255,0.72)' }} />
+            ))}
+          </div>
+          <button type="button" onClick={() => setActiveSlide((activeSlide + 1) % HERO_SLIDES.length)} aria-label="Show next image" className="flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:bg-white/20 focus-visible:outline-white" style={{ border: '1px solid rgba(255,255,255,0.55)', background: 'rgba(24,17,13,0.28)' }}>
+            <ChevronRight size={18} aria-hidden="true" />
+          </button>
+        </div>
       </div>
 
-      {/* Quick navigation cards below hero */}
-      <div className="mx-auto" style={{ maxWidth: '1400px', padding: '0 clamp(1.5rem, 4vw, 3rem)', marginTop: '-2rem', position: 'relative', zIndex: 10 }}>
+      <div className="mx-auto" style={{ maxWidth: '1400px', padding: '0 clamp(1.5rem, 4vw, 3rem)', marginTop: '-1.25rem', position: 'relative', zIndex: 10 }}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
-            { label: 'Kundali Reading', icon: '🔭', href: '/diagnostics', desc: 'Birth chart analysis' },
-            { label: 'Puja & Remedies', icon: '🪔', href: '/pacification', desc: 'Vedic rituals & healing' },
-            { label: 'Sacred Gems', icon: '💎', href: '/installations', desc: 'Prescribed gemstones' },
-            { label: 'Vastu Shastra', icon: '🏛️', href: '/spatial-harmonic', desc: 'Home & office alignment' },
+            { label: 'Kundali Reading', icon: Telescope, href: '/diagnostics', desc: 'Birth chart analysis' },
+            { label: 'Puja & Remedies', icon: Flame, href: '/pacification', desc: 'Vedic rituals & healing' },
+            { label: 'Sacred Gems', icon: Gem, href: '/installations', desc: 'Prescribed gemstones' },
+            { label: 'Vastu Shastra', icon: House, href: '/spatial-harmonic', desc: 'Home & office alignment' },
           ].map((card) => (
             <Link
               key={card.href}
@@ -130,7 +146,7 @@ export function Hero() {
               className="card-hover block p-4 text-center"
               style={{ background: '#FFFFFF', border: '1px solid rgba(184,134,11,0.15)', borderRadius: '8px', boxShadow: '0 2px 12px rgba(30,18,8,0.06)', textDecoration: 'none' }}
             >
-              <span style={{ fontSize: '1.5rem', display: 'block', marginBottom: '0.4rem' }} aria-hidden="true">{card.icon}</span>
+              <card.icon size={25} strokeWidth={1.5} color="#B8860B" className="mx-auto mb-2" aria-hidden="true" />
               <p style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.72rem', fontWeight: 600, color: '#1E1208', letterSpacing: '0.02em', marginBottom: '0.2rem' }}>{card.label}</p>
               <p style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.65rem', color: '#9A8C7E' }}>{card.desc}</p>
             </Link>

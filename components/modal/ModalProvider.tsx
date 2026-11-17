@@ -171,7 +171,7 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
                   marginBottom: '1.5rem',
                 }}
               >
-                Thank you, {formData.fullName || 'Seeker'}. Jyotish Ranjith Kumar&apos;s team will contact you within 24 hours on WhatsApp/Email to schedule your direct consultation call.
+                Thank you, {formData.fullName || 'Seeker'}. Acharya Ved Prakash&apos;s team will contact you within 24 hours on WhatsApp/Email to schedule your direct consultation call.
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center gap-3">
@@ -218,7 +218,7 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
                     marginBottom: '0.5rem',
                   }}
                 >
-                  Consult with Astrologer Ranjith Kumar
+                  Consult with Acharya Ved Prakash
                 </h2>
                 <p
                   style={{
@@ -228,7 +228,7 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
                     color: '#6B5B47',
                   }}
                 >
-                  20+ Years Experience · Clear &amp; Compassionate Guidance · 100% Confidential
+                  12+ Years Experience · Clear, personal guidance
                 </p>
               </div>
 
@@ -412,7 +412,7 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
 
               <div className="mt-4 pt-4 border-t border-black/5 flex items-center justify-between">
                 <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.68rem', color: '#9A8C7E' }}>
-                  🔒 100% Private &amp; Confidential
+                  🔒 Private consultation
                 </p>
                 <a
                   href={SOCIAL_LINKS.whatsapp}

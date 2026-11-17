@@ -6,51 +6,49 @@ import type { Metadata } from 'next'
 import { Check, Clock, ShieldCheck, Award } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Consultation with Astrologer Ranjith Kumar | TrueVedic',
-  description: 'Book a 1-on-1 private Vedic astrology consultation with Astrologer Ranjith Kumar (20+ years experience). Accurate Kundali analysis, marriage, career, and remedy guidance.',
+  title: 'Consultation with Acharya Ved Prakash | TrueVedic',
+  description: 'Book a private Vedic astrology consultation with Acharya Ved Prakash. Discuss your birth chart, relationships, career, or Vastu questions.',
+  alternates: { canonical: 'https://truevedic.com/consultation' },
 }
 
 const CONSULTATION_TIERS = [
   {
-    title: 'Single Personal Consultation',
-    subtitle: 'For Career, Health, or Specific Life Decisions',
-    desc: 'Comprehensive analysis of your Janam Kundali focusing on your immediate challenges, career path, financial prospects, and upcoming planetary periods (Dasha).',
-    duration: 'No strict time rush · Direct 1-on-1',
+    title: 'Personal consultation',
+    subtitle: 'For work, family, or a decision you are facing',
+    desc: 'Discuss your birth chart and the questions that matter to you. The reading will focus on the topic you choose.',
+    duration: 'One-to-one conversation',
     popular: false,
     features: [
-      'Full Janam Kundali (Birth Chart) Reading',
-      'Career, Job & Promotion Forecasting',
-      'Health & Wellness Planetary Analysis',
-      'Personalized Gemstone & Vedic Remedies',
-      'Answers to all your specific questions',
+      'Birth chart explained in clear language',
+      'Time to discuss your questions',
+      'Traditional options explained without pressure',
+      'Guidance shaped around your topic',
     ],
   },
   {
-    title: 'Marriage & Relationship Consultation',
-    subtitle: 'For Matchmaking, Compatibility & Marital Peace',
-    desc: 'Deep Gun Milan, Mangal Dosha assessment, and behavioral compatibility reading for couples or prospective bride & groom before or during marriage.',
-    duration: 'Comprehensive Couple Reading',
+    title: 'Couples and compatibility',
+    subtitle: 'For relationship questions and Kundali matching',
+    desc: 'Talk through what a traditional birth chart match can show and what it cannot. Bring the questions you would like to discuss together.',
+    duration: 'A conversation for two',
     popular: true,
     features: [
-      'Kundali Milan (36 Gunas Compatibility)',
-      'Mangal Dosha & Navamsha (D-9) Analysis',
-      'Emotional, Physical & Financial Harmony',
-      'Remedies for Relationship Delays or Discord',
-      'Auspicious Muhurat for Wedding Rituals',
+      'How traditional chart matching works',
+      'A plain-language explanation of the reading',
+      'Time to discuss shared questions and plans',
+      'Room to consider your own circumstances',
     ],
   },
   {
-    title: 'Business & Wealth Consultation',
-    subtitle: 'For Founders, Investors & Business Expansion',
-    desc: 'Strategic astrological insights for partnership compatibility, company registration Muhurat, market expansion timing, and planetary wealth houses.',
-    duration: 'Strategic In-Depth Consultation',
+    title: 'Work and business questions',
+    subtitle: 'For a career choice, partnership, or business plan',
+    desc: 'Discuss a work or business decision and how it is viewed in a Vedic birth chart. Use the reading as one perspective among the facts you consider.',
+    duration: 'One-to-one conversation',
     popular: false,
     features: [
-      'Business Chart & Partner Compatibility',
-      'Auspicious Timing for Launches & Investments',
-      'Wealth Houses (2nd & 11th) Activation',
-      'Vedic Remedial Yantras for Commercial Spaces',
-      'Annual Fortune Forecast for Business Owners',
+      'Time to talk through your decision',
+      'Traditional chart factors explained',
+      'Questions about work, timing, or partners',
+      'Practical options to consider',
     ],
   },
 ]
@@ -103,7 +101,7 @@ export default function ConsultationPage() {
                   marginBottom: '1.25rem',
                 }}
               >
-                Book a Consultation with Astrologer Ranjith Kumar
+                Book a Vedic astrology consultation
               </h1>
 
               <p
@@ -115,22 +113,22 @@ export default function ConsultationPage() {
                   marginBottom: '1.75rem',
                 }}
               >
-                Find answers, clarity, and peace of mind with an international Jyotish advisor with over <strong>20+ years of experience</strong>. Get direct, practical solutions tailored to your unique planetary chart.
+                Speak directly with Acharya Ved Prakash, who has more than 12 years of experience. Discuss your chart and questions, then consider the options that feel right for you.
               </p>
 
               {/* Highlights */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
                 <div className="p-3 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid rgba(184,134,11,0.15)' }}>
-                  <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.5rem', fontWeight: 600, color: '#B8860B' }}>20+ Yrs</p>
-                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', color: '#6B5B47' }}>Vedic Astrologer</p>
+                  <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.5rem', fontWeight: 600, color: '#B8860B' }}>12+ Years</p>
+                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', color: '#6B5B47' }}>Vedic astrology experience</p>
                 </div>
                 <div className="p-3 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid rgba(184,134,11,0.15)' }}>
-                  <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.5rem', fontWeight: 600, color: '#B8860B' }}>10,000+</p>
-                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', color: '#6B5B47' }}>Lives Guided</p>
+                  <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.1rem', fontWeight: 600, color: '#B8860B' }}>One-to-one</p>
+                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', color: '#6B5B47' }}>Personal consultation</p>
                 </div>
                 <div className="p-3 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid rgba(184,134,11,0.15)' }}>
-                  <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.5rem', fontWeight: 600, color: '#B8860B' }}>8+ Countries</p>
-                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', color: '#6B5B47' }}>Worldwide Diaspora</p>
+                  <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.1rem', fontWeight: 600, color: '#B8860B' }}>Online</p>
+                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', color: '#6B5B47' }}>Wherever you are</p>
                 </div>
               </div>
 
@@ -156,8 +154,8 @@ export default function ConsultationPage() {
               >
                 <div className="relative h-80 w-full">
                   <Image
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80"
-                    alt="Astrologer Ranjith Kumar Vedic Astrologer"
+                    src="/Astrologer in a Warm Study.png"
+                    alt="Acharya Ved Prakash in his study"
                     fill
                     className="object-cover object-top"
                   />
@@ -169,7 +167,7 @@ export default function ConsultationPage() {
                   />
                   <div className="absolute bottom-4 left-5 right-5 text-white">
                     <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.6rem', fontWeight: 500 }}>
-                      Jyotish Ranjith Kumar
+                      Acharya Ved Prakash
                     </p>
                     <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.75rem', color: '#D4AF37', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
                       Senior Vedic Astrologer &amp; Vastu Consultant
@@ -185,7 +183,7 @@ export default function ConsultationPage() {
                     </span>
                   </div>
                   <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.78rem', lineHeight: 1.6, color: '#6B5B47' }}>
-                    Consult directly on Google Meet, Zoom, or WhatsApp Audio/Video call. No assistants in between — speak directly with Ranjith Kumar.
+                    Consult directly on Google Meet, Zoom, or WhatsApp Audio/Video call. No assistants in between — speak directly with Acharya Ved Prakash.
                   </p>
                 </div>
               </div>
@@ -210,7 +208,7 @@ export default function ConsultationPage() {
                 color: '#1E1208',
               }}
             >
-              Choose the Right Session for You
+              Choose what you want to discuss
             </h2>
             <p
               style={{
@@ -221,7 +219,7 @@ export default function ConsultationPage() {
                 margin: '0.5rem auto 0',
               }}
             >
-              Every consultation is thorough and focused on actionable solutions. No complex jargon, just straightforward Vedic wisdom.
+              Choose a session by topic. We will explain the chart reading in straightforward language and leave time for your questions.
             </p>
           </div>
 
@@ -243,7 +241,7 @@ export default function ConsultationPage() {
                     className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-white text-xs font-semibold uppercase tracking-wider"
                     style={{ background: 'linear-gradient(135deg, #C4600A, #D4750C)' }}
                   >
-                    Most Requested
+                    For couples
                   </div>
                 )}
 
@@ -362,7 +360,7 @@ export default function ConsultationPage() {
                 2
               </div>
               <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.35rem', fontWeight: 500, marginBottom: '0.5rem' }}>
-                1-on-1 Call with Ranjith Kumar
+                1-on-1 Call with Acharya Ved Prakash
               </h3>
               <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.82rem', lineHeight: 1.7, color: '#5A4A36' }}>
                 Connect directly on Google Meet or WhatsApp call at your confirmed slot time. Ask anything without hurry or hesitation.
@@ -377,10 +375,10 @@ export default function ConsultationPage() {
                 3
               </div>
               <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.35rem', fontWeight: 500, marginBottom: '0.5rem' }}>
-                Clear Actionable Remedies
+                Talk through your next steps
               </h3>
               <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.82rem', lineHeight: 1.7, color: '#5A4A36' }}>
-                Receive customized, authentic Vedic remedies (Mantras, Gemstone advice, Puja rituals, or lifestyle adjustments) to overcome hurdles.
+                Discuss the reading, ask questions, and take time to decide what feels useful for you.
               </p>
             </div>
           </div>
@@ -405,7 +403,7 @@ export default function ConsultationPage() {
                 color: '#1E1208',
               }}
             >
-              Everything You Need to Know
+              Common questions about booking
             </h2>
           </div>
 
@@ -413,7 +411,7 @@ export default function ConsultationPage() {
             {[
               {
                 q: 'What if I do not know my exact birth time?',
-                a: 'If your birth time is approximate, Jyotish Ranjith Kumar can use Prashna Kundali (Horary Astrology) and Birth Time Rectification techniques based on major life events to provide accurate predictions.',
+                a: 'If your birth time is approximate, Acharya Ved Prakash can discuss traditional approaches to working with uncertain birth details during a consultation.',
               },
               {
                 q: 'How are consultations conducted for international clients?',
@@ -421,11 +419,11 @@ export default function ConsultationPage() {
               },
               {
                 q: 'Will my personal details and conversation be kept confidential?',
-                a: 'Yes, 100%. We follow a strict privacy policy. Your birth chart, personal circumstances, and conversation details are strictly confidential between you and Astrologer Ranjith Kumar.',
+                a: 'Yes. Your birth chart, personal circumstances, and conversation details are handled according to the TrueVedic privacy policy.',
               },
               {
                 q: 'Are the recommended remedies complicated or expensive?',
-                a: 'Not at all. Ranjith Kumar believes in simple, pure, and practical Vedic remedies including specific mantras, dietary alignment, charitable acts (Daan), or authentic natural gemstones.',
+                a: 'No. Acharya Ved Prakash discusses traditional Vedic practices and practical options; any remedy is a personal choice and should not replace professional advice.',
               },
             ].map((faq, fIdx) => (
               <div

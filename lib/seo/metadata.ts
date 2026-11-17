@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 const SITE_URL = 'https://truevedic.com'
 const SITE_NAME = 'TrueVedic'
-const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`
+const DEFAULT_OG_IMAGE = `${SITE_URL}/Astrologer%20in%20a%20Warm%20Study.png`
 
 export interface PageSEO {
   title: string
@@ -40,7 +40,7 @@ export function buildMetadata({
           url: DEFAULT_OG_IMAGE,
           width: 1200,
           height: 630,
-          alt: `${SITE_NAME} — Vedic Astrology & Life Guidance by Astrologer Ranjith Kumar`,
+          alt: `${SITE_NAME} — Vedic Astrology & Life Guidance by Acharya Ved Prakash`,
         },
       ],
       type: 'website',
@@ -68,11 +68,12 @@ export function buildMetadata({
 export const rootJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'TrueVedic — Astrologer Ranjith Kumar',
+  name: 'TrueVedic — Acharya Ved Prakash',
   description:
-    'Authentic Vedic astrology consultation, Kundali reading, marriage matching, Puja rituals, certified gemstones, and Vastu Shastra guidance with Astrologer Ranjith Kumar (20+ years experience).',
+    'Vedic astrology consultation, Kundali reading, marriage matching, Puja rituals, gemstones, and Vastu Shastra guidance with Acharya Ved Prakash.',
   url: SITE_URL,
-  serviceType: 'Vedic Astrology Advisory',
+  image: DEFAULT_OG_IMAGE,
+  serviceType: ['Vedic astrology consultations', 'Kundali reading', 'Vastu guidance'],
   areaServed: [
     'India',
     'UAE',
@@ -93,6 +94,10 @@ export const rootJsonLd = {
     'Nepali Rudraksha Beads',
     'Vedic Numerology (Ank Jyotish)',
   ],
-  slogan: 'Ancient Vedic Wisdom. Compassionate Guidance.',
-  priceRange: '₹₹ / $$',
+  founder: {
+    '@type': 'Person',
+    name: 'Acharya Ved Prakash',
+    jobTitle: 'Vedic astrologer',
+  },
+  slogan: 'Traditional Vedic guidance in clear, everyday language.',
 }

@@ -25,13 +25,14 @@ const geist = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL('https://truevedic.com'),
   title: {
-    default: 'TrueVedic — Authentic Vedic Astrology & Life Guidance | Astrologer Ranjith Kumar',
+    default: 'TrueVedic — Vedic Astrology & Life Guidance | Acharya Ved Prakash',
     template: '%s | TrueVedic',
   },
   description:
-    'TrueVedic provides trusted Vedic astrology consultations, Janam Kundali reading, marriage matchmaking, authentic Puja remedies, certified gemstones, and Vastu guidance with Astrologer Ranjith Kumar (20+ years experience). Serving clients across India, UAE, US, New Zealand, Australia, Canada, UK and Europe.',
+    'Book a personal Vedic astrology consultation with Acharya Ved Prakash. Get clear guidance on birth charts, relationships, career, traditional remedies, gemstones, and Vastu.',
+  alternates: { canonical: '/' },
   keywords: [
-    'Astrologer Ranjith Kumar',
+    'Acharya Ved Prakash',
     'Vedic astrology consultation',
     'Janam Kundali reading',
     'Kundali Milan matching',
@@ -44,28 +45,36 @@ export const metadata: Metadata = {
     'NRI astrology consultation',
     'online astrologer India UAE USA UK Canada Australia',
   ],
-  authors: [{ name: 'Astrologer Ranjith Kumar' }],
+  authors: [{ name: 'Acharya Ved Prakash' }],
   creator: 'TrueVedic',
   publisher: 'TrueVedic',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+  },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/TrueVedic Golden Lotus Logo.png',
   },
   openGraph: {
     type: 'website',
     siteName: 'TrueVedic',
     locale: 'en_US',
+    title: 'TrueVedic | Vedic Astrology Consultations with Acharya Ved Prakash',
+    description: 'Clear, personal guidance for questions about career, relationships, family, and home.',
+    url: 'https://truevedic.com/',
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'TrueVedic — Vedic Astrology & Life Guidance by Astrologer Ranjith Kumar',
+        url: '/Astrologer%20in%20a%20Warm%20Study.png',
+        alt: 'Acharya Ved Prakash in his study',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/og-image.jpg'],
+    title: 'TrueVedic | Vedic Astrology Consultations',
+    description: 'Clear, personal guidance from Acharya Ved Prakash.',
+    images: ['/Astrologer%20in%20a%20Warm%20Study.png'],
   },
 }
 
@@ -83,7 +92,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd).replace(/</g, '\\u003c') }}
         />
       </head>
       <body style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}>

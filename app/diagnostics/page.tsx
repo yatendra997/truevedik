@@ -4,11 +4,12 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
+import { BriefcaseBusiness, Heart, HeartPulse, Plane } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Kundali Reading & Horoscope Analysis | TrueVedic',
   description:
-    'Detailed Janam Kundali (birth chart) reading, Kundali Milan (horoscope matching), and Dasha timeline analysis with Astrologer Ranjith Kumar. Clear spiritual guidance for career, marriage, and life decisions.',
+    'Book a Vedic birth chart reading or Kundali matching consultation with Acharya Ved Prakash. Discuss questions about work, relationships, and important decisions.',
   alternates: {
     canonical: 'https://truevedic.com/diagnostics',
   },
@@ -41,7 +42,7 @@ function PageHero() {
                   marginBottom: '1.25rem',
                 }}
               >
-                Janam Kundali Reading &amp; Horoscope Matching
+                Birth chart readings and Kundali matching
               </h1>
               <p
                 style={{
@@ -53,7 +54,7 @@ function PageHero() {
                   marginBottom: '2rem',
                 }}
               >
-                Understand your planetary chart, upcoming life phases (Dasha periods), strengths, and remedies. Clear, practical answers without complicated terminology.
+                Learn how a Vedic birth chart is read and talk through questions about work, relationships, and the years ahead. We explain each step in plain language.
               </p>
               <div className="flex flex-wrap gap-3">
                 <CTAButton label="Book Kundali Reading" size="lg" />
@@ -73,8 +74,8 @@ function PageHero() {
               style={{ border: '1px solid rgba(184,134,11,0.2)' }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80"
-                alt="Vedic birth chart and cosmic alignment"
+                src="/service-kundali.jpg"
+                alt="Traditional Vedic birth chart illustrated on parchment"
                 fill
                 className="object-cover"
               />
@@ -89,7 +90,7 @@ function PageHero() {
                   Your Celestial Blueprint
                 </p>
                 <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.72rem', color: '#D4AF37' }}>
-                  Accurate Janam Kundali calculation based on exact date, time &amp; place
+                  A chart is prepared from your date, time, and place of birth
                 </p>
               </div>
             </div>
@@ -126,7 +127,7 @@ function JanamKundali() {
               marginBottom: '0.5rem',
             }}
           >
-            Personal Janam Kundali Reading
+            A personal birth chart reading
           </h2>
           <p
             style={{
@@ -139,7 +140,7 @@ function JanamKundali() {
               marginBottom: '1.25rem',
             }}
           >
-            Birth Chart Analysis · Dasha Timing · Life Predictions
+            Birth chart review · Life phases · Your questions
           </p>
 
           <p
@@ -151,15 +152,15 @@ function JanamKundali() {
               marginBottom: '1.5rem',
             }}
           >
-            When life feels stuck or confusing — whether in your career, finances, or personal life — your Janam Kundali provides the exact answers. Astrologer Ranjith Kumar studies the 12 houses, planetary placements, and active Mahadasha to show you when opportunities will open and how to navigate difficulties.
+            A Janam Kundali is a traditional Vedic birth chart. Acharya Ved Prakash can explain its main parts and discuss how an astrologer might read life phases in the context of the questions you bring.
           </p>
 
           <div className="space-y-2 mb-6">
             {[
-              'Career growth, job changes & business timing',
-              'Financial wealth cycles & investment prosperity',
-              'Health tendencies & preventive Vedic remedies',
-              'Answers to your top personal life questions',
+              'Work changes, career plans, or a new business',
+              'Questions about money and important decisions',
+              'Personal wellbeing, alongside professional care',
+              'Other questions you want to talk through',
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2 text-xs" style={{ color: '#5A4A36' }}>
                 <span style={{ color: '#B8860B', fontWeight: 'bold' }}>✓</span>
@@ -176,23 +177,23 @@ function JanamKundali() {
             {[
               {
                 title: 'Career & Wealth',
-                desc: 'Find out the ideal profession for you, timing of promotions, and auspicious periods for business expansion.',
-                icon: '💼',
+                desc: 'Talk through work changes, new roles, or business plans as part of a chart reading.',
+                icon: BriefcaseBusiness,
               },
               {
                 title: 'Marriage & Family',
-                desc: 'Analyze marital harmony, suitable partner characteristics, and timing of marriage.',
-                icon: '💍',
+                desc: 'Discuss relationship questions and how horoscope matching is understood in Vedic tradition.',
+                icon: Heart,
               },
               {
                 title: 'Health & Vitality',
-                desc: 'Identify planetary influences affecting energy levels and receive supportive lifestyle remedies.',
-                icon: '🌿',
+                desc: 'You can discuss wellbeing as a personal belief topic. Astrology is not a substitute for medical care.',
+                icon: HeartPulse,
               },
               {
-                title: 'Foreign Travel & Settling',
-                desc: 'Determine whether overseas education, work, or permanent settlement is indicated in your chart.',
-                icon: '✈️',
+                title: 'Study or work abroad',
+                desc: 'Talk through plans to study or work abroad. An astrology reading cannot guarantee what will happen.',
+                icon: Plane,
               },
             ].map((card, i) => (
               <div
@@ -204,7 +205,7 @@ function JanamKundali() {
                   boxShadow: '0 2px 10px rgba(30,18,8,0.03)',
                 }}
               >
-                <span className="text-2xl mb-2 block">{card.icon}</span>
+                <card.icon size={25} strokeWidth={1.5} color="#B8860B" className="mb-2" aria-hidden="true" />
                 <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.25rem', fontWeight: 500, color: '#1E1208', marginBottom: '0.25rem' }}>
                   {card.title}
                 </h3>
@@ -243,15 +244,15 @@ function KundaliMilan() {
             }}
           >
             <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.6rem', fontWeight: 500, color: '#1E1208', marginBottom: '1rem' }}>
-              What Gun Milan &amp; Matching Covers:
+              What a matching reading may cover
             </h3>
 
             <div className="space-y-4">
               {[
-                { title: 'Ashtakoot Gun Milan (36 Points)', desc: 'Analysis of Varna, Vashya, Tara, Yoni, Graha Maitri, Gana, Bhakoot, and Nadi.' },
-                { title: 'Mangal Dosha (Kuja Dosha) Analysis', desc: 'Accurate evaluation of Mars placement in both charts with authentic cancellation rules.' },
-                { title: 'Emotional & Behavioral Harmony', desc: 'Understanding temperament and mental compatibility to build a peaceful, lasting bond.' },
-                { title: 'Longevity, Prosperity & Child Prospects', desc: 'Assessing planetary support for health, prosperity, and happy family life together.' },
+                { title: 'The traditional score', desc: 'Learn what the 36-point Gun Milan score includes and what it leaves out.' },
+                { title: 'Mars in each chart', desc: 'Discuss how different Vedic traditions interpret Mangal Dosha.' },
+                { title: 'Questions for the couple', desc: 'Use the reading to talk about expectations, communication, and shared plans.' },
+                { title: 'What a chart cannot tell you', desc: 'Compatibility is also built through respect, consent, and honest conversation.' },
               ].map((item, idx) => (
                 <div key={idx} className="p-3 rounded-lg" style={{ background: '#FAF7F0', border: '1px solid rgba(184,134,11,0.1)' }}>
                   <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208', marginBottom: '0.2rem' }}>
@@ -279,7 +280,7 @@ function KundaliMilan() {
               marginBottom: '0.5rem',
             }}
           >
-            Kundali Milan (Horoscope Matching)
+            Kundali matching for couples
           </h2>
           <p
             style={{
@@ -292,7 +293,7 @@ function KundaliMilan() {
               marginBottom: '1.25rem',
             }}
           >
-            For Couples, Matchmaking &amp; Relationship Harmony
+            A starting point for a conversation
           </p>
 
           <p
@@ -304,11 +305,11 @@ function KundaliMilan() {
               marginBottom: '1.5rem',
             }}
           >
-            Marriage is a sacred lifelong journey. Horoscope matching goes far beyond just counting numbers — it provides a deep look into mental harmony, mutual respect, financial stability, and shared life goals. Astrologer Ranjith Kumar also suggests gentle Vedic remedies if minor planetary doshas exist.
+            Kundali matching compares selected parts of two birth charts. It can be a way to start a conversation, but it cannot decide whether a relationship will work. That depends on the people involved and the choices they make together.
           </p>
 
           <div className="flex flex-wrap gap-3">
-            <CTAButton label="Match Horoscopes" />
+            <CTAButton label="Ask about Kundali matching" />
             <CTAButton label="Ask a Question" variant="ghost" />
           </div>
         </AnimatedSection>

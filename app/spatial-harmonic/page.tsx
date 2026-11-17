@@ -4,11 +4,12 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
+import { Building2, Factory, House, Search } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Vastu Shastra & Home Energy Alignment | TrueVedic',
+  title: 'Vastu Guidance for Home & Work | TrueVedic',
   description:
-    'Authentic Vastu Shastra consultations for homes, apartments, villas, and commercial offices. Align directions, room placements, and energy flow without unnecessary demolition.',
+    'Discuss your home or workplace layout with a Vastu consultation. Explore traditional ideas alongside comfort, safety, and your practical needs.',
   alternates: {
     canonical: 'https://truevedic.com/spatial-harmonic',
   },
@@ -29,7 +30,7 @@ function PageHero() {
           
           <div className="lg:col-span-7">
             <AnimatedSection>
-              <SectionLabel>Vastu Shastra &amp; Numerology</SectionLabel>
+              <SectionLabel>Vastu for home and work</SectionLabel>
               <GoldRule className="mt-3 mb-5" />
               <h1
                 style={{
@@ -41,7 +42,7 @@ function PageHero() {
                   marginBottom: '1.25rem',
                 }}
               >
-                Vastu Shastra for Home, Office &amp; Prosperity
+                Vastu guidance for your home or workplace
               </h1>
               <p
                 style={{
@@ -53,7 +54,7 @@ function PageHero() {
                   marginBottom: '2rem',
                 }}
               >
-                The directions of your entrance, kitchen, bedroom, and workspace directly impact your health, wealth, and family peace. Learn how simple Vastu corrections bring positive transformation.
+                A Vastu review looks at room layout, movement, and direction. Discuss traditional ideas and practical changes that fit the way you use your space.
               </p>
               <div className="flex flex-wrap gap-3">
                 <CTAButton label="Request Vastu Consultation" size="lg" />
@@ -86,10 +87,10 @@ function PageHero() {
               />
               <div className="absolute bottom-4 left-5 right-5 text-white">
                 <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.3rem' }}>
-                  Vastu Without Demolition
+                  Thoughtful changes for your space
                 </p>
                 <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.72rem', color: '#D4AF37' }}>
-                  Remedies using sacred colors, directional elements, crystals &amp; Yantras
+                  Ideas for layout, light, and room use
                 </p>
               </div>
             </div>
@@ -110,21 +111,21 @@ function VastuShastra() {
           <SectionLabel>01 · Space Energy</SectionLabel>
           <GoldRule className="mt-3 mb-4" />
           <h2 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 400, color: '#1E1208', lineHeight: 1.25, marginBottom: '0.5rem' }}>
-            Vastu Consultation for Homes &amp; Commercial Spaces
+            Review your home or workplace layout
           </h2>
           <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', fontWeight: 600, marginBottom: '1.25rem' }}>
-            Blueprints Analysis &amp; On-Site Guidance
+            Floor plan review and practical guidance
           </p>
           <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.9rem', lineHeight: 1.8, color: '#5A4A36', marginBottom: '1.5rem' }}>
-            Do you feel restless in certain rooms? Are business transactions facing unexpected resistance? Vastu Shastra balances the five cosmic elements (Pancha Bhoota: Earth, Water, Fire, Air, Space) inside your property to unlock smooth cash flow and good health.
+            Vastu Shastra is a traditional way to think about how a space is arranged. A review can consider the entrance, room use, light, and movement, along with comfort, safety, budget, and building rules.
           </p>
 
           <div className="space-y-2 mb-6">
             {[
-              'North-East (Ishanya): Spiritual clarity & wealth accumulation',
-              'South-East (Agneya): Cash liquidity, vitality & kitchen fire balance',
-              'South-West (Nairutya): Master bedroom stability & leadership decision-making',
-              'North-West (Vayavya): Helpful networking, business support & guest harmony',
+              'North-East: often used for prayer or quiet spaces',
+              'South-East: traditionally linked with the kitchen',
+              'South-West: often considered for bedrooms',
+              'North-West: sometimes used for guest rooms',
             ].map((v, i) => (
               <div key={i} className="flex items-center gap-2 text-xs" style={{ color: '#5A4A36' }}>
                 <span style={{ color: '#B8860B', fontWeight: 'bold' }}>✓</span>
@@ -142,22 +143,22 @@ function VastuShastra() {
               {
                 title: 'Residential Homes & Flats',
                 desc: 'Optimize living rooms, bedrooms, kitchens, and mandir directions for harmonious family living.',
-                icon: '🏡',
+                icon: House,
               },
               {
                 title: 'Corporate Offices & Retail',
                 desc: 'Strategic seating for founders, cash counter positioning, and entrance energy for footfall and profit.',
-                icon: '🏢',
+                icon: Building2,
               },
               {
                 title: 'Factories & Industrial Units',
                 desc: 'Heavy machinery placement in South/South-West, raw materials, and transformer fire zones.',
-                icon: '⚙️',
+                icon: Factory,
               },
               {
                 title: 'Pre-Purchase Property Audit',
                 desc: 'Check Vastu suitability before buying or renting an apartment, plot, or commercial building.',
-                icon: '🔍',
+                icon: Search,
               },
             ].map((space, i) => (
               <div
@@ -169,7 +170,7 @@ function VastuShastra() {
                   boxShadow: '0 2px 10px rgba(30,18,8,0.03)',
                 }}
               >
-                <span className="text-2xl mb-2 block">{space.icon}</span>
+                <space.icon size={25} strokeWidth={1.5} color="#B8860B" className="mb-2" aria-hidden="true" />
                 <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.25rem', fontWeight: 500, color: '#1E1208', marginBottom: '0.25rem' }}>
                   {space.title}
                 </h3>
@@ -195,13 +196,13 @@ function AnkJyotish() {
           <SectionLabel>02 · Vedic Numerology</SectionLabel>
           <GoldRule className="mt-3 mb-4" />
           <h2 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 400, color: '#1E1208', lineHeight: 1.25, marginBottom: '0.5rem' }}>
-            Ank Jyotish &amp; Name Alignment
+            Numerology in the Vedic tradition
           </h2>
           <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', fontWeight: 600, marginBottom: '1.25rem' }}>
-            Harmonize Your Name, Business Name &amp; Key Numbers
+            A traditional way of looking at names and numbers
           </p>
           <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.9rem', lineHeight: 1.8, color: '#5A4A36', marginBottom: '1.5rem' }}>
-            Every alphabet has a numerical vibration corresponding to a specific planet. When your name spelling or company brand number matches your birth number (Mulank) and destiny number (Bhagyank), you experience effortless resonance, popularity, and success.
+            Some Vedic numerology traditions connect letters and birth dates with numbers. People may use this practice to reflect on names or important dates, but it cannot guarantee popularity or success.
           </p>
           
           <div className="flex flex-wrap gap-2 mb-6">
@@ -223,19 +224,19 @@ function AnkJyotish() {
             ))}
           </div>
 
-          <CTAButton label="Request Name Numerology Audit" />
+          <CTAButton label="Ask about numerology" />
         </AnimatedSection>
 
         <AnimatedSection delay={0.15} className="lg:col-span-6">
           <div className="p-8 rounded-2xl" style={{ background: '#FFFFFF', border: '1px solid rgba(184,134,11,0.2)', boxShadow: '0 4px 24px rgba(30,18,8,0.06)' }}>
             <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.5rem', fontWeight: 500, color: '#1E1208', marginBottom: '1rem' }}>
-              How Vedic Numerology Works for You:
+              Three terms you may hear
             </h3>
             <ul className="space-y-3">
               {[
-                { title: 'Mulank (Birth Number)', desc: 'Calculated from your day of birth — reveals your innate personality, traits, and core strengths.' },
-                { title: 'Bhagyank (Destiny Number)', desc: 'Calculated from full date of birth — reveals your life destiny and career trajectory.' },
-                { title: 'Namank (Name Number)', desc: 'Adjusted through subtle spelling correction to bring harmonious planetary resonance.' },
+                { title: 'Birth number (Mulank)', desc: 'A number based on the day of the month you were born, used in some numerology traditions.' },
+                { title: 'Life path number (Bhagyank)', desc: 'A number based on your full date of birth, used as a prompt for reflection in this tradition.' },
+                { title: 'Name number (Namank)', desc: 'A number linked to the letters in a name. Spelling changes are a personal choice, not a promise of success.' },
               ].map((n, i) => (
                 <li key={i} className="p-3 rounded-lg" style={{ background: '#FAF7F0', border: '1px solid rgba(184,134,11,0.1)' }}>
                   <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208', marginBottom: '0.2rem' }}>

@@ -5,43 +5,44 @@ import Link from 'next/link'
 import { AnimatedSection, AnimatedGroup, fadeUpItem } from '@/components/ui/AnimatedSection'
 import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
 import { motion } from 'framer-motion'
+import { Flame, Gem, House, Telescope } from 'lucide-react'
 
 const SERVICES = [
   {
-    icon: '🔭',
+    icon: Telescope,
     label: 'Kundali Reading',
-    title: 'Know What the Stars Say About Your Life',
-    description: 'Your birth chart holds the answers to why things happen in your life — career struggles, relationship problems, financial setbacks. We read it precisely and tell you exactly what to do.',
+    title: 'Make sense of your birth chart',
+    description: 'Talk through questions about work, relationships, or the choices ahead. We explain the reading in clear language and make room for your own judgment.',
     href: '/diagnostics',
-    image: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&q=80',
-    imageAlt: 'Night sky with stars — Vedic Kundali reading',
+    image: '/service-kundali.jpg',
+    imageAlt: 'Astrology chart and notes arranged on a desk',
   },
   {
-    icon: '🪔',
+    icon: Flame,
     label: 'Puja & Remedies',
-    title: 'Vedic Rituals That Actually Work',
-    description: 'When life feels blocked — relationships breaking, health suffering, money not flowing — Vedic remedies through sacred Puja can remove those blockages and restore positive energy.',
+    title: 'Explore traditional puja and remedies',
+    description: 'If a Vedic ritual is meaningful to you, learn what the options involve and how they are traditionally practiced. We will explain them clearly, without promises.',
     href: '/pacification',
-    image: 'https://images.unsplash.com/photo-1601662528567-526cd06f6582?w=600&q=80',
-    imageAlt: 'Sacred Puja ritual with candles and flowers',
+    image: '/service-puja.jpg',
+    imageAlt: 'Traditional Hindu havan ritual around a sacred fire',
   },
   {
-    icon: '💎',
+    icon: Gem,
     label: 'Sacred Gems',
-    title: 'Gemstones Prescribed for Your Specific Chart',
-    description: 'Not all gemstones are for everyone. We prescribe only the gems your planetary chart needs — sourced, tested and properly energized. Wear what works for you, not what looks pretty.',
+    title: 'Learn about gemstones for your chart',
+    description: 'Gemstones are not one-size-fits-all. Understand which stones are traditionally linked to your chart before deciding whether one is right for you.',
     href: '/installations',
-    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80',
-    imageAlt: 'Beautiful colorful gemstones — Vedic gem therapy',
+    image: '/service-gems.jpg',
+    imageAlt: 'Colorful gemstone pendants arranged on a light surface',
   },
   {
-    icon: '🏛️',
+    icon: House,
     label: 'Vastu Shastra',
-    title: 'Make Your Home a Place of Blessings',
-    description: 'The direction your home or office faces, where you sleep, where you work — all of this affects your life outcomes. Vastu corrections can transform the energy of your space.',
+    title: 'Bring more balance to your space',
+    description: 'Review your home or office layout, natural light, and how each room is used. Explore practical Vastu ideas that fit your space and daily life.',
     href: '/spatial-harmonic',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
-    imageAlt: 'Beautiful home interior — Vastu Shastra alignment',
+    image: '/vastu-home.jpg',
+    imageAlt: 'Modern home exterior surrounded by greenery',
   },
 ] as const
 
@@ -51,17 +52,17 @@ export function AudienceIndex() {
       <div className="mx-auto" style={{ maxWidth: '1400px' }}>
         {/* Header */}
         <AnimatedSection className="text-center mb-12">
-          <SectionLabel>How Can We Help You?</SectionLabel>
+          <SectionLabel>Choose a service</SectionLabel>
           <GoldRule className="mt-3 mb-5 mx-auto" />
           <h2 style={{
             fontFamily: 'var(--font-cormorant), Georgia, serif',
             fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
             fontWeight: 400, color: '#1E1208', lineHeight: 1.2,
           }}>
-            Vedic Guidance for Every Area of Life
+            Find guidance for what is on your mind
           </h2>
           <p style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: '#6B5B47', maxWidth: '520px', margin: '1rem auto 0' }}>
-            Whatever challenge you are facing — our ancient Vedic science has clear answers and proven solutions.
+            Start with the question you have. We will help you understand the options in clear, simple language.
           </p>
         </AnimatedSection>
 
@@ -85,7 +86,7 @@ export function AudienceIndex() {
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(30,18,8,0.6), transparent)' }} aria-hidden="true" />
                   {/* Label overlay */}
                   <div className="absolute bottom-3 left-4 flex items-center gap-2">
-                    <span style={{ fontSize: '1.1rem' }} aria-hidden="true">{service.icon}</span>
+                    <service.icon size={18} strokeWidth={1.6} color="#D4AF37" aria-hidden="true" />
                     <span style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#D4AF37', fontWeight: 600 }}>{service.label}</span>
                   </div>
                 </div>

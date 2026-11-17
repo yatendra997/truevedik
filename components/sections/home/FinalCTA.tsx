@@ -26,7 +26,7 @@ export function FinalCTA() {
             marginBottom: '1.25rem',
           }}
         >
-          Ready to Bring Peace, Clarity &amp; Prosperity into Your Life?
+          Talk through the question on your mind
         </h2>
 
         <p
@@ -41,7 +41,7 @@ export function FinalCTA() {
             marginRight: 'auto',
           }}
         >
-          Consult with Astrologer Ranjith Kumar for personalized Kundali reading, life guidance, and authentic Vedic remedies. All consultations are 100% confidential.
+          Book a private consultation with Acharya Ved Prakash to discuss your birth chart, relationships, work, or home.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">

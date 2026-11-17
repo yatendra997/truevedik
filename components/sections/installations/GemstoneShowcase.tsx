@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { AnimatedGroup, fadeUpItem } from '@/components/ui/AnimatedSection'
 import { motion } from 'framer-motion'
 import { CTAButton } from '@/components/ui/CTAButton'
@@ -10,57 +11,69 @@ import { ShieldCheck, Sparkles, Gem, Award } from 'lucide-react'
 const GEMSTONES = [
   {
     sanskrit: 'Pukhraj (Yellow Sapphire)',
-    planet: 'Guru (Jupiter)',
+    image: '/gem-pukhraj.jpg',
+    imageAlt: 'Yellow gemstone set in a gold pendant',
+    planet: 'Jupiter (Guru)',
     color: '#D4AF37',
-    benefit: 'Wealth, Wisdom & Higher Knowledge',
+    benefit: 'Traditionally linked with Jupiter',
     description:
-      'The premier stone for luck, business expansion, spiritual growth, and financial stability. Highly beneficial for entrepreneurs, educators, lawyers, and seekers of prosperity.',
-    applications: ['Wealth & Prosperity', 'Career Stability', 'Marriage Blessing', 'Higher Wisdom'],
+      'In Vedic astrology, yellow sapphire (Pukhraj) is linked with Jupiter. A reading can explain how this association is understood in a particular birth chart.',
+    applications: ['Jupiter', 'Learning', 'Growth', 'Chart review'],
   },
   {
     sanskrit: 'Neelam (Blue Sapphire)',
-    planet: 'Shani (Saturn)',
+    image: '/gem-neelam.jpg',
+    imageAlt: 'Faceted blue sapphire gemstone',
+    planet: 'Saturn (Shani)',
     color: '#2A52BE',
-    benefit: 'Fast Career Growth, Focus & Protection',
+    benefit: 'Traditionally linked with Saturn',
     description:
-      'One of the most potent stones in Vedic astrology. Dispels obstacles, provides immense discipline, sharp mental focus, and shields from negative envy or sudden downturns.',
-    applications: ['Career Authority', 'Saturn Blessing', 'Supreme Focus', 'Accident Shield'],
+      'Blue sapphire (Neelam) is linked with Saturn in Vedic astrology. Traditions differ on how it should be used, so ask for a clear explanation before choosing a stone.',
+    applications: ['Saturn', 'Patience', 'Discipline', 'Chart review'],
   },
   {
     sanskrit: 'Panna (Emerald)',
-    planet: 'Budh (Mercury)',
+    image: '/gem-panna.jpg',
+    imageAlt: 'Natural green emerald crystal',
+    planet: 'Mercury (Budh)',
     color: '#138808',
-    benefit: 'Communication, Business & Sharp Intellect',
+    benefit: 'Traditionally linked with Mercury',
     description:
-      'Enhances memory, mathematical ability, negotiation power, and artistic speech. Recommended for professionals in trade, marketing, technology, finance, and creative fields.',
-    applications: ['Business Growth', 'Negotiation Skills', 'Memory & Focus', 'Speech & Charm'],
+      'Emerald (Panna) is linked with Mercury in Vedic astrology. An astrologer can discuss what that connection means in the wider context of your chart.',
+    applications: ['Mercury', 'Communication', 'Study', 'Chart review'],
   },
   {
     sanskrit: 'Manikya (Ruby)',
-    planet: 'Surya (Sun)',
+    image: '/gem-manikya.jpg',
+    imageAlt: 'Red ruby-colored mineral crystals',
+    planet: 'Sun (Surya)',
     color: '#C71585',
-    benefit: 'Leadership, Vitality & Social Respect',
+    benefit: 'Traditionally linked with the Sun',
     description:
-      'Infuses confidence, leadership presence, good health, and government favor. Strengthens the vital life force and bestows social recognition and authority.',
-    applications: ['Leadership Presence', 'Vital Energy', 'Government Support', 'Confidence'],
+      'Ruby (Manikya) is linked with the Sun in Vedic astrology. Ask how this traditional meaning relates to your chart before deciding whether to wear it.',
+    applications: ['Sun', 'Leadership', 'Self-expression', 'Chart review'],
   },
   {
     sanskrit: 'Moti (Natural Pearl)',
-    planet: 'Chandra (Moon)',
+    image: '/gem-moti.jpg',
+    imageAlt: 'Close-up of round white pearls',
+    planet: 'Moon (Chandra)',
     color: '#4682B4',
-    benefit: 'Emotional Peace, Intuition & Sleep',
+    benefit: 'Traditionally linked with the Moon',
     description:
-      'Calms an overactive mind, relieves emotional anxiety and stress, strengthens motherly bonds, and restores peaceful sleep and intuitive clarity.',
-    applications: ['Mental Peace', 'Stress Relief', 'Emotional Balance', 'Sound Sleep'],
+      'Pearl (Moti) is linked with the Moon in Vedic astrology. This is a traditional association, not medical advice or a promise of a particular result.',
+    applications: ['Moon', 'Reflection', 'Tradition', 'Chart review'],
   },
   {
     sanskrit: 'Nepali Rudraksha (1 to 14 Mukhi)',
-    planet: 'Lord Shiva & Planets',
+    image: '/gem-rudraksha.jpg',
+    imageAlt: 'Traditional rudraksha prayer beads',
+    planet: 'Prayer tradition',
     color: '#8B4513',
-    benefit: 'Spiritual Protection, Blood Pressure & Chakra Balance',
+    benefit: 'Sacred beads used in prayer',
     description:
-      'Authentic Himalayan Rudraksha beads selected for high electromagnetic resonance. Harmonizes the body’s energy centers (Chakras) and neutralizes malefic planetary rays.',
-    applications: ['Meditation & Aura', 'Stress Mitigation', 'Chakra Healing', 'Divine Protection'],
+      'Rudraksha beads are used in several Hindu prayer and meditation traditions. Ask about the bead type, source, and care before buying.',
+    applications: ['Prayer', 'Meditation', 'Traditional use', 'Care guide'],
   },
 ] as const
 
@@ -86,7 +99,7 @@ export function GemstoneShowcase() {
               color: '#1E1208',
             }}
           >
-            Prescribed Only After Careful Chart Analysis
+            Understand each stone before you choose
           </h2>
           <p
             style={{
@@ -97,7 +110,7 @@ export function GemstoneShowcase() {
               margin: '0.5rem auto 0',
             }}
           >
-            A gemstone acts like a cosmic antenna, drawing favorable planetary energy to your body. We ensure exact suitability, weight (Ratti), metal setting, and auspicious wearing Muhurat.
+            Different stones have different meanings in Vedic astrology. We explain how each one is traditionally used and what questions to ask before buying or wearing one.
           </p>
         </AnimatedSection>
 
@@ -114,6 +127,9 @@ export function GemstoneShowcase() {
                 boxShadow: '0 2px 14px rgba(30,18,8,0.04)',
               }}
             >
+              <div className="relative -mx-6 -mt-6 mb-5 overflow-hidden rounded-t-xl" style={{ aspectRatio: '3 / 2', background: '#F5F0E6' }}>
+                <Image src={gem.image} alt={gem.imageAlt} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
+              </div>
               <div>
                 {/* Planet Badge */}
                 <div className="flex items-center justify-between mb-4">
@@ -197,7 +213,7 @@ export function GemstoneShowcase() {
                   ))}
                 </div>
 
-                <CTAButton label="Inquire for Your Chart" variant="ghost" size="sm" className="w-full justify-center" />
+                <CTAButton label="Ask about this stone" variant="ghost" size="sm" className="w-full justify-center" />
               </div>
             </motion.article>
           ))}
@@ -233,10 +249,10 @@ export function GemstoneShowcase() {
               </div>
               <div>
                 <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208' }}>
-                  Vedic Mantra Energization
+                  Traditional prayer, if requested
                 </p>
                 <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.75rem', color: '#6B5B47' }}>
-                  Consecrated with planetary Beej Mantras on auspicious Tithi &amp; Nakshatra.
+                  Ask whether a prayer ritual is available and what it involves.
                 </p>
               </div>
             </div>
