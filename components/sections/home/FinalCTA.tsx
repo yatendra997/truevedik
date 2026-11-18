@@ -1,70 +1,24 @@
+import Link from 'next/link'
 import { CTAButton } from '@/components/ui/CTAButton'
-import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
 
 export function FinalCTA() {
   return (
-    <section
-      style={{
-        background: 'linear-gradient(135deg, #FAF4E8 0%, #FFFDF8 50%, #F5EADB 100%)',
-        padding: 'clamp(4rem, 8vw, 7rem) clamp(1.5rem, 4vw, 3rem)',
-        borderTop: '1px solid rgba(184,134,11,0.15)',
-        borderBottom: '1px solid rgba(184,134,11,0.15)',
-      }}
-    >
-      <div className="mx-auto text-center" style={{ maxWidth: '800px' }}>
-        <SectionLabel>Direct Guidance</SectionLabel>
-        <GoldRule className="mt-3 mb-5 mx-auto" />
-
-        <h2
-          style={{
-            fontFamily: 'var(--font-cormorant), Georgia, serif',
-            fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-            fontWeight: 400,
-            color: '#1E1208',
-            lineHeight: 1.15,
-            marginBottom: '1.25rem',
-          }}
-        >
-          Talk through the question on your mind
+    <section aria-labelledby="final-consultation-heading" style={{ background: '#221334', padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 3rem)' }}>
+      <div className="mx-auto text-center" style={{ maxWidth: 820 }}>
+        <p className="text-xs font-semibold uppercase tracking-[.18em]" style={{ color: '#E2C47F' }}>A personal conversation</p>
+        <h2 id="final-consultation-heading" className="mt-4" style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontWeight: 500, color: '#FFF9ED', lineHeight: 1.12 }}>
+          Your journey towards clarity starts here
         </h2>
-
-        <p
-          style={{
-            fontFamily: 'var(--font-geist), system-ui, sans-serif',
-            fontSize: 'clamp(0.9rem, 1.2vw, 1.05rem)',
-            lineHeight: 1.8,
-            color: '#5A4A36',
-            marginBottom: '2.5rem',
-            maxWidth: '620px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-          }}
-        >
-          Book a private consultation with Acharya Ved Prakash to discuss your birth chart, relationships, work, or home.
+        <p className="mx-auto mt-5 max-w-2xl text-sm leading-7" style={{ color: '#E8E0ED' }}>
+          Share what you would like to discuss. The team will confirm availability, consultation mode, duration, and any price before you decide.
         </p>
-
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <CTAButton label="Book a Consultation Now" size="lg" />
-          {SOCIAL_LINKS.whatsapp !== '/consultation' && <CTAButton
-            label="Chat on WhatsApp"
-            size="lg"
-            variant="whatsapp"
-            href={SOCIAL_LINKS.whatsapp}
-          />}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <CTAButton label="Book your consultation" size="lg" />
+          {SOCIAL_LINKS.whatsapp !== '/consultation' && <CTAButton label="Chat on WhatsApp" size="lg" variant="whatsapp" href={SOCIAL_LINKS.whatsapp} />}
+          <Link href="/tools" className="inline-flex items-center justify-center rounded border px-6 py-3 text-xs font-semibold uppercase tracking-wider transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4" style={{ color: '#F1D597', borderColor: 'rgba(241,213,151,.6)', textDecoration: 'none' }}>Explore free tools</Link>
         </div>
-
-        <p
-          style={{
-            fontFamily: 'var(--font-geist), system-ui, sans-serif',
-            fontSize: '0.72rem',
-            color: '#9A8C7E',
-            marginTop: '2rem',
-            letterSpacing: '0.05em',
-          }}
-        >
-          Serving seekers across India, UAE, US, New Zealand, Australia, Canada, UK, and Europe.
-        </p>
+        <p className="mt-6 text-xs" style={{ color: '#D9C9E3' }}>Astrology is a traditional belief practice and cannot guarantee a specific result.</p>
       </div>
     </section>
   )
