@@ -5,6 +5,7 @@ import { SOCIAL_LINKS } from '@/lib/constants/social'
 import type { Metadata } from 'next'
 import { Check, Clock, ShieldCheck, Award } from 'lucide-react'
 import { absoluteSiteUrl } from '@/lib/constants/site'
+import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
   title: 'Consultation with Acharya Ved Prakash | TrueVedik',
@@ -57,6 +58,8 @@ const CONSULTATION_TIERS = [
 export default function ConsultationPage() {
   return (
     <main style={{ background: '#FFFDF8', color: '#1E1208' }}>
+      <ServiceJsonLd name="Vedic astrology consultation" description="A one-to-one online conversation with Acharya Ved Prakash about a birth chart and the questions the client brings." path="/consultation" />
+      <BreadcrumbJsonLd items={[{ name: 'Home', path: '/' }, { name: 'Consultation', path: '/consultation' }]} />
       {/* Hero Banner */}
       <section
         className="relative overflow-hidden"
@@ -180,7 +183,7 @@ export default function ConsultationPage() {
                   <div className="flex items-center gap-2 mb-3">
                     <ShieldCheck size={18} color="#B8860B" />
                     <span style={{ fontFamily: 'var(--font-geist)', fontSize: '0.75rem', fontWeight: 600, color: '#1E1208' }}>
-                      100% Private, Respectful &amp; Confidential
+                      A respectful one-to-one conversation
                     </span>
                   </div>
                   <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.78rem', lineHeight: 1.6, color: '#6B5B47' }}>

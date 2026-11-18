@@ -7,10 +7,10 @@ import { SOCIAL_LINKS } from '@/lib/constants/social'
 const NAV_LINKS = [
   { label: 'About Acharya Ved Prakash', href: '/about' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Kundali Reading', href: '/diagnostics' },
-  { label: 'Puja & Remedies', href: '/pacification' },
-  { label: 'Sacred Gems', href: '/installations' },
-  { label: 'Vastu Shastra', href: '/spatial-harmonic' },
+  { label: 'Kundali Reading', href: '/kundali-reading' },
+  { label: 'Puja & Remedies', href: '/puja-remedies' },
+  { label: 'Sacred Gems', href: '/gemstones' },
+  { label: 'Vastu Shastra', href: '/vastu-consultation' },
   { label: 'Book Consultation', href: '/consultation' },
 ]
 

@@ -135,10 +135,10 @@ export function Hero() {
       <div className="mx-auto" style={{ maxWidth: '1400px', padding: '0 clamp(1.5rem, 4vw, 3rem)', marginTop: '-1.25rem', position: 'relative', zIndex: 10 }}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
-            { label: 'Kundali Reading', icon: Telescope, href: '/diagnostics', desc: 'Birth chart analysis' },
-            { label: 'Puja & Remedies', icon: Flame, href: '/pacification', desc: 'Vedic rituals & healing' },
-            { label: 'Sacred Gems', icon: Gem, href: '/installations', desc: 'Prescribed gemstones' },
-            { label: 'Vastu Shastra', icon: House, href: '/spatial-harmonic', desc: 'Home & office alignment' },
+            { label: 'Kundali Reading', icon: Telescope, href: '/kundali-reading', desc: 'Birth chart analysis' },
+            { label: 'Puja & Remedies', icon: Flame, href: '/puja-remedies', desc: 'Vedic rituals & healing' },
+            { label: 'Sacred Gems', icon: Gem, href: '/gemstones', desc: 'Traditional gemstone guidance' },
+            { label: 'Vastu Shastra', icon: House, href: '/vastu-consultation', desc: 'Home & office guidance' },
           ].map((card) => (
             <Link
               key={card.href}

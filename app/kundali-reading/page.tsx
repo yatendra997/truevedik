@@ -6,13 +6,14 @@ import { CTAButton } from '@/components/ui/CTAButton'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
 import { BriefcaseBusiness, Heart, HeartPulse, Plane } from 'lucide-react'
 import { absoluteSiteUrl } from '@/lib/constants/site'
+import { BreadcrumbJsonLd, FAQSection, ServiceJsonLd } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
   title: 'Kundali Reading & Horoscope Analysis | TrueVedik',
   description:
     'Book a Vedic birth chart reading or Kundali matching consultation with Acharya Ved Prakash. Discuss questions about work, relationships, and important decisions.',
   alternates: {
-    canonical: absoluteSiteUrl('/diagnostics'),
+    canonical: absoluteSiteUrl('/kundali-reading'),
   },
 }
 
@@ -322,9 +323,16 @@ function KundaliMilan() {
 export default function DiagnosticsPage() {
   return (
     <main>
+      <ServiceJsonLd name="Kundali reading and birth chart consultation" description="A one-to-one Vedic astrology reading that explains a birth chart and discusses the questions a client brings." path="/kundali-reading" />
+      <BreadcrumbJsonLd items={[{ name: 'Home', path: '/' }, { name: 'Kundali reading', path: '/kundali-reading' }]} />
       <PageHero />
       <JanamKundali />
       <KundaliMilan />
+      <FAQSection items={[
+        { question: 'What details do I need for a Kundali reading?', answer: 'Share your date of birth, best-known birth time, and birthplace. If the time is uncertain, explain what you know so the limits can be discussed.' },
+        { question: 'Can a reading guarantee what will happen?', answer: 'No. Astrology is a belief practice and a reading cannot guarantee events or replace your own judgment.' },
+        { question: 'Can you discuss marriage compatibility?', answer: 'Yes. A traditional matching can be discussed as one perspective alongside direct conversation, shared values, and each person’s wishes.' },
+      ]} />
     </main>
   )
 }

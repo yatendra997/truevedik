@@ -67,37 +67,22 @@ export function buildMetadata({
 
 export const rootJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'TrueVedik — Acharya Ved Prakash',
-  description:
-    'Vedic astrology consultation, Kundali reading, marriage matching, Puja rituals, gemstones, and Vastu Shastra guidance with Acharya Ved Prakash.',
-  url: SITE_URL,
-  image: DEFAULT_OG_IMAGE,
-  serviceType: ['Vedic astrology consultations', 'Kundali reading', 'Vastu guidance'],
-  areaServed: [
-    'India',
-    'UAE',
-    'United States',
-    'New Zealand',
-    'Australia',
-    'Canada',
-    'United Kingdom',
-    'Europe',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'TrueVedik',
+      url: SITE_URL,
+      logo: absoluteSiteUrl('/truevedik-golden-lotus-logo.png'),
+      founder: { '@id': `${SITE_URL}/#person` },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${SITE_URL}/#person`,
+      name: 'Acharya Ved Prakash',
+      jobTitle: 'Vedic astrologer',
+      worksFor: { '@id': `${SITE_URL}/#organization` },
+      knowsAbout: ['Vedic astrology', 'Kundali reading', 'Vastu Shastra'],
+    },
   ],
-  knowsAbout: [
-    'Vedic Astrology',
-    'Janam Kundali Reading',
-    'Kundali Milan & Matchmaking',
-    'Vedic Puja & Anushthan',
-    'Vastu Shastra Consultation',
-    'Certified Vedic Gemstones',
-    'Nepali Rudraksha Beads',
-    'Vedic Numerology (Ank Jyotish)',
-  ],
-  founder: {
-    '@type': 'Person',
-    name: 'Acharya Ved Prakash',
-    jobTitle: 'Vedic astrologer',
-  },
-  slogan: 'Traditional Vedic guidance in clear, everyday language.',
 }

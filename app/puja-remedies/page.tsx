@@ -5,6 +5,7 @@ import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
 import { absoluteSiteUrl } from '@/lib/constants/site'
+import { BreadcrumbJsonLd, FAQSection, ServiceJsonLd } from '@/components/seo/StructuredData'
 import { BookOpen, Flower2, Flame, Orbit, ShieldCheck, Sparkles } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   description:
     'Learn about traditional Vedic puja, havan, and yantra practices. Ask what each ritual includes and decide whether it is right for you.',
   alternates: {
-    canonical: absoluteSiteUrl('/pacification'),
+    canonical: absoluteSiteUrl('/puja-remedies'),
   },
 }
 
@@ -238,9 +239,16 @@ function YantrasAndKavach() {
 export default function PacificationPage() {
   return (
     <main>
+      <ServiceJsonLd name="Traditional Puja and Vedic remedies" description="Learn about traditional Puja and remedy practices, including what a proposed ritual involves, before deciding whether to take part." path="/puja-remedies" />
+      <BreadcrumbJsonLd items={[{ name: 'Home', path: '/' }, { name: 'Puja and remedies', path: '/puja-remedies' }]} />
       <PageHero />
       <PujaServices />
       <YantrasAndKavach />
+      <FAQSection items={[
+        { question: 'Do I need to book a Puja after a reading?', answer: 'No. Rituals are optional. You can ask questions and decide what, if anything, feels right for you.' },
+        { question: 'Are specific results promised?', answer: 'No result is guaranteed. We can explain how a practice is understood in a tradition, without promising a change in your circumstances.' },
+        { question: 'Will I know the cost before deciding?', answer: 'Ask for a clear description of the proposed practice and its cost before you make a commitment.' },
+      ]} />
     </main>
   )
 }

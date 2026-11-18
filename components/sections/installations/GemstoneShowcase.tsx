@@ -219,7 +219,7 @@ export function GemstoneShowcase() {
           ))}
         </AnimatedGroup>
 
-        {/* Quality Guarantee Box */}
+        {/* Before-you-buy guidance */}
         <AnimatedSection
           delay={0.2}
           className="mt-14 p-8 rounded-2xl"
@@ -235,10 +235,10 @@ export function GemstoneShowcase() {
               </div>
               <div>
                 <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208' }}>
-                  100% Lab Tested &amp; Certified
+                  Ask about sourcing
                 </p>
                 <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.75rem', color: '#6B5B47' }}>
-                  Free Gemological Institute certificate with every gemstone purchase.
+                  Request details about the stone, treatment, measurements, price, and any available lab report.
                 </p>
               </div>
             </div>
@@ -249,10 +249,10 @@ export function GemstoneShowcase() {
               </div>
               <div>
                 <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208' }}>
-                  Traditional prayer, if requested
+                  Rituals are optional
                 </p>
                 <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.75rem', color: '#6B5B47' }}>
-                  Ask whether a prayer ritual is available and what it involves.
+                  We explain any proposed prayer practice and its cost before you decide.
                 </p>
               </div>
             </div>
@@ -263,10 +263,10 @@ export function GemstoneShowcase() {
               </div>
               <div>
                 <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208' }}>
-                  Worldwide Insured Delivery
+                  Take time before you buy
                 </p>
                 <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.75rem', color: '#6B5B47' }}>
-                  Shipped safely to India, UAE, USA, UK, Canada, Australia &amp; Europe.
+                  Compare your options and ask questions before making a purchase.
                 </p>
               </div>
             </div>

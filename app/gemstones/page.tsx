@@ -6,13 +6,14 @@ import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
 import { absoluteSiteUrl } from '@/lib/constants/site'
+import { BreadcrumbJsonLd, FAQSection, ServiceJsonLd } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
   title: 'Sacred Gemstones & Rudraksha Guidance | TrueVedik',
   description:
-    '100% natural, lab-certified Vedic gemstones (Pukhraj, Neelam, Panna, Manikya) and authentic Nepali Rudraksha energized through Vedic rituals for planetary strength and harmony.',
+    'Learn how gemstones and Rudraksha are used in Vedic astrology, what to ask about sourcing and testing, and how traditional associations are discussed in a birth chart.',
   alternates: {
-    canonical: absoluteSiteUrl('/installations'),
+    canonical: absoluteSiteUrl('/gemstones'),
   },
 }
 
@@ -106,8 +107,15 @@ function PageHero() {
 export default function InstallationsPage() {
   return (
     <main>
+      <ServiceJsonLd name="Vedic gemstone and Rudraksha guidance" description="Understand traditional gemstone associations and ask about sourcing, treatment, and available reports before purchasing." path="/gemstones" />
+      <BreadcrumbJsonLd items={[{ name: 'Home', path: '/' }, { name: 'Gemstones', path: '/gemstones' }]} />
       <PageHero />
       <GemstoneShowcase />
+      <FAQSection items={[
+        { question: 'Should I choose a gemstone based on my birth sign?', answer: 'A gemstone should not be selected from a sun sign alone. Ask how the recommendation relates to your full chart and take time to review the details.' },
+        { question: 'Are gemstones guaranteed to change an outcome?', answer: 'No. Gemstone meanings come from traditional beliefs, and wearing a stone cannot guarantee a particular result.' },
+        { question: 'What should I ask before buying?', answer: 'Ask about the stone type, source, treatment, measurements, price, return terms, and any independent lab report that is available.' },
+      ]} />
     </main>
   )
 }

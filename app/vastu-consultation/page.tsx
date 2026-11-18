@@ -5,6 +5,7 @@ import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
 import { absoluteSiteUrl } from '@/lib/constants/site'
+import { BreadcrumbJsonLd, FAQSection, ServiceJsonLd } from '@/components/seo/StructuredData'
 import { Building2, Factory, House, Search } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   description:
     'Discuss your home or workplace layout with a Vastu consultation. Explore traditional ideas alongside comfort, safety, and your practical needs.',
   alternates: {
-    canonical: absoluteSiteUrl('/spatial-harmonic'),
+    canonical: absoluteSiteUrl('/vastu-consultation'),
   },
 }
 
@@ -260,9 +261,16 @@ function AnkJyotish() {
 export default function SpatialHarmonicPage() {
   return (
     <main>
+      <ServiceJsonLd name="Vastu consultation for home and work" description="Discuss a home or workplace layout through traditional Vastu ideas alongside comfort, accessibility, safety, and practical needs." path="/vastu-consultation" />
+      <BreadcrumbJsonLd items={[{ name: 'Home', path: '/' }, { name: 'Vastu consultation', path: '/vastu-consultation' }]} />
       <PageHero />
       <VastuShastra />
       <AnkJyotish />
+      <FAQSection items={[
+        { question: 'Do Vastu suggestions require construction work?', answer: 'No. A discussion can start with how rooms are used, movement through the space, light, and practical constraints. Any building work should be reviewed by a qualified professional.' },
+        { question: 'Can a Vastu review guarantee results?', answer: 'No. Vastu is a traditional belief practice and cannot guarantee a particular result.' },
+        { question: 'Can I get advice for a rented home?', answer: 'Yes. You can discuss the layout and explore small, reversible ideas that fit your permission, budget, and daily needs.' },
+      ]} />
     </main>
   )
 }
