@@ -10,8 +10,8 @@ import { ChevronLeft, ChevronRight, Flame, Gem, House, Telescope } from 'lucide-
 
 const HERO_SLIDES = [
   { src: '/acharya-ved-prakash-study.webp', alt: 'Acharya Ved Prakash in his study' },
-  { src: '/service-kundali.jpg', alt: 'Traditional birth chart notes prepared for a Kundali discussion' },
-  { src: '/vastu-home.jpg', alt: 'A calm, light-filled home for Vastu discussion' },
+  { src: '/india-excellence-awards.webp', alt: 'Acharya Ved Prakash at the India Excellence Awards 2025' },
+  { src: '/global-vedic-astrologer-award-2025.webp', alt: 'Acharya Ved Prakash receiving the Global Vedic Astrologer award' },
 ] as const
 
 export function Hero() {
@@ -28,8 +28,8 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative overflow-hidden" style={{ background: '#221334' }}>
-      <div className="relative w-full" style={{ height: 'min(84vh, 760px)', minHeight: '540px' }}>
+    <section className="relative overflow-hidden" style={{ background: '#FFFDF8' }}>
+      <div className="relative w-full" style={{ height: 'min(88vh, 760px)', minHeight: '560px' }}>
         <Image
           key={HERO_SLIDES[activeSlide].src}
           src={HERO_SLIDES[activeSlide].src}
@@ -42,7 +42,7 @@ export function Hero() {
         />
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(90deg, rgba(34,19,52,0.94) 0%, rgba(34,19,52,0.78) 48%, rgba(34,19,52,0.48) 100%), linear-gradient(0deg, rgba(34,19,52,0.45), transparent 35%, rgba(34,19,52,0.22))' }}
+          style={{ background: 'linear-gradient(90deg, rgba(24,17,13,0.9) 0%, rgba(24,17,13,0.68) 48%, rgba(24,17,13,0.38) 100%), linear-gradient(0deg, rgba(24,17,13,0.25), transparent 35%, rgba(24,17,13,0.12))' }}
           aria-hidden="true"
         />
 
@@ -54,11 +54,11 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="inline-flex items-center gap-2 mb-5 px-4 py-1.5"
-                style={{ background: 'rgba(226,196,127,0.12)', border: '1px solid rgba(226,196,127,0.38)', borderRadius: '20px' }}
+                style={{ background: 'rgba(184,134,11,0.18)', border: '1px solid rgba(212,175,55,0.42)', borderRadius: '20px' }}
               >
-                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#E2C47F', display: 'inline-block' }} />
+                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#D4AF37', display: 'inline-block' }} />
                 <span style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#D4AF37' }}>
-                  Online Vedic astrology consultation · Hindi &amp; English
+                  Personal Vedic guidance for everyday decisions
                 </span>
               </motion.div>
 
@@ -73,7 +73,7 @@ export function Hero() {
                   color: '#FFFFFF', marginBottom: '1.25rem',
                 }}
               >
-                Traditional Vedic astrology, explained with care
+                Clear guidance for the decisions that matter
               </motion.h1>
 
               <motion.p
@@ -87,7 +87,8 @@ export function Hero() {
                   marginBottom: '2rem', maxWidth: '520px',
                 }}
               >
-                Bring your questions about work, relationships, family, or home to a one-to-one conversation with Acharya Ved Prakash. Explore a traditional chart reading in clear, everyday language, with room to make your own choices.
+                Speak with Acharya Ved Prakash about work, relationships, family, or what comes next.
+                Get a thoughtful reading explained in simple, everyday language.
               </motion.p>
 
               <motion.div
@@ -97,7 +98,6 @@ export function Hero() {
                 className="flex flex-wrap gap-3"
               >
                 <CTAButton label="Book a Consultation" size="lg" />
-                <Link href="#services" className="inline-flex items-center justify-center rounded border px-5 py-3 text-xs font-semibold uppercase tracking-wider transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4" style={{ color: '#FFF9ED', borderColor: 'rgba(255,249,237,.65)', textDecoration: 'none' }}>Explore our services</Link>
                 {SOCIAL_LINKS.whatsapp === '/consultation'
                   ? <CTAButton label="Ask a Question" size="lg" variant="ghost" />
                   : <CTAButton label="Chat on WhatsApp" size="lg" variant="whatsapp" href={SOCIAL_LINKS.whatsapp} />}
@@ -110,7 +110,7 @@ export function Hero() {
                 className="flex flex-wrap gap-5 mt-6"
               >
                 <div className="flex items-center gap-2">
-                  <span style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '1.4rem', fontWeight: 600, color: '#E2C47F' }}>12+</span>
+                  <span style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '1.4rem', fontWeight: 600, color: '#D4AF37' }}>12+</span>
                   <span style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.7rem', color: 'rgba(255,255,255,0.82)', letterSpacing: '0.05em' }}>Years of experience</span>
                 </div>
                 <span style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.7rem', color: 'rgba(255,255,255,0.82)', letterSpacing: '0.05em', alignSelf: 'center' }}>Private one-to-one consultations</span>
