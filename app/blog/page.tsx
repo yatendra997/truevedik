@@ -3,11 +3,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { BLOG_POSTS } from '@/lib/blog/posts'
+import { absoluteSiteUrl } from '@/lib/constants/site'
 
 export const metadata: Metadata = {
   title: 'Vedic Astrology & Vastu Guides',
   description: 'Clear guides to birth charts, relationship compatibility, Vedic astrology, and practical Vastu for your home.',
-  alternates: { canonical: 'https://truevedic.com/blog' },
+  alternates: { canonical: absoluteSiteUrl('/blog') },
 }
 
 export default function BlogPage() {

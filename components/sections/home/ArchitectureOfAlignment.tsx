@@ -37,7 +37,7 @@ export function ArchitectureOfAlignment() {
               <div className="absolute bottom-0 left-0 right-0 p-5"
                 style={{ background: 'linear-gradient(to top, rgba(30,18,8,0.8), transparent)' }}>
                 <p style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '1.5rem', fontWeight: 400, color: '#FFFFFF' }}>Acharya Ved Prakash</p>
-                <p style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#D4AF37' }}>Vedic Astrologer · Founder, TrueVedic</p>
+                <p style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#D4AF37' }}>Vedic Astrologer · Founder, TrueVedik</p>
               </div>
             </div>
 
@@ -53,7 +53,7 @@ export function ArchitectureOfAlignment() {
               </div>
 
               <p style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.9rem', lineHeight: 1.85, color: '#5A4A36', marginBottom: '1.25rem' }}>
-                Acharya Ved Prakash founded TrueVedic and has more than 12 years of experience offering one-to-one Vedic astrology guidance. He works with people who have questions about career, relationships, family, and other important decisions.
+                Acharya Ved Prakash founded TrueVedik and has more than 12 years of experience offering one-to-one Vedic astrology guidance. He works with people who have questions about career, relationships, family, and other important decisions.
               </p>
               <p style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.9rem', lineHeight: 1.85, color: '#5A4A36', marginBottom: '2rem' }}>
                 He explains traditional Jyotish and Vastu ideas in everyday language, then discusses practical options with you. Astrology is a personal belief practice and does not replace medical, legal, or financial advice.

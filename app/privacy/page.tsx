@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
+import { absoluteSiteUrl } from '@/lib/constants/site'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | TrueVedic',
+  title: 'Privacy Policy | TrueVedik',
   description:
-    'TrueVedic privacy policy explains how we protect client birth details and personal information with 100% confidentiality.',
+    'TrueVedik privacy policy explains how we handle client birth details and personal information.',
   alternates: {
-    canonical: 'https://truevedic.com/privacy',
+    canonical: absoluteSiteUrl('/privacy'),
   },
 }
 
@@ -15,14 +16,14 @@ const sections = [
   {
     number: '01',
     title: 'Our Commitment to Confidentiality',
-    body: `TrueVedic is a dedicated Vedic advisory practice. The protection of our clients' personal, family, and astrological information is our absolute priority. All information submitted through our consultation forms is treated with the strictest privacy.
+    body: `TrueVedik is a dedicated Vedic advisory practice. We take care to protect clients' personal, family, and astrological information. Information submitted through consultation forms is handled according to this policy.
 
 No client name, birth chart details, personal questions, or consultation notes are ever shared, published, sold, or disclosed to any third party under any circumstance.`,
   },
   {
     number: '02',
     title: 'Information We Receive',
-    body: `During booking and consultation, TrueVedic receives:
+    body: `During booking and consultation, TrueVedik receives:
 
 - Exact birth details (date, time, and location of birth)
 - Questions or life topics you wish to explore with Acharya Ved Prakash
@@ -47,7 +48,7 @@ We never request or store sensitive financial card numbers or government identit
   {
     number: '05',
     title: 'Your Rights & Deletion Requests',
-    body: `You have the right to request deletion of your birth records or contact details from our database at any time by messaging our support on WhatsApp or emailing contact@truevedic.com.`,
+    body: `You may request deletion of your birth records or contact details by contacting TrueVedik through the consultation page.`,
   },
 ] as const
 

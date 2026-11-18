@@ -167,7 +167,7 @@ export function BlindedCaseFiles() {
                     marginBottom: '2rem',
                   }}
                 >
-                  TrueVedic identified the precise transit window, initiated a 14-day
+                  TrueVedik identified the precise transit window, initiated a 14-day
                   closed-door Rahu pacification protocol, and prescribed a calibrated
                   Hessonite installation. Within 60 days of protocol completion, the
                   board dispute was resolved in the client&apos;s favor.
@@ -185,7 +185,7 @@ export function BlindedCaseFiles() {
                     paddingTop: '1.25rem',
                   }}
                 >
-                  This case file is anonymized in accordance with TrueVedic&apos;s
+                  This case file is anonymized in accordance with TrueVedik&apos;s
                   strict non-disclosure obligations. All identifying information
                   has been permanently removed. Individual outcomes are not
                   representative of universal results.

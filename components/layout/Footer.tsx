@@ -45,7 +45,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-4" style={{ textDecoration: 'none' }}>
-              <Image src="/TrueVedic Golden Lotus Logo.png" alt="TrueVedic" width={142} height={64} className="h-12 w-auto" />
+              <Image src="/truevedik-golden-lotus-logo.png" alt="TrueVedik" width={142} height={64} className="h-12 w-auto" />
             </Link>
             <p style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.8rem', lineHeight: 1.75, color: '#D2C8B8', marginBottom: '1.25rem' }}>
               Vedic astrology consultations for questions about work, relationships, family, and home.
@@ -123,7 +123,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
           <p style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.72rem', color: '#AFA391' }}>
-            © {year} TrueVedic. All rights reserved. · Private consultations.
+            © {year} TrueVedik. All rights reserved. · Private consultations.
           </p>
           <p style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.65rem', color: '#B8860B', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
             Ancient Wisdom. Modern Guidance.

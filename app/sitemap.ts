@@ -1,9 +1,8 @@
 import type { MetadataRoute } from 'next'
 import { BLOG_POSTS } from '@/lib/blog/posts'
+import { absoluteSiteUrl } from '@/lib/constants/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://truevedic.com'
-
   const routes = [
     { path: '', priority: 1.0, changeFrequency: 'monthly' as const },
     { path: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
@@ -19,13 +18,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...routes.map(({ path, priority, changeFrequency }) => ({
-      url: `${baseUrl}${path}`,
+      url: absoluteSiteUrl(path),
       lastModified: new Date(),
       changeFrequency,
       priority,
     })),
     ...BLOG_POSTS.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
+      url: absoluteSiteUrl(`/blog/${post.slug}`),
       lastModified: new Date(`${post.publishedAt}T00:00:00`),
       changeFrequency: 'monthly' as const,
       priority: 0.7,

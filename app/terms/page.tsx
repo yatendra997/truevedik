@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
+import { absoluteSiteUrl } from '@/lib/constants/site'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | TrueVedic',
+  title: 'Terms of Service | TrueVedik',
   description:
-    'Terms of service and consultation guidelines for TrueVedic astrology guidance and Vedic advisory sessions.',
+    'Terms of service and consultation guidelines for TrueVedik astrology guidance and Vedic advisory sessions.',
   alternates: {
-    canonical: 'https://truevedic.com/terms',
+    canonical: absoluteSiteUrl('/terms'),
   },
 }
 
@@ -15,7 +16,7 @@ const sections = [
   {
     number: '01',
     title: 'Scope of Astrological Advisory',
-    body: `TrueVedic provides astrological interpretations and Vedic guidance based on traditional Parashari, Jaimini, and Vastu principles through Acharya Ved Prakash. 
+    body: `TrueVedik provides astrological interpretations and Vedic guidance based on traditional Parashari, Jaimini, and Vastu principles through Acharya Ved Prakash.
 
 Astrology is an advisory discipline designed to provide perspective, self-awareness, and supportive spiritual remedies. It does not replace licensed medical diagnosis, legal counsel, or certified financial advisory.`,
   },
@@ -27,7 +28,7 @@ Astrology is an advisory discipline designed to provide perspective, self-awaren
   {
     number: '03',
     title: 'Authenticity of Prescribed Remedies & Gemstones',
-    body: `All gemstones and Rudraksha provided through TrueVedic are 100% natural, untreated, and accompanied by authentic third-party gemological laboratory certificates. Puja rituals and Hawans are performed according to traditional Vedic methods.`,
+    body: `Ask for details about the source and any available testing for gemstones or Rudraksha before purchase. If a Puja ritual is discussed, we will explain what the proposed practice involves.`,
   },
   {
     number: '04',
@@ -68,7 +69,7 @@ export default function TermsPage() {
                 color: '#6B5B47',
               }}
             >
-              Last updated: {new Date().getFullYear()} · TrueVedic Advisory Guidelines
+              Last updated: {new Date().getFullYear()} · TrueVedik Advisory Guidelines
             </p>
           </AnimatedSection>
         </div>

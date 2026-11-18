@@ -4,14 +4,15 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
+import { absoluteSiteUrl } from '@/lib/constants/site'
 import { Building2, Factory, House, Search } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Vastu Guidance for Home & Work | TrueVedic',
+  title: 'Vastu Guidance for Home & Work | TrueVedik',
   description:
     'Discuss your home or workplace layout with a Vastu consultation. Explore traditional ideas alongside comfort, safety, and your practical needs.',
   alternates: {
-    canonical: 'https://truevedic.com/spatial-harmonic',
+    canonical: absoluteSiteUrl('/spatial-harmonic'),
   },
 }
 

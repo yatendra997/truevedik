@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { SITE_URL, absoluteSiteUrl } from '@/lib/constants/site'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [],
       },
     ],
-    sitemap: 'https://truevedic.com/sitemap.xml',
-    host: 'https://truevedic.com',
+    sitemap: absoluteSiteUrl('/sitemap.xml'),
+    host: SITE_URL,
   }
 }

@@ -5,13 +5,14 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
+import { absoluteSiteUrl } from '@/lib/constants/site'
 
 export const metadata: Metadata = {
-  title: 'Sacred Certified Gemstones & Rudraksha | TrueVedic',
+  title: 'Sacred Gemstones & Rudraksha Guidance | TrueVedik',
   description:
     '100% natural, lab-certified Vedic gemstones (Pukhraj, Neelam, Panna, Manikya) and authentic Nepali Rudraksha energized through Vedic rituals for planetary strength and harmony.',
   alternates: {
-    canonical: 'https://truevedic.com/installations',
+    canonical: absoluteSiteUrl('/installations'),
   },
 }
 

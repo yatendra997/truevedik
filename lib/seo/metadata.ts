@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
+import { absoluteSiteUrl, SITE_URL } from '@/lib/constants/site'
 
-const SITE_URL = 'https://truevedic.com'
-const SITE_NAME = 'TrueVedic'
-const DEFAULT_OG_IMAGE = `${SITE_URL}/Astrologer%20in%20a%20Warm%20Study.png`
+const SITE_NAME = 'TrueVedik'
+const DEFAULT_OG_IMAGE = absoluteSiteUrl('/Astrologer in a Warm Study.png')
 
 export interface PageSEO {
   title: string
@@ -19,7 +19,7 @@ export function buildMetadata({
   ogTitle,
   ogDescription,
 }: PageSEO): Metadata {
-  const canonical = `${SITE_URL}${path}`
+  const canonical = absoluteSiteUrl(path)
   const resolvedOgTitle = ogTitle ?? title
   const resolvedOgDesc = ogDescription ?? description
 
@@ -68,7 +68,7 @@ export function buildMetadata({
 export const rootJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'TrueVedic — Acharya Ved Prakash',
+  name: 'TrueVedik — Acharya Ved Prakash',
   description:
     'Vedic astrology consultation, Kundali reading, marriage matching, Puja rituals, gemstones, and Vastu Shastra guidance with Acharya Ved Prakash.',
   url: SITE_URL,

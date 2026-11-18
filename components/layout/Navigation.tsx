@@ -66,10 +66,10 @@ function SocialBar() {
 }
 
 /* ─── Logo ─────────────────────────────────────────────────── */
-function TrueVedicLogo() {
+function TrueVedikLogo() {
   return (
-    <Link href="/" aria-label="TrueVedic — Home" className="flex items-center gap-2.5 group">
-      <Image src="/TrueVedic Golden Lotus Logo.png" alt="TrueVedic" width={142} height={64} priority className="h-12 w-auto" />
+    <Link href="/" aria-label="TrueVedik — Home" className="flex items-center gap-2.5 group">
+      <Image src="/truevedik-golden-lotus-logo.png" alt="TrueVedik" width={142} height={64} priority className="h-12 w-auto" />
     </Link>
   )
 }
@@ -155,7 +155,7 @@ export function Navigation() {
           className="mx-auto flex items-center justify-between"
           style={{ maxWidth: '1400px', padding: '0 clamp(1.25rem, 3vw, 2.5rem)', height: '68px' }}
         >
-          <TrueVedicLogo />
+          <TrueVedikLogo />
 
           {/* Desktop Nav */}
           <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-7">

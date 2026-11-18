@@ -4,14 +4,15 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
+import { absoluteSiteUrl } from '@/lib/constants/site'
 import { BookOpen, Flower2, Flame, Orbit, ShieldCheck, Sparkles } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Vedic Puja & Traditional Remedies | TrueVedic',
+  title: 'Vedic Puja & Traditional Remedies | TrueVedik',
   description:
     'Learn about traditional Vedic puja, havan, and yantra practices. Ask what each ritual includes and decide whether it is right for you.',
   alternates: {
-    canonical: 'https://truevedic.com/pacification',
+    canonical: absoluteSiteUrl('/pacification'),
   },
 }
 

@@ -3,8 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { BLOG_POSTS, getBlogPost } from '@/lib/blog/posts'
-
-const SITE_URL = 'https://truevedic.com'
+import { absoluteSiteUrl, SITE_URL } from '@/lib/constants/site'
 
 export function generateStaticParams() {
   return BLOG_POSTS.map(({ slug }) => ({ slug }))
@@ -20,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: post.description,
     keywords: post.keywords,
     authors: [{ name: 'Acharya Ved Prakash' }],
-    alternates: { canonical: `${SITE_URL}/blog/${post.slug}` },
+    alternates: { canonical: absoluteSiteUrl(`/blog/${post.slug}`) },
     openGraph: {
       type: 'article',
       title: post.title,
@@ -42,12 +41,12 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
     '@type': 'Article',
     headline: post.title,
     description: post.description,
-    image: `${SITE_URL}${post.image}`,
+    image: absoluteSiteUrl(post.image),
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
     author: { '@type': 'Person', name: 'Acharya Ved Prakash' },
-    publisher: { '@type': 'Organization', name: 'TrueVedic', url: SITE_URL },
-    mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+    publisher: { '@type': 'Organization', name: 'TrueVedik', url: SITE_URL },
+    mainEntityOfPage: absoluteSiteUrl(`/blog/${post.slug}`),
   }
 
   return (

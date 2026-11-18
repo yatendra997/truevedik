@@ -5,13 +5,14 @@ import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
 import { BriefcaseBusiness, Heart, HeartPulse, Plane } from 'lucide-react'
+import { absoluteSiteUrl } from '@/lib/constants/site'
 
 export const metadata: Metadata = {
-  title: 'Kundali Reading & Horoscope Analysis | TrueVedic',
+  title: 'Kundali Reading & Horoscope Analysis | TrueVedik',
   description:
     'Book a Vedic birth chart reading or Kundali matching consultation with Acharya Ved Prakash. Discuss questions about work, relationships, and important decisions.',
   alternates: {
-    canonical: 'https://truevedic.com/diagnostics',
+    canonical: absoluteSiteUrl('/diagnostics'),
   },
 }
 

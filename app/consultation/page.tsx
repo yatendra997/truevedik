@@ -4,11 +4,12 @@ import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
 import type { Metadata } from 'next'
 import { Check, Clock, ShieldCheck, Award } from 'lucide-react'
+import { absoluteSiteUrl } from '@/lib/constants/site'
 
 export const metadata: Metadata = {
-  title: 'Consultation with Acharya Ved Prakash | TrueVedic',
+  title: 'Consultation with Acharya Ved Prakash | TrueVedik',
   description: 'Book a private Vedic astrology consultation with Acharya Ved Prakash. Discuss your birth chart, relationships, career, or Vastu questions.',
-  alternates: { canonical: 'https://truevedic.com/consultation' },
+  alternates: { canonical: absoluteSiteUrl('/consultation') },
 }
 
 const CONSULTATION_TIERS = [
@@ -419,7 +420,7 @@ export default function ConsultationPage() {
               },
               {
                 q: 'Will my personal details and conversation be kept confidential?',
-                a: 'Yes. Your birth chart, personal circumstances, and conversation details are handled according to the TrueVedic privacy policy.',
+                a: 'Yes. Your birth chart, personal circumstances, and conversation details are handled according to the TrueVedik privacy policy.',
               },
               {
                 q: 'Are the recommended remedies complicated or expensive?',

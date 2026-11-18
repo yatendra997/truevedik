@@ -40,11 +40,13 @@ export function CTAButton({
   }
 
   if (href) {
+    const opensNewTab = /^https?:\/\//.test(href)
+
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={opensNewTab ? '_blank' : undefined}
+        rel={opensNewTab ? 'noopener noreferrer' : undefined}
         className={cn('group', sizeStyles[size], className)}
         style={{
           ...baseStyle,
