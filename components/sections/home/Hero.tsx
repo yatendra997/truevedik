@@ -9,9 +9,9 @@ import Link from 'next/link'
 import { ChevronLeft, ChevronRight, Flame, Gem, House, Telescope } from 'lucide-react'
 
 const HERO_SLIDES = [
-  { src: '/Astrologer in a Warm Study.png', alt: 'Acharya Ved Prakash in his study' },
-  { src: '/India Excellence Awards Ceremony.png', alt: 'Acharya Ved Prakash at the India Excellence Awards 2025' },
-  { src: '/Global Vedic Astrologer Award 2025.png', alt: 'Acharya Ved Prakash receiving the Global Vedic Astrologer award' },
+  { src: '/acharya-ved-prakash-study.webp', alt: 'Acharya Ved Prakash in his study' },
+  { src: '/india-excellence-awards.webp', alt: 'Acharya Ved Prakash at the India Excellence Awards 2025' },
+  { src: '/global-vedic-astrologer-award-2025.webp', alt: 'Acharya Ved Prakash receiving the Global Vedic Astrologer award' },
 ] as const
 
 export function Hero() {

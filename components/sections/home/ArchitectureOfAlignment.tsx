@@ -28,7 +28,7 @@ export function ArchitectureOfAlignment() {
             {/* Image */}
             <div className="relative min-h-[360px] lg:min-h-[480px]">
               <Image
-                src="/Astrologer in a Warm Study.png"
+                src="/acharya-ved-prakash-study.webp"
                 alt="Acharya Ved Prakash in his study"
                 fill
                 className="object-cover object-top"
@@ -70,8 +70,8 @@ export function ArchitectureOfAlignment() {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-                <Image src="/India Excellence Awards Ceremony.png" alt="Acharya Ved Prakash at the India Excellence Awards 2025" width={1536} height={1024} className="h-36 w-full rounded-md object-cover" />
-                <Image src="/Global Vedic Astrologer Award 2025.png" alt="Global Vedic Astrologer of the Year 2025 award presented to Acharya Ved Prakash" width={1790} height={894} className="h-36 w-full rounded-md object-cover" />
+                <Image src="/india-excellence-awards.webp" alt="Acharya Ved Prakash at the India Excellence Awards 2025" width={1536} height={1024} className="h-36 w-full rounded-md object-cover" />
+                <Image src="/global-vedic-astrologer-award-2025.webp" alt="Global Vedic Astrologer of the Year 2025 award presented to Acharya Ved Prakash" width={1790} height={894} className="h-36 w-full rounded-md object-cover" />
               </div>
 
               <div className="flex flex-wrap gap-3">

@@ -7,6 +7,7 @@ import { BLOG_POSTS, getBlogPost } from '../lib/blog/posts.ts'
 test('blog post slugs are unique', () => {
   const slugs = BLOG_POSTS.map((post) => post.slug)
   assert.equal(new Set(slugs).size, slugs.length)
+  assert.equal(BLOG_POSTS.length, 10, 'The editorial plan includes ten published guides')
 })
 
 test('each post can be found by its slug', () => {

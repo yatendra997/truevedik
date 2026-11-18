@@ -66,7 +66,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
           </div>
         </header>
         <div className="relative mx-auto mt-8 overflow-hidden" style={{ maxWidth: '900px', width: 'calc(100% - 3rem)', aspectRatio: '16 / 8', borderRadius: '8px' }}>
-          <Image src={post.image} alt={post.imageAlt} fill priority className="object-cover" sizes="(max-width: 900px) 100vw, 900px" />
+          <Image src={post.image} alt={post.imageAlt} fill className="object-cover" sizes="(max-width: 900px) 100vw, 900px" />
         </div>
         <div className="mx-auto" style={{ maxWidth: '740px', padding: '2.5rem 1.5rem var(--space-section)' }}>
           {post.sections.map((section) => (

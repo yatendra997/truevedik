@@ -160,7 +160,7 @@ export default function ConsultationPage() {
               >
                 <div className="relative h-80 w-full">
                   <Image
-                    src="/Astrologer in a Warm Study.png"
+                    src="/acharya-ved-prakash-study.webp"
                     alt="Acharya Ved Prakash in his study"
                     fill
                     className="object-cover object-top"

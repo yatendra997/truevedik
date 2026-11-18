@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   description:
     'Book a personal Vedic astrology consultation with Acharya Ved Prakash. Get clear guidance on birth charts, relationships, career, traditional remedies, gemstones, and Vastu.',
-  alternates: { canonical: '/' },
+  alternates: { canonical: '/', languages: { en: '/', hi: '/hi' } },
   keywords: [
     'Acharya Ved Prakash',
     'Vedic astrology consultation',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
   icons: {
-    icon: '/truevedik-golden-lotus-logo.png',
+    icon: '/truevedik-golden-lotus-logo.webp',
   },
   openGraph: {
     type: 'website',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     url: absoluteSiteUrl('/'),
     images: [
       {
-        url: absoluteSiteUrl('/Astrologer in a Warm Study.png'),
+        url: absoluteSiteUrl('/acharya-ved-prakash-study.webp'),
         alt: 'Acharya Ved Prakash in his study',
       },
     ],
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'TrueVedik | Vedic Astrology Consultations',
     description: 'Clear, personal guidance from Acharya Ved Prakash.',
-    images: [absoluteSiteUrl('/Astrologer in a Warm Study.png')],
+    images: [absoluteSiteUrl('/acharya-ved-prakash-study.webp')],
   },
 }
 

@@ -4,6 +4,7 @@ import { ArchitectureOfAlignment } from '@/components/sections/home/Architecture
 import { Testimonials } from '@/components/sections/home/Testimonials'
 import { FinalCTA } from '@/components/sections/home/FinalCTA'
 import { BlogHighlights } from '@/components/sections/home/BlogHighlights'
+import { YouTubeSection } from '@/components/sections/home/YouTubeSection'
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <AudienceIndex />
       <ArchitectureOfAlignment />
       <BlogHighlights />
+      <YouTubeSection />
       <Testimonials />
       <FinalCTA />
     </main>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { absoluteSiteUrl, SITE_URL } from '@/lib/constants/site'
 
 const SITE_NAME = 'TrueVedik'
-const DEFAULT_OG_IMAGE = absoluteSiteUrl('/Astrologer in a Warm Study.png')
+const DEFAULT_OG_IMAGE = absoluteSiteUrl('/acharya-ved-prakash-study.webp')
 
 export interface PageSEO {
   title: string
@@ -73,7 +73,7 @@ export const rootJsonLd = {
       '@id': `${SITE_URL}/#organization`,
       name: 'TrueVedik',
       url: SITE_URL,
-      logo: absoluteSiteUrl('/truevedik-golden-lotus-logo.png'),
+      logo: absoluteSiteUrl('/truevedik-golden-lotus-logo.webp'),
       founder: { '@id': `${SITE_URL}/#person` },
     },
     {

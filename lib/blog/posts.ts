@@ -24,8 +24,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Vedic Astrology',
     publishedAt: '2026-11-12',
     readingTime: '6 min read',
-    image: '/service-kundali.jpg',
-    imageAlt: 'Astrology chart and notes arranged on a desk',
+    image: '/kundali-stars.jpg',
+    imageAlt: 'Night sky with stars, used as a visual for traditional chart matching',
     keywords: ['Janam Kundali', 'Vedic birth chart', 'Kundali reading', 'birth chart houses'],
     sections: [
       {
@@ -117,6 +117,181 @@ export const BLOG_POSTS: BlogPost[] = [
           'Use Vastu as one lens for thoughtful planning, alongside accessibility, building codes, comfort, and the needs of everyone at home. No layout can guarantee a particular outcome, but a considered space can better support daily life.',
         ],
       },
+    ],
+  },
+  {
+    slug: 'career-kundali-reflection-questions',
+    title: 'Career Questions in a Kundali: What a Reading Can and Cannot Tell You',
+    description: 'A grounded guide to discussing work themes in a birth chart, with practical questions to ask before making a career decision.',
+    category: 'Career & Work',
+    publishedAt: '2026-11-18',
+    readingTime: '5 min read',
+    image: '/acharya-ved-prakash-study.webp',
+    imageAlt: 'Acharya Ved Prakash in his study, where he meets clients for consultations',
+    keywords: ['career astrology', 'career Kundali reading', 'Vedic astrology for work'],
+    sections: [
+      { heading: 'Use a reading to think, not to decide for you', paragraphs: [
+        'In a traditional Vedic astrology reading, an astrologer may discuss chart factors linked with work, responsibility, learning, and periods of change. These are ways of looking at a question through a belief practice. They do not replace your skills, interests, financial needs, or knowledge of your field.',
+        'A chart cannot promise a job, promotion, or business result. Treat an interpretation as one perspective to consider alongside real information, conversations with people you trust, and advice from qualified career or financial professionals when needed.',
+      ] },
+      { heading: 'Bring the decision into focus', paragraphs: [
+        'Before a consultation, write down the choice in front of you. For example: are you comparing two roles, thinking of further study, or deciding whether to make a gradual career change? A clear question makes the conversation easier to follow.',
+        'Bring your best-known birth time and place, and say if either detail is uncertain. Ask the astrologer to explain the chart factors in everyday language and to separate traditional interpretation from practical facts.',
+      ] },
+      { heading: 'Leave room for your own judgment', paragraphs: [
+        'Take notes if they help, then give yourself time to reflect. You do not have to accept a suggestion or make a quick change because of a reading. Your circumstances and personal choice matter.',
+        'For a career-focused conversation, see our Kundali reading page or read the consultation details before booking.',
+      ] },
+    ],
+  },
+  {
+    slug: 'vedic-remedies-what-to-ask-before-starting',
+    title: 'Vedic Remedies: Questions to Ask Before You Begin',
+    description: 'Learn how to discuss traditional puja and mantra practices with care, clear costs, and no pressure to act.',
+    category: 'Puja & Remedies',
+    publishedAt: '2026-11-18',
+    readingTime: '4 min read',
+    image: '/service-puja.jpg',
+    imageAlt: 'Traditional puja setting representing Vedic worship practices',
+    keywords: ['Vedic remedies', 'puja consultation', 'traditional mantra practice'],
+    sections: [
+      { heading: 'Understand what is being suggested', paragraphs: [
+        'Vedic remedies can refer to many traditional practices, including prayer, mantra recitation, puja, or acts of service. Customs vary by teacher and community. Ask what a practice involves, how often it is done, and what parts are optional.',
+        'A remedy is a matter of personal belief. It cannot guarantee a change in health, relationships, work, or finances, and it should never be used to frighten someone into paying or acting quickly.',
+      ] },
+      { heading: 'Ask about time and cost first', paragraphs: [
+        'If a ritual or service has a fee, request the full price and a plain description before agreeing. You should have time to consider it. A simple personal practice may be enough for someone who prefers not to arrange a service.',
+        'Avoid sharing payment details until you have reviewed the terms. Do not stop prescribed care, delay urgent help, or make a legal or financial decision because of a suggested remedy.',
+      ] },
+      { heading: 'Choose without pressure', paragraphs: [
+        'A respectful conversation leaves the decision with you and makes room for questions. It should not predict harm if you decline. If something feels unclear, pause and seek another opinion.',
+        'Read about the approach on our Puja and remedies page, then decide whether you want to discuss it in a consultation.',
+      ] },
+    ],
+  },
+  {
+    slug: 'vedic-gemstones-buying-with-care',
+    title: 'Vedic Gemstones: A Careful Guide Before You Buy',
+    description: 'What to ask about gemstone quality, cost, and tradition before buying a stone or wearing it for astrological reasons.',
+    category: 'Gemstones',
+    publishedAt: '2026-11-18',
+    readingTime: '5 min read',
+    image: '/gem-pukhraj.jpg',
+    imageAlt: 'A yellow gemstone shown as an example of traditional gemology',
+    keywords: ['Vedic gemstones', 'astrological gemstone', 'gemstone buying guide'],
+    sections: [
+      { heading: 'Know the difference between tradition and evidence', paragraphs: [
+        'In Vedic astrology, some traditions associate particular gemstones with planets. These associations are cultural and spiritual beliefs, not proven ways to change health, luck, or life outcomes. A stone should not be presented as a guaranteed solution.',
+        'You may choose a gemstone for its colour, craft, or personal meaning. If you are considering one for astrological reasons, ask the practitioner to explain the tradition and why it may or may not fit your question.',
+      ] },
+      { heading: 'Check the stone and the price', paragraphs: [
+        'Ask for the stone name, whether it has been treated, its weight, and any independent gem report that comes with it. Confirm the complete price, return terms, and whether a report can be checked with its issuing lab.',
+        'A certificate describes certain gem details; it does not prove an astrological effect. Be cautious of pressure to buy quickly or claims that a costly stone is necessary to prevent harm.',
+      ] },
+      { heading: 'Take time before wearing it', paragraphs: [
+        'There is no need to make a purchase during a consultation. Compare options, check your budget, and use a qualified gem professional for questions about authenticity or care.',
+        'See the stones and tradition described on our Vedic gemology page. The choice to buy or wear a gem is always yours.',
+      ] },
+    ],
+  },
+  {
+    slug: 'rudraksha-tradition-and-care',
+    title: 'Rudraksha: Meaning, Selection, and Everyday Care',
+    description: 'A simple introduction to Rudraksha in Hindu traditions, plus thoughtful questions to ask about sourcing and care.',
+    category: 'Tradition & Practice',
+    publishedAt: '2026-11-18',
+    readingTime: '4 min read',
+    image: '/gem-rudraksha.jpg',
+    imageAlt: 'Rudraksha beads used in prayer and meditation traditions',
+    keywords: ['Rudraksha beads', 'Rudraksha tradition', 'Rudraksha care'],
+    sections: [
+      { heading: 'A bead with a place in devotional practice', paragraphs: [
+        'Rudraksha beads are used in several Hindu devotional and meditation traditions. People may wear a bead or use a mala during prayer. Customs differ, so advice can vary between families, communities, and teachers.',
+        'Some sellers attach spiritual or astrological claims to particular bead types. These claims are not guarantees of health, protection, or success. You can value the tradition without treating a purchase as a promise of an outcome.',
+      ] },
+      { heading: 'Ask where it comes from', paragraphs: [
+        'If you are buying a bead, ask about its origin, how it was checked, and what the seller means by any labels they use. Compare prices and request clear return terms before paying.',
+        'A photograph or certificate may not answer every question about a bead. For authenticity and material details, seek an independent specialist rather than relying only on a spiritual claim from the seller.',
+      ] },
+      { heading: 'Care for it in a way that suits you', paragraphs: [
+        'Keep a bead clean and dry, and follow the seller’s care guidance for any thread or metal setting. If wearing it does not suit your routine, you are free to choose another way to take part in a practice.',
+        'Our gemology and Rudraksha page explains the items we discuss. Ask questions and take time before making a choice.',
+      ] },
+    ],
+  },
+  {
+    slug: 'birth-time-accuracy-kundali-reading',
+    title: 'How Important Is Birth Time for a Kundali Reading?',
+    description: 'Find out why birth time is used in a Vedic chart, what to do when you are unsure, and how to discuss uncertainty openly.',
+    category: 'Vedic Astrology',
+    publishedAt: '2026-11-18',
+    readingTime: '4 min read',
+    image: '/service-kundali.jpg',
+    imageAlt: 'Traditional birth chart notes prepared for a Kundali discussion',
+    keywords: ['birth time for Kundali', 'birth time accuracy', 'Vedic birth chart'],
+    sections: [
+      { heading: 'Why the time is included', paragraphs: [
+        'A Vedic birth chart is calculated for a date, time, and place. The ascendant and some house placements can shift during the day, so a more accurate time can help an astrologer apply the chosen chart method.',
+        'This does not mean every interpretation is certain. Astrology is a traditional belief practice, and different practitioners may read the same chart in different ways.',
+      ] },
+      { heading: 'If your time is not exact', paragraphs: [
+        'Share the range you know and explain where it came from, such as a family note or official record. Do not guess a precise minute just to complete the form.',
+        'An astrologer may explain options for discussing an uncertain time, but these methods have limits. Ask how uncertainty affects the reading before relying on a detail.',
+      ] },
+      { heading: 'Bring the details you have', paragraphs: [
+        'A full birthplace is useful because chart calculations depend on location and local time. If you do not know the exact time, you can still bring a clear question and ask what can reasonably be explored.',
+        'Find more information on the Kundali reading page or read our birth chart guide.',
+      ] },
+    ],
+  },
+  {
+    slug: 'marriage-matching-questions-for-couples',
+    title: 'Kundali Matching: Questions Couples Can Discuss Together',
+    description: 'Use a traditional compatibility reading as a starting point for honest conversations about values, family, and shared plans.',
+    category: 'Marriage & Relationships',
+    publishedAt: '2026-11-18',
+    readingTime: '4 min read',
+    image: '/acharya-ved-prakash-study.webp',
+    imageAlt: 'Acharya Ved Prakash in a consultation setting',
+    keywords: ['marriage Kundali matching', 'couples astrology', 'Guna Milan questions'],
+    sections: [
+      { heading: 'Make space for the people behind the charts', paragraphs: [
+        'Kundali matching is one traditional way families may discuss compatibility. A score or chart comparison cannot tell you everything about a relationship, and it cannot replace the choices and conversations made by the two people involved.',
+        'A reading should not be used to pressure either person. Consent, respect, communication, and how you handle everyday decisions matter in a partnership.',
+      ] },
+      { heading: 'Agree on the questions first', paragraphs: [
+        'If both partners want a reading, talk about what you hope to understand. You might ask how the matching method works, what a score leaves out, or how different traditions interpret the same factor.',
+        'You can also talk directly about family expectations, work, where you hope to live, money habits, and the kind of support each of you values. These practical topics deserve attention in their own right.',
+      ] },
+      { heading: 'Keep the decision with the couple', paragraphs: [
+        'Ask the astrologer to explain uncertainty and avoid claims that a match guarantees a happy marriage or predicts a fixed outcome. Take time after the conversation to reflect together.',
+        'Read our guide to Kundali matching beyond Guna Milan or visit the Kundali reading page.',
+      ] },
+    ],
+  },
+  {
+    slug: 'daily-horoscope-as-a-reflection-practice',
+    title: 'Daily Horoscope: A Gentle Way to Use It as Reflection',
+    description: 'A balanced way to read a daily horoscope as a prompt for reflection without treating it as a forecast or instruction.',
+    category: 'Astrology Basics',
+    publishedAt: '2026-11-18',
+    readingTime: '3 min read',
+    image: '/vedic-sky.jpg',
+    imageAlt: 'Open sky at sunrise, used as a calm visual for daily reflection',
+    keywords: ['daily horoscope', 'astrology reflection', 'Vedic astrology guide'],
+    sections: [
+      { heading: 'Read with curiosity', paragraphs: [
+        'A daily horoscope is a short astrology-based message. Many are written for a broad group, so they cannot account for every person’s chart or circumstances. Different astrologers may also use different methods.',
+        'You can read one as a prompt to pause and notice what matters to you. It should not be treated as a certain prediction or a replacement for your own judgment.',
+      ] },
+      { heading: 'Keep important choices practical', paragraphs: [
+        'For health, legal, safety, or money questions, consult the right qualified professional. A horoscope should never be used to delay urgent help or make someone afraid.',
+        'If a message feels unhelpful, you can leave it aside. There is no need to buy something, change a plan, or take a remedy because of a short reading.',
+      ] },
+      { heading: 'Explore the larger tradition', paragraphs: [
+        'A personal birth chart discussion has more context than a general sign-based note, though it remains an interpretation within a belief practice. Ask what the reading can and cannot address.',
+        'Browse more Vedic astrology guides or learn about a one-to-one consultation.',
+      ] },
     ],
   },
 ]
