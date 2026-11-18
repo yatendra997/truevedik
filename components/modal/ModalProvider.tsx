@@ -9,6 +9,7 @@ import React, {
   useState,
 } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 import { X, CheckCircle, Sparkles } from 'lucide-react'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
 
@@ -30,9 +31,12 @@ export function useModal(): ModalContextValue {
 /* ─── Modal Panel ─────────────────────────────────────────── */
 
 function ConsultationModal({ onClose }: { onClose: () => void }) {
+  const router = useRouter()
   const panelRef = useRef<HTMLDivElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -42,6 +46,10 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
     pob: '',
     service: 'Kundali Reading & Life Consultation',
     message: '',
+    timezone: 'Asia/Kolkata',
+    mode: 'WhatsApp',
+    website: '',
+    consent: false,
   })
 
   /* Focus trap */
@@ -81,9 +89,39 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [onClose])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSubmitError('')
+    setIsSubmitting(true)
+    try {
+      const response = await fetch('/api/bookings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.fullName,
+          phone: formData.phone,
+          email: formData.email,
+          dateOfBirth: formData.dob,
+          timeOfBirth: formData.tob,
+          placeOfBirth: formData.pob,
+          question: formData.message,
+          timezone: formData.timezone,
+          mode: formData.mode,
+          service: formData.service,
+          website: formData.website,
+          consent: formData.consent,
+        }),
+      })
+      const result = await response.json() as { error?: string }
+      if (!response.ok) throw new Error(result.error || 'Please try again.')
+      setSubmitted(true)
+      onClose()
+      router.push('/thank-you')
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'We could not send your request. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -171,14 +209,12 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
                   marginBottom: '1.5rem',
                 }}
               >
-                Thank you, {formData.fullName || 'Seeker'}. Acharya Ved Prakash&apos;s team will contact you within 24 hours on WhatsApp/Email to schedule your direct consultation call.
+                Thank you, {formData.fullName}. Your request has been sent. We will use the contact details you provided to discuss a suitable time. This is a request, not a confirmed appointment.
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center gap-3">
                 <a
                   href={SOCIAL_LINKS.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="px-6 py-3 rounded-lg text-xs font-semibold text-white flex items-center justify-center gap-2"
                   style={{ background: '#25D366', textDecoration: 'none' }}
                 >
@@ -280,6 +316,11 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
                       }}
                     />
                   </div>
+
+                  <div>
+                    <label htmlFor="booking-email" className="block text-xs font-semibold mb-1" style={{ color: '#1E1208', fontFamily: 'var(--font-geist)' }}>Email (optional)</label>
+                    <input id="booking-email" type="email" autoComplete="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-3 py-2.5 rounded-lg text-sm" style={{ background: '#FFFFFF', border: '1px solid rgba(30,18,8,0.15)', color: '#1E1208' }} />
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -375,6 +416,19 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
                   </select>
                 </div>
 
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="booking-timezone" className="block text-xs font-semibold mb-1" style={{ color: '#1E1208', fontFamily: 'var(--font-geist)' }}>Your time zone *</label>
+                    <input id="booking-timezone" required maxLength={60} value={formData.timezone} onChange={(e) => setFormData({ ...formData, timezone: e.target.value })} placeholder="e.g. Asia/Kolkata" className="w-full px-3 py-2.5 rounded-lg text-sm" style={{ background: '#FFFFFF', border: '1px solid rgba(30,18,8,0.15)', color: '#1E1208' }} />
+                  </div>
+                  <div>
+                    <label htmlFor="booking-mode" className="block text-xs font-semibold mb-1" style={{ color: '#1E1208', fontFamily: 'var(--font-geist)' }}>Preferred way to talk *</label>
+                    <select id="booking-mode" required value={formData.mode} onChange={(e) => setFormData({ ...formData, mode: e.target.value })} className="w-full px-3 py-2.5 rounded-lg text-sm" style={{ background: '#FFFFFF', border: '1px solid rgba(30,18,8,0.15)', color: '#1E1208' }}>
+                      <option>WhatsApp</option><option>Phone</option><option>Video</option>
+                    </select>
+                  </div>
+                </div>
+
                 <div>
                   <label
                     className="block text-xs font-semibold mb-1"
@@ -383,6 +437,7 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
                     What questions would you like answered?
                   </label>
                   <textarea
+                    id="booking-question"
                     rows={3}
                     placeholder="Briefly describe your key questions or situation..."
                     value={formData.message}
@@ -397,8 +452,20 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
                   />
                 </div>
 
+                <div aria-hidden="true" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clipPath: 'inset(50%)' }}>
+                  <label htmlFor="booking-website">Leave this field empty</label>
+                  <input id="booking-website" tabIndex={-1} autoComplete="off" value={formData.website} onChange={(e) => setFormData({ ...formData, website: e.target.value })} />
+                </div>
+
+                <label className="flex items-start gap-2 text-xs" style={{ color: '#514536', lineHeight: 1.6 }}>
+                  <input type="checkbox" required checked={formData.consent} onChange={(e) => setFormData({ ...formData, consent: e.target.checked })} className="mt-1" />
+                  I agree that TrueVedik may use these details to respond to my consultation request. Please do not include information you do not want to share.
+                </label>
+                {submitError && <p role="alert" className="text-sm" style={{ color: '#A33A2B' }}>{submitError}</p>}
+
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full py-3.5 rounded-lg text-xs font-semibold uppercase tracking-wider text-white transition-all cursor-pointer"
                   style={{
                     background: 'linear-gradient(135deg, #C4600A, #D4750C)',
@@ -406,7 +473,7 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
                     border: 'none',
                   }}
                 >
-                  Submit &amp; Request Consultation Call
+                  {isSubmitting ? 'Sending request…' : 'Send consultation request'}
                 </button>
               </form>
 

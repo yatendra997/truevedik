@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { label: 'Sacred Gems', href: '/gemstones' },
   { label: 'Vastu Shastra', href: '/vastu-consultation' },
   { label: 'Book Consultation', href: '/consultation' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 function FooterSocialIcon({ href, label, children }: { href: string; label: string; children: React.ReactNode }) {
@@ -89,7 +90,7 @@ export function Footer() {
           <div>
             <p style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#B8860B', fontWeight: 600, marginBottom: '1rem' }}>Legal</p>
             <ul className="flex flex-col gap-2.5" role="list">
-              {[{ label: 'Privacy Policy', href: '/privacy' }, { label: 'Terms of Service', href: '/terms' }].map((link) => (
+              {[{ label: 'Privacy Policy', href: '/privacy' }, { label: 'Terms of Service', href: '/terms' }, { label: 'Refunds & Cancellations', href: '/refund-cancellation' }].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: '0.82rem', color: '#D2C8B8', textDecoration: 'none', transition: 'color 0.2s' }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#B8860B')}

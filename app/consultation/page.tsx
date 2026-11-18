@@ -6,6 +6,7 @@ import type { Metadata } from 'next'
 import { Check, Clock, ShieldCheck, Award } from 'lucide-react'
 import { absoluteSiteUrl } from '@/lib/constants/site'
 import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/StructuredData'
+import { getPaymentSetup } from '@/lib/payments/config'
 
 export const metadata: Metadata = {
   title: 'Consultation with Acharya Ved Prakash | TrueVedik',
@@ -56,6 +57,7 @@ const CONSULTATION_TIERS = [
 ]
 
 export default function ConsultationPage() {
+  const paymentSetup = getPaymentSetup()
   return (
     <main style={{ background: '#FFFDF8', color: '#1E1208' }}>
       <ServiceJsonLd name="Vedic astrology consultation" description="A one-to-one online conversation with Acharya Ved Prakash about a birth chart and the questions the client brings." path="/consultation" />
@@ -187,7 +189,7 @@ export default function ConsultationPage() {
                     </span>
                   </div>
                   <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.78rem', lineHeight: 1.6, color: '#6B5B47' }}>
-                    Consult directly on Google Meet, Zoom, or WhatsApp Audio/Video call. No assistants in between — speak directly with Acharya Ved Prakash.
+                    Choose WhatsApp, phone, or video in your request. We will confirm the available platform and time with you.
                   </p>
                 </div>
               </div>
@@ -198,6 +200,11 @@ export default function ConsultationPage() {
       </section>
 
       {/* Consultation Options Grid */}
+      <p className="mx-auto max-w-3xl px-6 py-4 text-center text-sm" style={{ color: '#514536' }}>
+        {paymentSetup.checkoutEnabled
+          ? 'Payment options will be shown after your session details are confirmed.'
+          : 'A booking request does not take payment. Any price and payment terms will be shared with you before you confirm a session.'}
+      </p>
       <section style={{ padding: 'clamp(4rem, 6vw, 6rem) clamp(1.5rem, 4vw, 3rem)' }}>
         <div className="mx-auto" style={{ maxWidth: '1200px' }}>
           
@@ -367,7 +374,7 @@ export default function ConsultationPage() {
                 1-on-1 Call with Acharya Ved Prakash
               </h3>
               <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.82rem', lineHeight: 1.7, color: '#5A4A36' }}>
-                Connect directly on Google Meet or WhatsApp call at your confirmed slot time. Ask anything without hurry or hesitation.
+                Meet by WhatsApp, phone, or video. We will confirm the platform and available time with you before the session.
               </p>
             </div>
 
@@ -423,7 +430,7 @@ export default function ConsultationPage() {
               },
               {
                 q: 'Will my personal details and conversation be kept confidential?',
-                a: 'Yes. Your birth chart, personal circumstances, and conversation details are handled according to the TrueVedik privacy policy.',
+                  a: 'Booking details are sent to the team by email so we can respond. Read the privacy policy for how these details are handled and shared with service providers.',
               },
               {
                 q: 'Are the recommended remedies complicated or expensive?',

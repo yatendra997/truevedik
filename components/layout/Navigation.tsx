@@ -15,6 +15,7 @@ const NAV_LINKS = [
   { label: 'Puja & Remedies', href: '/puja-remedies' },
   { label: 'Sacred Gems', href: '/gemstones' },
   { label: 'Vastu Shastra', href: '/vastu-consultation' },
+  { label: 'Contact', href: '/contact' },
 ] as const
 
 /* ─── Social Icons ─────────────────────────────────────────── */

@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/Footer'
 import { ModalProvider } from '@/components/modal/ModalProvider'
 import { rootJsonLd } from '@/lib/seo/metadata'
 import { absoluteSiteUrl, SITE_URL } from '@/lib/constants/site'
+import { CookieConsent } from '@/components/privacy/CookieConsent'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     'marriage astrology guidance',
     'career astrology predictions',
     'Vedic Puja remedies',
-    'certified Vedic gemstones',
+    'Vedic gemstones',
     'Rudraksha beads',
     'Vastu Shastra consultation',
     'NRI astrology consultation',
@@ -101,6 +102,7 @@ export default function RootLayout({
           <Navigation />
           <div id="main-content">{children}</div>
           <Footer />
+          <CookieConsent />
         </ModalProvider>
       </body>
     </html>

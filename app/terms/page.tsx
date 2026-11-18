@@ -23,7 +23,7 @@ Astrology is an advisory discipline designed to provide perspective, self-awaren
   {
     number: '02',
     title: 'Consultation Bookings & Rescheduling',
-    body: `Consultation slots are reserved upon receipt of booking requests. If you need to reschedule your call due to an unexpected emergency, please notify our coordinator at least 6 hours in advance on WhatsApp or Email, and we will happily assign an alternate slot.`,
+    body: `A request does not reserve a time. We will contact you to discuss availability, session length, and any fee before you confirm. If you later need to cancel or reschedule, contact us and refer to the terms agreed for that booking.`,
   },
   {
     number: '03',
@@ -33,7 +33,7 @@ Astrology is an advisory discipline designed to provide perspective, self-awaren
   {
     number: '04',
     title: 'Confidentiality & Code of Conduct',
-    body: `We maintain a respectful, compassionate, and non-judgmental environment for all seekers regardless of cultural background, nationality, or faith. All client discussions remain strictly confidential.`,
+    body: `We aim to provide a respectful conversation for people of different backgrounds. Personal information is handled as described in our privacy policy.`,
   },
 ] as const
 

@@ -16,39 +16,33 @@ const sections = [
   {
     number: '01',
     title: 'Our Commitment to Confidentiality',
-    body: `TrueVedik is a dedicated Vedic advisory practice. We take care to protect clients' personal, family, and astrological information. Information submitted through consultation forms is handled according to this policy.
-
-No client name, birth chart details, personal questions, or consultation notes are ever shared, published, sold, or disclosed to any third party under any circumstance.`,
+    body: `We use the information you submit to respond to a consultation request and prepare for a session. Please share only details needed for your request. Do not include medical, financial, legal, or other sensitive information in the form.`,
   },
   {
     number: '02',
     title: 'Information We Receive',
-    body: `During booking and consultation, TrueVedik receives:
+    body: `The booking form may collect:
 
 - Exact birth details (date, time, and location of birth)
 - Questions or life topics you wish to explore with Acharya Ved Prakash
 - Contact details (phone / WhatsApp / email) for scheduling the consultation call
 
-We never request or store sensitive financial card numbers or government identity cards.`,
+The form does not ask for payment card numbers or identity documents.`,
   },
   {
     number: '03',
     title: 'How We Use Your Information',
-    body: `All information is used exclusively to prepare and conduct your Vedic consultation:
-
-- Birth details are used to calculate the Janam Kundali and planetary periods
-- Contact details are used to coordinate the consultation slot
-- We do not spam or sell data to third-party marketing companies`,
+    body: `Booking details are used to respond to your request and arrange a consultation. When booking email notifications are enabled, the form sends the information to the configured notification provider and inbox.`,
   },
   {
     number: '04',
     title: 'Data Security & Storage',
-    body: `Client information is stored in secure, password-protected systems accessible only to Acharya Ved Prakash and his direct scheduling coordinator.`,
+    body: `The website does not save booking requests in a database. A submitted request is sent by email through Resend to the configured booking inbox. Email providers and inbox settings may retain messages; contact us if you need to request deletion.`,
   },
   {
     number: '05',
     title: 'Your Rights & Deletion Requests',
-    body: `You may request deletion of your birth records or contact details by contacting TrueVedik through the consultation page.`,
+    body: `You may ask us to delete a booking message by contacting TrueVedik through the contact page. We may need to retain information where required by law.`,
   },
 ] as const
 
@@ -84,7 +78,7 @@ export default function PrivacyPage() {
                 color: '#6B5B47',
               }}
             >
-              Last updated: {new Date().getFullYear()} · 100% Secure &amp; Protected
+              Last updated: {new Date().getFullYear()} · Privacy information
             </p>
           </AnimatedSection>
         </div>
