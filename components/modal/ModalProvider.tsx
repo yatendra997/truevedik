@@ -213,13 +213,13 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center gap-3">
-                <a
+                {SOCIAL_LINKS.whatsapp !== '/consultation' && <a
                   href={SOCIAL_LINKS.whatsapp}
                   className="px-6 py-3 rounded-lg text-xs font-semibold text-white flex items-center justify-center gap-2"
                   style={{ background: '#25D366', textDecoration: 'none' }}
                 >
                   Message Directly on WhatsApp
-                </a>
+                </a>}
                 <button
                   onClick={onClose}
                   className="px-6 py-3 rounded-lg text-xs font-semibold"
@@ -481,7 +481,7 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
                 <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.68rem', color: '#9A8C7E' }}>
                   🔒 Private consultation
                 </p>
-                <a
+                {SOCIAL_LINKS.whatsapp !== '/consultation' && <a
                   href={SOCIAL_LINKS.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -489,7 +489,7 @@ function ConsultationModal({ onClose }: { onClose: () => void }) {
                   style={{ color: '#25D366', textDecoration: 'none' }}
                 >
                   Need instant booking? WhatsApp &rarr;
-                </a>
+                </a>}
               </div>
             </>
           )}

@@ -46,12 +46,12 @@ export function FinalCTA() {
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <CTAButton label="Book a Consultation Now" size="lg" />
-          <CTAButton
+          {SOCIAL_LINKS.whatsapp !== '/consultation' && <CTAButton
             label="Chat on WhatsApp"
             size="lg"
             variant="whatsapp"
             href={SOCIAL_LINKS.whatsapp}
-          />
+          />}
         </div>
 
         <p

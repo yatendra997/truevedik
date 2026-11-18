@@ -140,12 +140,12 @@ export default function ConsultationPage() {
 
               <div className="flex flex-wrap gap-4">
                 <CTAButton label="Book Your Call Now" size="lg" />
-                <CTAButton
+                {SOCIAL_LINKS.whatsapp !== '/consultation' && <CTAButton
                   label="Instant WhatsApp Booking"
                   size="lg"
                   variant="whatsapp"
                   href={SOCIAL_LINKS.whatsapp}
-                />
+                />}
               </div>
             </div>
 

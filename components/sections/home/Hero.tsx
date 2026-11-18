@@ -98,7 +98,9 @@ export function Hero() {
                 className="flex flex-wrap gap-3"
               >
                 <CTAButton label="Book a Consultation" size="lg" />
-                <CTAButton label="Chat on WhatsApp" size="lg" variant="whatsapp" href={SOCIAL_LINKS.whatsapp} />
+                {SOCIAL_LINKS.whatsapp === '/consultation'
+                  ? <CTAButton label="Ask a Question" size="lg" variant="ghost" />
+                  : <CTAButton label="Chat on WhatsApp" size="lg" variant="whatsapp" href={SOCIAL_LINKS.whatsapp} />}
               </motion.div>
 
               <motion.div

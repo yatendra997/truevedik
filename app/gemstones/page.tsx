@@ -60,12 +60,12 @@ function PageHero() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <CTAButton label="Get Gemstone Recommendation" size="lg" />
-                <CTAButton
+                {SOCIAL_LINKS.whatsapp !== '/consultation' && <CTAButton
                   label="Inquire on WhatsApp"
                   size="lg"
                   variant="whatsapp"
                   href={SOCIAL_LINKS.whatsapp}
-                />
+                />}
               </div>
             </AnimatedSection>
           </div>
