@@ -51,14 +51,14 @@ export function CookieConsent() {
         </Script>
       )}
       {choice === null && (
-        <aside role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-copy" className="fixed inset-x-4 bottom-4 z-[80] mx-auto flex max-w-3xl flex-col gap-4 rounded-xl p-5 shadow-xl sm:flex-row sm:items-center sm:justify-between" style={{ background: '#241B14', color: '#FFFDF8', border: '1px solid rgba(212,175,55,0.45)' }}>
+        <aside role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-copy" className="fixed inset-x-4 bottom-4 z-[80] mx-auto flex max-h-[calc(100dvh-2rem)] max-w-3xl flex-col gap-4 overflow-y-auto rounded-xl p-5 shadow-xl sm:flex-row sm:items-center sm:justify-between" style={{ background: '#241B14', color: '#FFFDF8', border: '1px solid rgba(212,175,55,0.45)' }}>
           <div>
             <h2 id="cookie-title" className="font-semibold">Optional analytics</h2>
             <p id="cookie-copy" className="mt-1 text-sm" style={{ color: '#E5DCCB', lineHeight: 1.6 }}>We use analytics only if you allow it. Essential site functions work either way.</p>
           </div>
-          <div className="flex shrink-0 gap-2">
-            <button type="button" onClick={() => choose('rejected')} className="rounded-md border px-4 py-2 text-sm" style={{ borderColor: '#D4AF37', color: '#FFFDF8' }}>Reject optional</button>
-            <button type="button" onClick={() => choose('accepted')} className="rounded-md px-4 py-2 text-sm font-medium" style={{ background: '#D4AF37', color: '#241B14' }}>Allow analytics</button>
+          <div className="flex w-full shrink-0 flex-col gap-2 sm:w-auto sm:flex-row">
+            <button type="button" onClick={() => choose('rejected')} className="w-full rounded-md border px-4 py-2 text-sm sm:w-auto" style={{ borderColor: '#D4AF37', color: '#FFFDF8' }}>Reject optional</button>
+            <button type="button" onClick={() => choose('accepted')} className="w-full rounded-md px-4 py-2 text-sm font-medium sm:w-auto" style={{ background: '#D4AF37', color: '#241B14' }}>Allow analytics</button>
           </div>
         </aside>
       )}

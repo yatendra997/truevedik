@@ -29,7 +29,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden" style={{ background: '#FFFDF8' }}>
-      <div className="relative w-full" style={{ height: 'min(88vh, 760px)', minHeight: '560px' }}>
+      <div className="relative w-full h-[min(88svh,760px)] min-h-[560px] max-[640px]:min-h-[620px]">
         <Image
           key={HERO_SLIDES[activeSlide].src}
           src={HERO_SLIDES[activeSlide].src}
@@ -46,7 +46,7 @@ export function Hero() {
           aria-hidden="true"
         />
 
-        <div className="absolute inset-0 z-10 flex items-center">
+        <div className="absolute inset-0 z-10 flex items-center pb-16 sm:pb-0">
           <div className="mx-auto w-full" style={{ maxWidth: '1400px', padding: '0 clamp(1.5rem, 4vw, 3rem)' }}>
             <div style={{ maxWidth: '690px' }}>
               <motion.div
@@ -95,12 +95,12 @@ export function Hero() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="flex flex-wrap gap-3"
+                className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center"
               >
-                <CTAButton label="Book a Consultation" size="lg" />
+                <CTAButton label="Book a Consultation" size="lg" className="w-full justify-center sm:w-auto" />
                 {SOCIAL_LINKS.whatsapp === '/consultation'
-                  ? <CTAButton label="Ask a Question" size="lg" variant="ghost" />
-                  : <CTAButton label="Chat on WhatsApp" size="lg" variant="whatsapp" href={SOCIAL_LINKS.whatsapp} />}
+                  ? <CTAButton label="Ask a Question" size="lg" variant="ghost" className="w-full justify-center sm:w-auto" />
+                  : <CTAButton label="Chat on WhatsApp" size="lg" variant="whatsapp" href={SOCIAL_LINKS.whatsapp} className="w-full justify-center sm:w-auto" />}
               </motion.div>
 
               <motion.div

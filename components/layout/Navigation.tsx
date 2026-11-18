@@ -127,7 +127,7 @@ export function Navigation() {
     <>
       {/* Top social bar — desktop only */}
       <div
-        className="hidden lg:flex items-center justify-between px-8"
+        className="hidden xl:flex items-center justify-between px-8"
         style={{
           background: '#F5F0E6',
           height: '36px',
@@ -160,7 +160,7 @@ export function Navigation() {
           <TrueVedikLogo />
 
           {/* Desktop Nav */}
-          <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-7">
+          <nav aria-label="Primary navigation" className="hidden xl:flex items-center gap-7">
             {NAV_LINKS.map((link) => (
               <NavLink key={link.href} href={link.href} label={link.label} active={pathname === link.href} />
             ))}
@@ -168,7 +168,7 @@ export function Navigation() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             {SOCIAL_LINKS.whatsapp !== '/consultation' && <a
               href={SOCIAL_LINKS.whatsapp}
               target="_blank"
@@ -206,9 +206,10 @@ export function Navigation() {
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
+            className="xl:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
             onClick={toggleMenu}
             aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             style={{ background: 'transparent', border: 'none' }}
           >
@@ -242,7 +243,7 @@ export function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="fixed inset-x-0 top-[104px] z-40 shadow-xl lg:hidden"
+            className="fixed inset-x-0 top-[68px] z-40 max-h-[calc(100dvh-4.25rem)] overflow-y-auto overscroll-contain shadow-xl xl:hidden"
             style={{ background: '#FFFDF8', borderBottom: '1px solid rgba(30,18,8,0.08)' }}
           >
             <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '1.5rem clamp(1.25rem, 4vw, 2.5rem) 2rem' }}>

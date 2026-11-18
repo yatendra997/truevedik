@@ -14,7 +14,7 @@ const REPORTS = [
 
 const INK = '#1E1208'
 const GOLD = '#B8904B'
-const MUTED = '#655C6D'
+const MUTED = '#655A4A'
 
 export function FreeToolsSection() {
   const now = new Date()
@@ -23,7 +23,6 @@ export function FreeToolsSection() {
   const month = Number(parts.find((part) => part.type === 'month')?.value)
   const day = Number(parts.find((part) => part.type === 'day')?.value)
   const indiaDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`
-  const dayOfYear = Math.floor((Date.UTC(year, month - 1, day) - Date.UTC(year, 0, 0)) / 86_400_000)
   const today = new Intl.DateTimeFormat('en-IN', { dateStyle: 'full', timeZone: 'Asia/Kolkata' }).format(now)
 
   return (
@@ -38,7 +37,7 @@ export function FreeToolsSection() {
           <Link href="/tools" className="inline-flex items-center gap-2 text-sm font-semibold underline-offset-4 hover:underline focus-visible:outline-2" style={{ color: '#70501D' }}>View all tools <ArrowRight size={16} aria-hidden="true" /></Link>
         </div>
 
-        <DailyHoroscopeSlider dateLabel={today} dateTime={indiaDate} dayIndex={dayOfYear} />
+        <DailyHoroscopeSlider dateLabel={today} dateTime={indiaDate} />
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {REPORTS.map((report) => {

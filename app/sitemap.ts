@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { BLOG_POSTS } from '@/lib/blog/posts'
 import { absoluteSiteUrl } from '@/lib/constants/site'
+import { SIGNS } from '@/lib/horoscope'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
@@ -32,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(`${post.publishedAt}T00:00:00`),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
+    })),
+    ...SIGNS.map((sign) => ({
+      url: absoluteSiteUrl(`/horoscope/${sign.en.toLowerCase()}`),
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.65,
     })),
   ]
 }
