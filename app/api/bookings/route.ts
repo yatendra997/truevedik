@@ -1,5 +1,7 @@
 export const runtime = 'nodejs'
 
+import nodemailer from 'nodemailer'
+
 type BookingRequest = {
   name?: unknown
   phone?: unknown
@@ -67,7 +69,7 @@ export async function POST(request: Request) {
     return Response.json({ error: 'Please check the form and try again.' }, { status: 400 })
   }
 
-  // Quietly accept bot submissions without sending email.
+  // Honeypot — quietly accept bot submissions without sending email
   if (cleanText(input.website, 200)) return Response.json({ ok: true })
 
   const booking = {
@@ -113,42 +115,76 @@ export async function POST(request: Request) {
     return Response.json({ error: 'Enter a valid time of birth.' }, { status: 400 })
   }
 
-  const apiKey = process.env.RESEND_API_KEY
-  const to = process.env.BOOKING_NOTIFICATION_EMAIL
-  const from = process.env.BOOKING_FROM_EMAIL
-  if (!apiKey || !to || !from) {
+  // ── Gmail SMTP via Nodemailer ──────────────────────────────
+  const smtpEmail = process.env.SMTP_EMAIL
+  const smtpPassword = process.env.SMTP_PASSWORD
+  const notificationEmail = process.env.BOOKING_NOTIFICATION_EMAIL
+
+  if (!smtpEmail || !smtpPassword || !notificationEmail) {
+    console.error('Missing email env variables: SMTP_EMAIL, SMTP_PASSWORD, or BOOKING_NOTIFICATION_EMAIL')
     return Response.json({ error: 'Booking requests are temporarily unavailable. Please contact us on WhatsApp.' }, { status: 503 })
   }
 
+  // Build the HTML email body
   const rows = Object.entries({
-    Name: booking.name,
-    Phone: booking.phone,
-    Email: booking.email || 'Not provided',
-    Service: booking.service || 'Consultation',
-    'Preferred mode': booking.mode,
-    'Date of birth': booking.dateOfBirth || 'Not provided',
-    'Time of birth': booking.timeOfBirth || 'Not provided',
-    'Place of birth': booking.placeOfBirth || 'Not provided',
-    Timezone: booking.timezone,
-    Question: booking.question || 'Not provided',
-  }).map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}</p>`).join('')
+    'Name': booking.name,
+    'Phone / WhatsApp': booking.phone,
+    'Email': booking.email || 'Not provided',
+    'Service Requested': booking.service || 'General Consultation',
+    'Preferred Mode': booking.mode,
+    'Date of Birth': booking.dateOfBirth || 'Not provided',
+    'Time of Birth': booking.timeOfBirth || 'Not provided',
+    'Place of Birth': booking.placeOfBirth || 'Not provided',
+    'Timezone': booking.timezone,
+    'Question / Details': booking.question || 'Not provided',
+  }).map(([label, value]) =>
+    `<tr>
+      <td style="padding:10px 14px;border-bottom:1px solid #f0ebe3;font-weight:600;color:#5A4A36;white-space:nowrap;vertical-align:top;">${escapeHtml(label)}</td>
+      <td style="padding:10px 14px;border-bottom:1px solid #f0ebe3;color:#1E1208;">${escapeHtml(value)}</td>
+    </tr>`
+  ).join('')
+
+  const submittedAt = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'full', timeStyle: 'short' })
+
+  const htmlBody = `
+    <div style="font-family:Arial,Helvetica,sans-serif;max-width:600px;margin:0 auto;background:#FFFDF8;border:1px solid #e8dfc9;border-radius:12px;overflow:hidden;">
+      <div style="background:linear-gradient(135deg,#B8860B,#C4600A);padding:24px 28px;">
+        <h1 style="margin:0;color:#FFFFFF;font-size:22px;font-weight:600;">🕉️ New Consultation Lead</h1>
+        <p style="margin:6px 0 0;color:rgba(255,255,255,0.85);font-size:13px;">TrueVedic — Booking Form Submission</p>
+      </div>
+      <div style="padding:24px 28px;">
+        <p style="margin:0 0 16px;color:#5A4A36;font-size:14px;">A new consultation request has been submitted:</p>
+        <table style="width:100%;border-collapse:collapse;font-size:14px;border:1px solid #e8dfc9;border-radius:8px;overflow:hidden;">
+          ${rows}
+        </table>
+        <p style="margin:20px 0 0;color:#9A8C7E;font-size:12px;">Submitted on: ${submittedAt} (IST)</p>
+      </div>
+      <div style="background:#F5F0E6;padding:16px 28px;text-align:center;">
+        <p style="margin:0;color:#9A8C7E;font-size:11px;">This email was sent from the TrueVedic website booking form.</p>
+      </div>
+    </div>
+  `
 
   try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        from,
-        to: [to],
-        reply_to: booking.email || undefined,
-        subject: `New TrueVedik consultation request: ${booking.name}`,
-        html: `<h1>Consultation request</h1>${rows}<p>Submitted from the TrueVedik booking form.</p>`,
-      }),
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: smtpEmail,
+        pass: smtpPassword,
+      },
     })
-    if (!response.ok) {
-      return Response.json({ error: 'We could not send your request just now. Please try again or contact us on WhatsApp.' }, { status: 502 })
-    }
-  } catch {
+
+    await transporter.sendMail({
+      from: `"TrueVedic Bookings" <${smtpEmail}>`,
+      to: notificationEmail,
+      replyTo: booking.email || undefined,
+      subject: `🕉️ New Lead: ${booking.name} — ${booking.service || 'Consultation'}`,
+      html: htmlBody,
+    })
+  } catch (err) {
+    console.error('Email sending failed:', err)
     return Response.json({ error: 'We could not send your request just now. Please try again or contact us on WhatsApp.' }, { status: 502 })
   }
 
