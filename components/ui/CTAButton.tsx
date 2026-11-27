@@ -27,14 +27,14 @@ export function CTAButton({
   }
 
   const baseStyle: React.CSSProperties = {
-    fontFamily: 'var(--font-geist), system-ui, sans-serif',
+    fontFamily: 'var(--font-body), system-ui, sans-serif',
     letterSpacing: '0.08em',
     textTransform: 'uppercase' as const,
     cursor: 'pointer',
     display: 'inline-flex',
     alignItems: 'center',
     gap: '0.5rem',
-    transition: 'all 0.25s ease',
+    transition: 'background 150ms ease, border-color 150ms ease, box-shadow 150ms ease',
     fontWeight: 500,
     border: 'none',
   }
@@ -50,7 +50,7 @@ export function CTAButton({
         className={cn('group', sizeStyles[size], className)}
         style={{
           ...baseStyle,
-          background: '#25D366',
+          background: '#176B45',
           color: '#fff',
           borderRadius: '4px',
           textDecoration: 'none',
@@ -86,7 +86,7 @@ export function CTAButton({
         }}
       >
         {label}
-        <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+        <span aria-hidden="true">→</span>
       </button>
     )
   }
@@ -105,16 +105,14 @@ export function CTAButton({
       onMouseEnter={(e) => {
         e.currentTarget.style.background = 'linear-gradient(135deg, #B05509, #C4600A)'
         e.currentTarget.style.boxShadow = '0 6px 20px rgba(196,96,10,0.4)'
-        e.currentTarget.style.transform = 'translateY(-1px)'
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.background = 'linear-gradient(135deg, #C4600A, #D4750C)'
         e.currentTarget.style.boxShadow = '0 4px 16px rgba(196,96,10,0.3)'
-        e.currentTarget.style.transform = 'translateY(0)'
       }}
     >
       {label}
-      <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+      <span aria-hidden="true">→</span>
     </button>
   )
 }

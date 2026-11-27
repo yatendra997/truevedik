@@ -30,7 +30,7 @@ export function HoroscopeReading({ sign, dateLabel, dateTime, dayIndex }: { sign
         </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[.15em]" style={{ color: '#805900' }}>Your {sign.en} horoscope</p>
-          <h1 className="mt-1 text-4xl font-medium sm:text-5xl" style={{ color: '#1E1208', fontFamily: 'var(--font-cormorant), Georgia, serif' }}>{sign.en} <span lang="hi" className="text-2xl">({sign.hi})</span></h1>
+          <h1 className="mt-1 text-4xl font-medium sm:text-5xl" style={{ color: '#1E1208', fontFamily: 'var(--font-display), Georgia, serif' }}>{sign.en} <span lang="hi" className="text-2xl">({sign.hi})</span></h1>
           <p className="mt-2 text-sm" style={{ color: '#665B4E' }}>A general Vedic astrology reflection for <time dateTime={dateTime}>{dateLabel}</time>.</p>
         </div>
       </div>
@@ -56,7 +56,7 @@ export function HoroscopeReading({ sign, dateLabel, dateTime, dayIndex }: { sign
     </section>
 
     <aside className="mt-7 rounded-2xl p-6 sm:p-7" style={{ background: '#21190E', color: '#FFFDF8' }}>
-      <h2 className="text-2xl font-medium" style={{ fontFamily: 'var(--font-cormorant), Georgia, serif' }}>Want to explore your birth chart?</h2>
+      <h2 className="text-2xl font-medium" style={{ fontFamily: 'var(--font-display), Georgia, serif' }}>Want to explore your birth chart?</h2>
       <p className="mt-2 max-w-2xl text-sm leading-6" style={{ color: '#E8DDC7' }}>A personal consultation can look at your birth details and the questions you bring. There are no guaranteed outcomes.</p>
       <Link href="/consultation" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4" style={{ color: '#F1D99C' }}>Explore a consultation <ArrowRight size={16} aria-hidden="true" /></Link>
     </aside>

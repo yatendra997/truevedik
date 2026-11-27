@@ -1,7 +1,9 @@
 'use client'
 
 import Script from 'next/script'
+import { usePathname } from 'next/navigation'
 import { useSyncExternalStore } from 'react'
+import { isHindiPath } from '@/lib/i18n/routes'
 
 const STORAGE_KEY = 'truevedik-analytics-consent'
 const CHANGE_EVENT = 'truevedik-consent-change'
@@ -26,6 +28,7 @@ function getServerSnapshot() {
 
 export function CookieConsent() {
   const choice = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+  const hindi = isHindiPath(usePathname())
   const choose = (value: 'accepted' | 'rejected') => {
     window.localStorage.setItem(STORAGE_KEY, value)
     window.dispatchEvent(new Event(CHANGE_EVENT))
@@ -53,12 +56,12 @@ export function CookieConsent() {
       {choice === null && (
         <aside role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-copy" className="fixed inset-x-4 bottom-4 z-[80] mx-auto flex max-h-[calc(100dvh-2rem)] max-w-3xl flex-col gap-4 overflow-y-auto rounded-xl p-5 shadow-xl sm:flex-row sm:items-center sm:justify-between" style={{ background: '#241B14', color: '#FFFDF8', border: '1px solid rgba(212,175,55,0.45)' }}>
           <div>
-            <h2 id="cookie-title" className="font-semibold">Optional analytics</h2>
-            <p id="cookie-copy" className="mt-1 text-sm" style={{ color: '#E5DCCB', lineHeight: 1.6 }}>We use analytics only if you allow it. Essential site functions work either way.</p>
+            <h2 id="cookie-title" className="font-semibold">{hindi ? 'वैकल्पिक विश्लेषिकी' : 'Optional analytics'}</h2>
+            <p id="cookie-copy" className="mt-1 text-sm" style={{ color: '#E5DCCB', lineHeight: 1.6 }}>{hindi ? 'विश्लेषिकी आपकी अनुमति के बाद ही चालू होती है। जरूरी वेबसाइट सुविधाएँ दोनों स्थितियों में काम करती हैं।' : 'We use analytics only if you allow it. Essential site functions work either way.'}</p>
           </div>
           <div className="flex w-full shrink-0 flex-col gap-2 sm:w-auto sm:flex-row">
-            <button type="button" onClick={() => choose('rejected')} className="w-full rounded-md border px-4 py-2 text-sm sm:w-auto" style={{ borderColor: '#D4AF37', color: '#FFFDF8' }}>Reject optional</button>
-            <button type="button" onClick={() => choose('accepted')} className="w-full rounded-md px-4 py-2 text-sm font-medium sm:w-auto" style={{ background: '#D4AF37', color: '#241B14' }}>Allow analytics</button>
+            <button type="button" onClick={() => choose('rejected')} className="w-full rounded-md border px-4 py-2 text-sm font-medium sm:w-auto" style={{ minHeight: 44, borderColor: '#D4AF37', color: '#FFFDF8', background: 'transparent' }}>{hindi ? 'अस्वीकार करें' : 'Reject optional'}</button>
+            <button type="button" onClick={() => choose('accepted')} className="w-full rounded-md border px-4 py-2 text-sm font-medium sm:w-auto" style={{ minHeight: 44, borderColor: '#D4AF37', color: '#FFFDF8', background: 'transparent' }}>{hindi ? 'विश्लेषिकी स्वीकार करें' : 'Allow analytics'}</button>
           </div>
         </aside>
       )}

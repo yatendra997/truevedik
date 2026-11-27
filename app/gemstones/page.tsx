@@ -36,7 +36,7 @@ function PageHero() {
               <GoldRule className="mt-3 mb-5" />
               <h1
                 style={{
-                  fontFamily: 'var(--font-cormorant), Georgia, serif',
+                  fontFamily: 'var(--font-display), Georgia, serif',
                   fontSize: 'clamp(2.25rem, 5vw, 4rem)',
                   fontWeight: 400,
                   lineHeight: 1.15,
@@ -48,7 +48,7 @@ function PageHero() {
               </h1>
               <p
                 style={{
-                  fontFamily: 'var(--font-geist), system-ui, sans-serif',
+                  fontFamily: 'var(--font-body), system-ui, sans-serif',
                   fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
                   lineHeight: 1.85,
                   color: '#5A4A36',
@@ -76,9 +76,10 @@ function PageHero() {
               style={{ border: '1px solid rgba(184,134,11,0.2)' }}
             >
               <Image
-                src="/service-gems.jpg"
-                alt="Vedic gemstones in several colors"
+                src="/images/gemstones-consultation.webp"
+                alt="A selection of loose gemstones beside a jeweler’s loupe and an open ledger"
                 fill
+                sizes="(max-width: 1024px) 100vw, 42vw"
                 className="object-cover"
               />
               <div
@@ -88,10 +89,10 @@ function PageHero() {
                 }}
               />
               <div className="absolute bottom-4 left-5 right-5 text-white">
-                <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.3rem' }}>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem' }}>
                   Know what you are choosing
                 </p>
-                <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.72rem', color: '#D4AF37' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: '#D4AF37' }}>
                   Ask about each stone, its source, and its certificate
                 </p>
               </div>

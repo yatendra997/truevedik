@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { BLOG_POSTS } from '@/lib/blog/posts'
 import { absoluteSiteUrl } from '@/lib/constants/site'
 import { SIGNS } from '@/lib/horoscope'
+import { HINDI_BLOG_POSTS, HINDI_PAGES } from '@/lib/i18n/hindi-content'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
@@ -28,6 +29,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency,
       priority,
     })),
+    ...Object.keys(HINDI_PAGES).map((path) => ({
+      url: absoluteSiteUrl(`/hi${path}`),
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.65,
+    })),
+    {
+      url: absoluteSiteUrl('/hi/blog'),
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    },
+    ...HINDI_BLOG_POSTS.map((post) => ({
+      url: absoluteSiteUrl(`/hi/blog/${post.slug}`),
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
     ...BLOG_POSTS.map((post) => ({
       url: absoluteSiteUrl(`/blog/${post.slug}`),
       lastModified: new Date(`${post.publishedAt}T00:00:00`),
@@ -39,6 +58,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 0.65,
+    })),
+    ...SIGNS.map((sign) => ({
+      url: absoluteSiteUrl(`/hi/horoscope/${sign.en.toLowerCase()}`),
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.6,
     })),
   ]
 }

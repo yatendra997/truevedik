@@ -36,7 +36,7 @@ function PageHero() {
               <GoldRule className="mt-3 mb-5" />
               <h1
                 style={{
-                  fontFamily: 'var(--font-cormorant), Georgia, serif',
+                  fontFamily: 'var(--font-display), Georgia, serif',
                   fontSize: 'clamp(2.25rem, 5vw, 4rem)',
                   fontWeight: 400,
                   lineHeight: 1.15,
@@ -48,7 +48,7 @@ function PageHero() {
               </h1>
               <p
                 style={{
-                  fontFamily: 'var(--font-geist), system-ui, sans-serif',
+                  fontFamily: 'var(--font-body), system-ui, sans-serif',
                   fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
                   lineHeight: 1.85,
                   color: '#5A4A36',
@@ -76,9 +76,10 @@ function PageHero() {
               style={{ border: '1px solid rgba(184,134,11,0.2)' }}
             >
               <Image
-                src="/service-kundali.jpg"
-                alt="Traditional Vedic birth chart illustrated on parchment"
+                src="/images/kundli-reading-hero.webp"
+                alt="Vedic birth chart on handmade paper beside a brass diya and marigold petals"
                 fill
+                sizes="(max-width: 1024px) 100vw, 42vw"
                 className="object-cover"
               />
               <div
@@ -88,10 +89,10 @@ function PageHero() {
                 }}
               />
               <div className="absolute bottom-4 left-5 right-5 text-white">
-                <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.3rem' }}>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem' }}>
                   Your Celestial Blueprint
                 </p>
-                <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.72rem', color: '#D4AF37' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: '#D4AF37' }}>
                   A chart is prepared from your date, time, and place of birth
                 </p>
               </div>
@@ -121,7 +122,7 @@ function JanamKundali() {
           <GoldRule className="mt-3 mb-4" />
           <h2
             style={{
-              fontFamily: 'var(--font-cormorant), Georgia, serif',
+              fontFamily: 'var(--font-display), Georgia, serif',
               fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
               fontWeight: 400,
               color: '#1E1208',
@@ -133,7 +134,7 @@ function JanamKundali() {
           </h2>
           <p
             style={{
-              fontFamily: 'var(--font-geist), system-ui, sans-serif',
+              fontFamily: 'var(--font-body), system-ui, sans-serif',
               fontSize: '0.7rem',
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
@@ -147,7 +148,7 @@ function JanamKundali() {
 
           <p
             style={{
-              fontFamily: 'var(--font-geist), system-ui, sans-serif',
+              fontFamily: 'var(--font-body), system-ui, sans-serif',
               fontSize: '0.9rem',
               lineHeight: 1.8,
               color: '#5A4A36',
@@ -200,7 +201,7 @@ function JanamKundali() {
             ].map((card, i) => (
               <div
                 key={i}
-                className="p-5 rounded-xl transition-all duration-300 hover:shadow-md"
+                className="p-5 rounded-xl transition-shadow duration-150 hover:shadow-md"
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid rgba(184,134,11,0.15)',
@@ -208,10 +209,10 @@ function JanamKundali() {
                 }}
               >
                 <card.icon size={25} strokeWidth={1.5} color="#B8860B" className="mb-2" aria-hidden="true" />
-                <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.25rem', fontWeight: 500, color: '#1E1208', marginBottom: '0.25rem' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 500, color: '#1E1208', marginBottom: '0.25rem' }}>
                   {card.title}
                 </h3>
-                <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.8rem', lineHeight: 1.6, color: '#6B5B47' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', lineHeight: 1.6, color: '#6B5B47' }}>
                   {card.desc}
                 </p>
               </div>
@@ -245,7 +246,7 @@ function KundaliMilan() {
               boxShadow: '0 4px 24px rgba(30,18,8,0.06)',
             }}
           >
-            <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.6rem', fontWeight: 500, color: '#1E1208', marginBottom: '1rem' }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 500, color: '#1E1208', marginBottom: '1rem' }}>
               What a matching reading may cover
             </h3>
 
@@ -257,10 +258,10 @@ function KundaliMilan() {
                 { title: 'What a chart cannot tell you', desc: 'Compatibility is also built through respect, consent, and honest conversation.' },
               ].map((item, idx) => (
                 <div key={idx} className="p-3 rounded-lg" style={{ background: '#FAF7F0', border: '1px solid rgba(184,134,11,0.1)' }}>
-                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208', marginBottom: '0.2rem' }}>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208', marginBottom: '0.2rem' }}>
                     {item.title}
                   </p>
-                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.78rem', color: '#6B5B47', lineHeight: 1.5 }}>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: '#6B5B47', lineHeight: 1.5 }}>
                     {item.desc}
                   </p>
                 </div>
@@ -274,7 +275,7 @@ function KundaliMilan() {
           <GoldRule className="mt-3 mb-4" />
           <h2
             style={{
-              fontFamily: 'var(--font-cormorant), Georgia, serif',
+              fontFamily: 'var(--font-display), Georgia, serif',
               fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
               fontWeight: 400,
               color: '#1E1208',
@@ -286,7 +287,7 @@ function KundaliMilan() {
           </h2>
           <p
             style={{
-              fontFamily: 'var(--font-geist), system-ui, sans-serif',
+              fontFamily: 'var(--font-body), system-ui, sans-serif',
               fontSize: '0.7rem',
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
@@ -300,7 +301,7 @@ function KundaliMilan() {
 
           <p
             style={{
-              fontFamily: 'var(--font-geist), system-ui, sans-serif',
+              fontFamily: 'var(--font-body), system-ui, sans-serif',
               fontSize: '0.9rem',
               lineHeight: 1.8,
               color: '#5A4A36',

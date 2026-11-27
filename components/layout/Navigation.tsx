@@ -3,15 +3,16 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { useCallback, useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { Menu, X } from 'lucide-react'
 import { useModal } from '@/components/modal/ModalProvider'
 import { SOCIAL_LINKS } from '@/lib/constants/social'
+import { HINDI_NAV_LABELS } from '@/lib/i18n/hindi-navigation'
+import { isHindiPath, languageSwitchPath, localizePath } from '@/lib/i18n/routes'
 
 const NAV_LINKS = [
   { label: 'About Acharya', href: '/about' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Free Tools', href: '/tools' },
   { label: 'Kundali Reading', href: '/kundali-reading' },
   { label: 'Puja & Remedies', href: '/puja-remedies' },
   { label: 'Sacred Gems', href: '/gemstones' },
@@ -27,7 +28,7 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="flex items-center justify-center w-8 h-8 transition-all duration-200"
+      className="flex items-center justify-center w-8 h-8 transition-colors duration-150"
       style={{ color: '#9A8C7E', borderRadius: '50%' }}
       onMouseEnter={(e) => { e.currentTarget.style.color = '#B8860B' }}
       onMouseLeave={(e) => { e.currentTarget.style.color = '#9A8C7E' }}
@@ -68,9 +69,9 @@ function SocialBar() {
 }
 
 /* ─── Logo ─────────────────────────────────────────────────── */
-function TrueVedikLogo() {
+function TrueVedikLogo({ hindi }: { hindi: boolean }) {
   return (
-    <Link href="/" aria-label="TrueVedik — Home" className="flex items-center gap-2.5 group">
+    <Link href={hindi ? '/hi' : '/'} aria-label={hindi ? 'TrueVedik — मुख्य पृष्ठ' : 'TrueVedik — Home'} className="flex items-center gap-2.5 group">
       <Image src="/truevedik-golden-lotus-logo.webp" alt="TrueVedik" width={142} height={64} priority className="h-12 w-auto" />
     </Link>
   )
@@ -81,22 +82,20 @@ function NavLink({ href, label, active }: { href: string; label: string; active:
   return (
     <Link
       href={href}
-      className="relative group"
+      aria-current={active ? 'page' : undefined}
+      className="rounded-full transition-colors duration-200 hover:bg-[#F5F0E6] hover:text-[#805B0A] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8860B]"
       style={{
-        fontFamily: 'var(--font-geist), system-ui, sans-serif',
-        fontSize: '0.72rem', letterSpacing: '0.08em',
-        color: active ? '#B8860B' : '#5A4A36',
-        fontWeight: active ? 500 : 400,
-        textDecoration: 'none', transition: 'color 0.2s',
+        fontFamily: 'var(--font-body), system-ui, sans-serif',
+        fontSize: '0.79rem', letterSpacing: '0.01em',
+        color: active ? '#805B0A' : '#493A2B',
+        fontWeight: active ? 700 : 600,
+        textDecoration: 'none',
+        background: active ? '#F5F0E6' : 'transparent',
+        border: active ? '1px solid rgba(184,134,11,0.22)' : '1px solid transparent',
+        padding: '0.55rem 0.7rem',
       }}
-      onMouseEnter={(e) => { if (!active) e.currentTarget.style.color = '#B8860B' }}
-      onMouseLeave={(e) => { if (!active) e.currentTarget.style.color = '#5A4A36' }}
     >
       {label}
-      {active && (
-        <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
-          style={{ background: 'linear-gradient(90deg, #B8860B, #C4600A)' }} />
-      )}
     </Link>
   )
 }
@@ -104,10 +103,15 @@ function NavLink({ href, label, active }: { href: string; label: string; active:
 /* ─── Navigation ───────────────────────────────────────────── */
 export function Navigation() {
   const pathname = usePathname()
+  const hindi = isHindiPath(pathname)
   const { openModal } = useModal()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
+
+  useEffect(() => {
+    document.documentElement.lang = hindi ? 'hi' : 'en'
+  }, [hindi, pathname])
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -121,7 +125,7 @@ export function Navigation() {
     return () => document.body.classList.remove('modal-open')
   }, [menuOpen])
 
-  const toggleMenu = useCallback(() => setMenuOpen((v) => !v), [])
+  const toggleMenu = () => setMenuOpen((value) => !value)
 
   return (
     <>
@@ -135,72 +139,83 @@ export function Navigation() {
         }}
       >
         <p style={{
-          fontFamily: 'var(--font-geist), system-ui, sans-serif',
+          fontFamily: 'var(--font-body), system-ui, sans-serif',
           fontSize: '0.65rem', color: '#9A8C7E', letterSpacing: '0.05em',
         }}>
-          Serving clients in India · UAE · USA · UK · Canada · Australia · New Zealand · Europe
+          {hindi ? 'भारत · UAE · USA · UK · कनाडा · ऑस्ट्रेलिया · न्यूज़ीलैंड · यूरोप में सेवाएँ' : 'Serving clients in India · UAE · USA · UK · Canada · Australia · New Zealand · Europe'}
         </p>
         <SocialBar />
       </div>
 
       <header
         role="banner"
-        className="sticky top-0 z-50 transition-all duration-400"
+        className="sticky top-0 z-50 transition-shadow duration-150"
         style={{
-          background: scrolled ? 'rgba(255,253,248,0.97)' : '#FFFDF8',
-          backdropFilter: scrolled ? 'blur(12px)' : 'none',
+          background: '#FFFDF8',
           borderBottom: '1px solid rgba(30,18,8,0.08)',
           boxShadow: scrolled ? '0 2px 20px rgba(30,18,8,0.06)' : 'none',
         }}
       >
         <div
           className="mx-auto flex items-center justify-between"
-          style={{ maxWidth: '1400px', padding: '0 clamp(1.25rem, 3vw, 2.5rem)', height: '68px' }}
+          style={{ maxWidth: '1400px', padding: '0 clamp(1rem, 2vw, 2rem)', height: '74px' }}
         >
-          <TrueVedikLogo />
+          <TrueVedikLogo hindi={hindi} />
 
           {/* Desktop Nav */}
-          <nav aria-label="Primary navigation" className="hidden xl:flex items-center gap-7">
+          <nav aria-label="Primary navigation" className="hidden xl:flex items-center gap-1">
             {NAV_LINKS.map((link) => (
-              <NavLink key={link.href} href={link.href} label={link.label} active={pathname === link.href} />
+              <NavLink
+                key={link.href}
+                href={localizePath(link.href, hindi)}
+                label={hindi ? HINDI_NAV_LABELS[link.href] : link.label}
+                active={pathname === localizePath(link.href, hindi) || pathname.startsWith(`${localizePath(link.href, hindi)}/`)}
+              />
             ))}
-            <Link href={pathname.startsWith('/hi') ? '/' : '/hi'} lang={pathname.startsWith('/hi') ? 'en' : 'hi'} aria-label={pathname.startsWith('/hi') ? 'Switch to English' : 'हिंदी में देखें'} style={{ color: '#62470B', fontSize: '.76rem', fontWeight: 600 }}> {pathname.startsWith('/hi') ? 'EN' : 'हिंदी'}</Link>
+            <Link
+              href={languageSwitchPath(pathname)}
+              lang={hindi ? 'en' : 'hi'}
+              aria-label={hindi ? 'Switch to English' : 'हिंदी में देखें'}
+              className="ml-1 rounded-full border border-[#B8860B]/25 bg-[#FFF9EB] px-3 py-2 text-[0.78rem] font-semibold text-[#62470B] transition-colors hover:bg-[#F5EBD2] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8860B]"
+            >
+              {hindi ? 'English' : 'हिंदी'}
+            </Link>
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden xl:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-2">
             {SOCIAL_LINKS.whatsapp !== '/consultation' && <a
               href={SOCIAL_LINKS.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 transition-opacity duration-200 hover:opacity-80"
+              className="flex items-center gap-2 rounded-full border border-[#176B45]/20 bg-[#F1F7F2] px-3 py-2 font-semibold transition-colors hover:bg-[#E6F1E9]"
               style={{
-                fontFamily: 'var(--font-geist), system-ui, sans-serif',
-                fontSize: '0.68rem', letterSpacing: '0.05em',
-                color: '#25D366', textDecoration: 'none',
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
+                fontSize: '0.76rem', letterSpacing: '0.01em',
+                color: '#176B45', textDecoration: 'none', whiteSpace: 'nowrap',
               }}
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
               </svg>
-              WhatsApp
+              {hindi ? 'WhatsApp पर बात करें' : 'WhatsApp'}
             </a>}
             <button
               onClick={openModal}
-              className="cursor-pointer transition-all duration-200"
+              className="cursor-pointer transition-shadow duration-150"
               style={{
-                fontFamily: 'var(--font-geist), system-ui, sans-serif',
-                fontSize: '0.68rem', letterSpacing: '0.12em', textTransform: 'uppercase',
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
+                fontSize: '0.74rem', letterSpacing: '0.06em', textTransform: 'uppercase', fontWeight: 700,
                 color: '#FFFFFF',
                 background: 'linear-gradient(135deg, #C4600A, #D4750C)',
-                border: 'none', padding: '0.55rem 1.25rem',
-                borderRadius: '4px',
+                border: 'none', padding: '0.68rem 1.1rem',
+                borderRadius: '999px', whiteSpace: 'nowrap',
                 boxShadow: '0 3px 12px rgba(196,96,10,0.3)',
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 5px 16px rgba(196,96,10,0.4)'; e.currentTarget.style.transform = 'translateY(-1px)' }}
-              onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 3px 12px rgba(196,96,10,0.3)'; e.currentTarget.style.transform = 'translateY(0)' }}
+              onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 5px 16px rgba(196,96,10,0.4)' }}
+              onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 3px 12px rgba(196,96,10,0.3)' }}
             >
-              Book Consultation
+              {hindi ? 'परामर्श बुक करें' : 'Book Consultation'}
             </button>
           </div>
 
@@ -210,113 +225,91 @@ export function Navigation() {
               href={SOCIAL_LINKS.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Chat with us on WhatsApp"
-              className="flex h-10 w-10 items-center justify-center rounded-full"
-              style={{ color: '#25D366' }}
+              aria-label={hindi ? 'WhatsApp पर संदेश भेजें' : 'Chat with us on WhatsApp'}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#176B45]/15 bg-[#F1F7F2] text-[#176B45] transition-colors hover:bg-[#E6F1E9]"
+              style={{ color: '#176B45' }}
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694-.248-1.289-.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>
             </a>}
             <button
-              className="flex flex-col gap-1.5 p-2 cursor-pointer"
+              className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-xl border border-[#B8860B]/15 p-2 cursor-pointer transition-colors hover:bg-[#F5F0E6]"
               onClick={toggleMenu}
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-              style={{ background: 'transparent', border: 'none' }}
+              style={{ background: '#FFF9EB', borderColor: 'rgba(184,134,11,0.15)' }}
             >
-              {[0, 1, 2].map((i) => (
-                <motion.span
-                  key={i}
-                  className="block h-0.5 rounded-full"
-                  style={{ background: '#1E1208', transformOrigin: 'center' }}
-                  animate={
-                    menuOpen
-                      ? i === 0 ? { rotate: 45, y: 7, width: 24 }
-                      : i === 1 ? { opacity: 0, width: 0 }
-                      : { rotate: -45, y: -7, width: 24 }
-                      : { rotate: 0, y: 0, opacity: 1, width: i === 1 ? 18 : 24 }
-                  }
-                  transition={{ duration: 0.25 }}
-                />
-              ))}
+              {menuOpen ? <X size={22} strokeWidth={1.8} aria-hidden="true" /> : <Menu size={22} strokeWidth={1.8} aria-hidden="true" />}
             </button>
           </div>
         </div>
       </header>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
+      {menuOpen && (
+          <div
             id="mobile-nav"
             role="navigation"
             aria-label="Mobile navigation"
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="fixed inset-x-0 top-[68px] z-40 max-h-[calc(100dvh-4.25rem)] overflow-y-auto overscroll-contain shadow-xl xl:hidden"
+            className="fixed inset-x-0 top-[74px] z-40 max-h-[calc(100dvh-4.625rem)] overflow-y-auto overscroll-contain shadow-xl xl:hidden"
             style={{ background: '#FFFDF8', borderBottom: '1px solid rgba(30,18,8,0.08)' }}
           >
             <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '1.5rem clamp(1.25rem, 4vw, 2.5rem) 2rem' }}>
               {/* Mobile links */}
               <nav className="flex flex-col gap-0 mb-6">
-                {NAV_LINKS.map((link, i) => (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, x: -12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.06, duration: 0.3 }}
-                  >
+                {NAV_LINKS.map((link) => (
+                  <div key={link.href}>
                     <Link
-                      href={link.href}
+                      href={localizePath(link.href, hindi)}
                       onClick={() => setMenuOpen(false)}
-                      className="flex items-center justify-between py-3.5"
+                      aria-current={pathname === localizePath(link.href, hindi) || pathname.startsWith(`${localizePath(link.href, hindi)}/`) ? 'page' : undefined}
+                      className="mb-1 flex items-center justify-between rounded-xl px-4 py-3.5 transition-colors hover:bg-[#F5F0E6]"
                       style={{
-                        fontFamily: 'var(--font-cormorant), Georgia, serif',
-                        fontSize: '1.35rem', fontWeight: 400,
-                        color: pathname === link.href ? '#B8860B' : '#1E1208',
-                        borderBottom: '1px solid rgba(30,18,8,0.06)',
+                        fontFamily: 'var(--font-display), Georgia, serif',
+                        fontSize: '1.2rem', fontWeight: pathname === localizePath(link.href, hindi) || pathname.startsWith(`${localizePath(link.href, hindi)}/`) ? 600 : 500,
+                        color: pathname === localizePath(link.href, hindi) || pathname.startsWith(`${localizePath(link.href, hindi)}/`) ? '#805B0A' : '#1E1208',
+                        background: pathname === localizePath(link.href, hindi) || pathname.startsWith(`${localizePath(link.href, hindi)}/`) ? '#F5F0E6' : 'transparent',
+                        border: pathname === localizePath(link.href, hindi) || pathname.startsWith(`${localizePath(link.href, hindi)}/`) ? '1px solid rgba(184,134,11,0.22)' : '1px solid transparent',
                         textDecoration: 'none',
                       }}
                     >
-                      {link.label}
-                      <span style={{ color: '#B8860B', fontSize: '0.9rem' }}>→</span>
+                      {hindi ? HINDI_NAV_LABELS[link.href] : link.label}
+                      <span aria-hidden="true" style={{ color: '#B8860B', fontSize: '1rem' }}>→</span>
                     </Link>
-                  </motion.div>
+                  </div>
                 ))}
               </nav>
-              <Link href={pathname.startsWith('/hi') ? '/' : '/hi'} onClick={() => setMenuOpen(false)} lang={pathname.startsWith('/hi') ? 'en' : 'hi'} className="mb-4 inline-flex py-2" style={{ color: '#62470B', fontWeight: 600 }}>{pathname.startsWith('/hi') ? 'English' : 'हिंदी में देखें'}</Link>
+              <Link href={languageSwitchPath(pathname)} onClick={() => setMenuOpen(false)} lang={hindi ? 'en' : 'hi'} className="mb-4 inline-flex rounded-full border border-[#B8860B]/25 bg-[#FFF9EB] px-3 py-2 text-sm font-semibold text-[#62470B]">{hindi ? 'English' : 'हिंदी में देखें'}</Link>
 
               {/* Mobile CTAs */}
               <div className="flex flex-col gap-3">
                 <button
                   onClick={() => { setMenuOpen(false); openModal() }}
-                  className="w-full py-3.5 cursor-pointer"
+                  className="w-full rounded-xl py-3.5 cursor-pointer"
                   style={{
-                    fontFamily: 'var(--font-geist), system-ui, sans-serif',
-                    fontSize: '0.75rem', letterSpacing: '0.12em', textTransform: 'uppercase',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
+                    fontSize: '0.75rem', letterSpacing: '0.07em', textTransform: 'uppercase', fontWeight: 700,
                     color: '#FFFFFF',
                     background: 'linear-gradient(135deg, #C4600A, #D4750C)',
-                    border: 'none', borderRadius: '4px',
+                    border: 'none', borderRadius: '12px',
                   }}
                 >
-                  Book Consultation
+                  {hindi ? 'परामर्श बुक करें' : 'Book Consultation'}
                 </button>
                 {SOCIAL_LINKS.whatsapp !== '/consultation' && <a
                   href={SOCIAL_LINKS.whatsapp}
                   target="_blank" rel="noopener noreferrer"
-                  className="w-full py-3 flex items-center justify-center gap-2"
+                  className="w-full rounded-xl py-3 flex items-center justify-center gap-2 transition-colors hover:bg-[#E6F1E9]"
                   style={{
-                    fontFamily: 'var(--font-geist), system-ui, sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontSize: '0.75rem', letterSpacing: '0.08em',
-                    color: '#25D366', border: '1.5px solid rgba(37,211,102,0.4)',
-                    borderRadius: '4px', textDecoration: 'none',
+                    color: '#176B45', border: '1.5px solid rgba(23,107,69,0.4)',
+                    borderRadius: '12px', textDecoration: 'none', fontWeight: 600,
                   }}
                 >
-                  Chat on WhatsApp
+                  {hindi ? 'WhatsApp पर संदेश भेजें' : 'Chat on WhatsApp'}
                 </a>}
               </div>
 
@@ -325,9 +318,8 @@ export function Navigation() {
                 <SocialBar />
               </div>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
     </>
   )
 }

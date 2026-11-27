@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Geist } from 'next/font/google'
+import { Lora, Manrope } from 'next/font/google'
 import './globals.css'
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
@@ -8,18 +8,18 @@ import { rootJsonLd } from '@/lib/seo/metadata'
 import { absoluteSiteUrl, SITE_URL } from '@/lib/constants/site'
 import { CookieConsent } from '@/components/privacy/CookieConsent'
 
-const cormorant = Cormorant_Garamond({
+const lora = Lora({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-cormorant',
+  weight: 'variable',
+  variable: '--font-display',
   display: 'swap',
   preload: true,
 })
 
-const geist = Geist({
+const manrope = Manrope({
   subsets: ['latin'],
-  variable: '--font-geist',
+  weight: 'variable',
+  variable: '--font-body',
   display: 'swap',
   preload: true,
 })
@@ -88,7 +88,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${geist.variable}`}
+      className={`${lora.variable} ${manrope.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -97,7 +97,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd).replace(/</g, '\\u003c') }}
         />
       </head>
-      <body style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}>
+      <body style={{ fontFamily: 'var(--font-body), system-ui, sans-serif' }}>
         <ModalProvider>
           <Navigation />
           <div id="main-content">{children}</div>

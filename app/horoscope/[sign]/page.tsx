@@ -44,7 +44,7 @@ export default async function SignHoroscopePage({ params }: Props) {
   return <main className="min-h-screen px-5 py-10 sm:px-8 sm:py-14" style={{ background: '#FFFDF8' }}>
     <div className="mx-auto max-w-5xl">
       <nav aria-label="Breadcrumb" className="mb-6 text-sm" style={{ color: '#665B4E' }}>
-        <ol className="flex flex-wrap items-center gap-2"><li><Link className="underline-offset-4 hover:underline" href="/">Home</Link></li><li aria-hidden="true">/</li><li><Link className="underline-offset-4 hover:underline" href="/#free-tools-title">Daily horoscope</Link></li><li aria-hidden="true">/</li><li aria-current="page">{sign.en}</li></ol>
+        <ol className="flex flex-wrap items-center gap-2"><li><Link className="underline-offset-4 hover:underline" href="/">Home</Link></li><li aria-hidden="true">/</li><li><Link className="underline-offset-4 hover:underline" href="/tools">Daily horoscope</Link></li><li aria-hidden="true">/</li><li aria-current="page">{sign.en}</li></ol>
       </nav>
       <HoroscopeReading sign={sign} dateLabel={dateLabel} dateTime={dateTime} dayIndex={dayIndex} />
     </div>

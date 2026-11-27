@@ -36,7 +36,7 @@ function PageHero() {
               <GoldRule className="mt-3 mb-5" />
               <h1
                 style={{
-                  fontFamily: 'var(--font-cormorant), Georgia, serif',
+                  fontFamily: 'var(--font-display), Georgia, serif',
                   fontSize: 'clamp(2.25rem, 5vw, 4rem)',
                   fontWeight: 400,
                   lineHeight: 1.15,
@@ -48,7 +48,7 @@ function PageHero() {
               </h1>
               <p
                 style={{
-                  fontFamily: 'var(--font-geist), system-ui, sans-serif',
+                  fontFamily: 'var(--font-body), system-ui, sans-serif',
                   fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
                   lineHeight: 1.85,
                   color: '#5A4A36',
@@ -88,10 +88,10 @@ function PageHero() {
                 }}
               />
               <div className="absolute bottom-4 left-5 right-5 text-white">
-                <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.3rem' }}>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem' }}>
                   Thoughtful changes for your space
                 </p>
-                <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.72rem', color: '#D4AF37' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: '#D4AF37' }}>
                   Ideas for layout, light, and room use
                 </p>
               </div>
@@ -112,13 +112,13 @@ function VastuShastra() {
         <AnimatedSection className="lg:col-span-5">
           <SectionLabel>01 · Space Energy</SectionLabel>
           <GoldRule className="mt-3 mb-4" />
-          <h2 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 400, color: '#1E1208', lineHeight: 1.25, marginBottom: '0.5rem' }}>
+          <h2 style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 400, color: '#1E1208', lineHeight: 1.25, marginBottom: '0.5rem' }}>
             Review your home or workplace layout
           </h2>
-          <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', fontWeight: 600, marginBottom: '1.25rem' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', fontWeight: 600, marginBottom: '1.25rem' }}>
             Floor plan review and practical guidance
           </p>
-          <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.9rem', lineHeight: 1.8, color: '#5A4A36', marginBottom: '1.5rem' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.8, color: '#5A4A36', marginBottom: '1.5rem' }}>
             Vastu Shastra is a traditional way to think about how a space is arranged. A review can consider the entrance, room use, light, and movement, along with comfort, safety, budget, and building rules.
           </p>
 
@@ -165,7 +165,7 @@ function VastuShastra() {
             ].map((space, i) => (
               <div
                 key={i}
-                className="p-5 rounded-xl transition-all duration-300 hover:shadow-md"
+                className="p-5 rounded-xl transition-shadow duration-150 hover:shadow-md"
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid rgba(184,134,11,0.15)',
@@ -173,10 +173,10 @@ function VastuShastra() {
                 }}
               >
                 <space.icon size={25} strokeWidth={1.5} color="#B8860B" className="mb-2" aria-hidden="true" />
-                <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.25rem', fontWeight: 500, color: '#1E1208', marginBottom: '0.25rem' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 500, color: '#1E1208', marginBottom: '0.25rem' }}>
                   {space.title}
                 </h3>
-                <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.8rem', lineHeight: 1.6, color: '#6B5B47' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', lineHeight: 1.6, color: '#6B5B47' }}>
                   {space.desc}
                 </p>
               </div>
@@ -197,13 +197,13 @@ function AnkJyotish() {
         <AnimatedSection className="lg:col-span-6">
           <SectionLabel>02 · Vedic Numerology</SectionLabel>
           <GoldRule className="mt-3 mb-4" />
-          <h2 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 400, color: '#1E1208', lineHeight: 1.25, marginBottom: '0.5rem' }}>
+          <h2 style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 400, color: '#1E1208', lineHeight: 1.25, marginBottom: '0.5rem' }}>
             Numerology in the Vedic tradition
           </h2>
-          <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', fontWeight: 600, marginBottom: '1.25rem' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', fontWeight: 600, marginBottom: '1.25rem' }}>
             A traditional way of looking at names and numbers
           </p>
-          <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.9rem', lineHeight: 1.8, color: '#5A4A36', marginBottom: '1.5rem' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.8, color: '#5A4A36', marginBottom: '1.5rem' }}>
             Some Vedic numerology traditions connect letters and birth dates with numbers. People may use this practice to reflect on names or important dates, but it cannot guarantee popularity or success.
           </p>
           
@@ -212,7 +212,7 @@ function AnkJyotish() {
               <span
                 key={item}
                 style={{
-                  fontFamily: 'var(--font-geist)',
+                  fontFamily: 'var(--font-body)',
                   fontSize: '0.68rem',
                   color: '#5A4A36',
                   background: '#FFFFFF',
@@ -231,7 +231,7 @@ function AnkJyotish() {
 
         <AnimatedSection delay={0.15} className="lg:col-span-6">
           <div className="p-8 rounded-2xl" style={{ background: '#FFFFFF', border: '1px solid rgba(184,134,11,0.2)', boxShadow: '0 4px 24px rgba(30,18,8,0.06)' }}>
-            <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.5rem', fontWeight: 500, color: '#1E1208', marginBottom: '1rem' }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 500, color: '#1E1208', marginBottom: '1rem' }}>
               Three terms you may hear
             </h3>
             <ul className="space-y-3">
@@ -241,10 +241,10 @@ function AnkJyotish() {
                 { title: 'Name number (Namank)', desc: 'A number linked to the letters in a name. Spelling changes are a personal choice, not a promise of success.' },
               ].map((n, i) => (
                 <li key={i} className="p-3 rounded-lg" style={{ background: '#FAF7F0', border: '1px solid rgba(184,134,11,0.1)' }}>
-                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208', marginBottom: '0.2rem' }}>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208', marginBottom: '0.2rem' }}>
                     {n.title}
                   </p>
-                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.78rem', color: '#6B5B47', lineHeight: 1.5 }}>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: '#6B5B47', lineHeight: 1.5 }}>
                     {n.desc}
                   </p>
                 </li>

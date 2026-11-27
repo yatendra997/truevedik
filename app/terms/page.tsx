@@ -53,7 +53,7 @@ export default function TermsPage() {
             <GoldRule className="mt-3 mb-5" />
             <h1
               style={{
-                fontFamily: 'var(--font-cormorant), Georgia, serif',
+                fontFamily: 'var(--font-display), Georgia, serif',
                 fontSize: 'clamp(2.2rem, 5vw, 3.5rem)',
                 fontWeight: 400,
                 color: '#1E1208',
@@ -64,7 +64,7 @@ export default function TermsPage() {
             </h1>
             <p
               style={{
-                fontFamily: 'var(--font-geist)',
+                fontFamily: 'var(--font-body)',
                 fontSize: '0.85rem',
                 color: '#6B5B47',
               }}
@@ -89,7 +89,7 @@ export default function TermsPage() {
                 <div className="flex items-start gap-4 mb-3">
                   <span
                     style={{
-                      fontFamily: 'var(--font-cormorant)',
+                      fontFamily: 'var(--font-display)',
                       fontSize: '1.2rem',
                       fontWeight: 600,
                       color: '#B8860B',
@@ -99,7 +99,7 @@ export default function TermsPage() {
                   </span>
                   <h2
                     style={{
-                      fontFamily: 'var(--font-cormorant)',
+                      fontFamily: 'var(--font-display)',
                       fontSize: '1.45rem',
                       fontWeight: 500,
                       color: '#1E1208',
@@ -114,7 +114,7 @@ export default function TermsPage() {
                     <p
                       key={j}
                       style={{
-                        fontFamily: 'var(--font-geist)',
+                        fontFamily: 'var(--font-body)',
                         fontSize: '0.875rem',
                         lineHeight: 1.8,
                         color: '#5A4A36',

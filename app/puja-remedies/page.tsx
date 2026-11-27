@@ -36,7 +36,7 @@ function PageHero() {
               <GoldRule className="mt-3 mb-5" />
               <h1
                 style={{
-                  fontFamily: 'var(--font-cormorant), Georgia, serif',
+                  fontFamily: 'var(--font-display), Georgia, serif',
                   fontSize: 'clamp(2.25rem, 5vw, 4rem)',
                   fontWeight: 400,
                   lineHeight: 1.15,
@@ -48,7 +48,7 @@ function PageHero() {
               </h1>
               <p
                 style={{
-                  fontFamily: 'var(--font-geist), system-ui, sans-serif',
+                  fontFamily: 'var(--font-body), system-ui, sans-serif',
                   fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
                   lineHeight: 1.85,
                   color: '#5A4A36',
@@ -88,10 +88,10 @@ function PageHero() {
                 }}
               />
               <div className="absolute bottom-4 left-5 right-5 text-white">
-                <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.3rem' }}>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem' }}>
                   A ritual, explained clearly
                 </p>
-                <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.72rem', color: '#D4AF37' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: '#D4AF37' }}>
                   Learn what is included and how it is traditionally performed
                 </p>
               </div>
@@ -150,10 +150,10 @@ function PujaServices() {
         <AnimatedSection className="text-center mb-12">
           <SectionLabel>Ritual options</SectionLabel>
           <GoldRule className="mt-3 mb-5 mx-auto" />
-          <h2 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: 'clamp(1.8rem, 4vw, 2.75rem)', fontWeight: 400, color: '#1E1208' }}>
+          <h2 style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: 'clamp(1.8rem, 4vw, 2.75rem)', fontWeight: 400, color: '#1E1208' }}>
             Puja and havan services
           </h2>
-          <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.9rem', color: '#6B5B47', maxWidth: '550px', margin: '0.5rem auto 0' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: '#6B5B47', maxWidth: '550px', margin: '0.5rem auto 0' }}>
             Ask us about the steps, timing, and details of each ritual before you book.
           </p>
         </AnimatedSection>
@@ -162,7 +162,7 @@ function PujaServices() {
           {rituals.map((r, i) => (
             <div
               key={i}
-              className="p-6 rounded-xl transition-all duration-300 hover:shadow-lg flex flex-col justify-between"
+              className="p-6 rounded-xl transition-shadow duration-150 hover:shadow-lg flex flex-col justify-between"
               style={{ background: '#FFFFFF', border: '1px solid rgba(184,134,11,0.15)', boxShadow: '0 2px 14px rgba(30,18,8,0.04)' }}
             >
               <div>
@@ -172,10 +172,10 @@ function PujaServices() {
                     {r.deity}
                   </span>
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.4rem', fontWeight: 500, color: '#1E1208', marginBottom: '0.5rem' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 500, color: '#1E1208', marginBottom: '0.5rem' }}>
                   {r.title}
                 </h3>
-                <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.82rem', lineHeight: 1.7, color: '#6B5B47', marginBottom: '1.25rem' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', lineHeight: 1.7, color: '#6B5B47', marginBottom: '1.25rem' }}>
                   {r.desc}
                 </p>
               </div>
@@ -196,13 +196,13 @@ function YantrasAndKavach() {
         <AnimatedSection className="lg:col-span-6">
           <SectionLabel>Sacred Geometry</SectionLabel>
           <GoldRule className="mt-3 mb-4" />
-          <h2 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 400, color: '#1E1208', lineHeight: 1.25, marginBottom: '0.5rem' }}>
+          <h2 style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 400, color: '#1E1208', lineHeight: 1.25, marginBottom: '0.5rem' }}>
             Yantras and traditional prayer objects
           </h2>
-          <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', fontWeight: 600, marginBottom: '1.25rem' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', fontWeight: 600, marginBottom: '1.25rem' }}>
             Ask what each item is used for
           </p>
-          <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.9rem', lineHeight: 1.8, color: '#5A4A36', marginBottom: '1.5rem' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.8, color: '#5A4A36', marginBottom: '1.5rem' }}>
             A yantra is a geometric symbol used in some Hindu prayer traditions. Different designs are linked with different deities and intentions. Ask about the materials, preparation, and care before you order.
           </p>
           <div className="space-y-2 mb-6">
@@ -226,8 +226,8 @@ function YantrasAndKavach() {
             />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(30,18,8,0.75) 0%, transparent 60%)' }} />
             <div className="absolute bottom-4 left-5 right-5 text-white">
-              <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.3rem' }}>Pran Pratishtha Energized</p>
-              <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.72rem', color: '#D4AF37' }}>Each Yantra is consecrated with specific mantras before dispatch</p>
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem' }}>Pran Pratishtha Energized</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: '#D4AF37' }}>Each Yantra is consecrated with specific mantras before dispatch</p>
             </div>
           </div>
         </AnimatedSection>

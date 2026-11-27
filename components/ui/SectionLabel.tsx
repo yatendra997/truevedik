@@ -8,12 +8,12 @@ export function SectionLabel({ children, className }: SectionLabelProps) {
     <p
       className={className}
       style={{
-        fontFamily: 'var(--font-geist), system-ui, sans-serif',
-        fontSize: '0.65rem',
+        fontFamily: 'var(--font-body), system-ui, sans-serif',
+        fontSize: '0.72rem',
         fontWeight: 600,
-        letterSpacing: '0.22em',
+        letterSpacing: '0.16em',
         textTransform: 'uppercase' as const,
-        color: '#B8860B',
+        color: '#75530F',
       }}
     >
       {children}

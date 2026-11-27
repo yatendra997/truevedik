@@ -6,8 +6,8 @@ import { absoluteSiteUrl } from '@/lib/constants/site'
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: 'Free Astrology Tools | Daily Sign Prompts & Kundali Request',
-  description: 'Explore daily zodiac reflection prompts and learn how to request a Kundali overview. Astrology is a traditional belief practice, not a guaranteed forecast.',
+  title: 'Daily Astrology Reflections & Guides',
+  description: 'Read general daily zodiac reflection prompts and learn about Vedic astrology. These prompts are not personal predictions or professional advice.',
   alternates: { canonical: absoluteSiteUrl('/tools') },
 }
 
@@ -37,7 +37,7 @@ export default function ToolsPage() {
       <header style={{ background: '#F5F0E6', padding: 'clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 4vw, 3rem)' }}>
         <div className="mx-auto" style={{ maxWidth: 1120 }}>
           <p style={{ color: '#805900', fontSize: '.72rem', letterSpacing: '.14em', textTransform: 'uppercase' }}>Explore at your own pace</p>
-          <h1 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, marginTop: '.6rem' }}>Astrology tools and thoughtful prompts</h1>
+          <h1 style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, marginTop: '.6rem' }}>Daily zodiac reflections and guides</h1>
           <p style={{ maxWidth: 680, color: '#514536', lineHeight: 1.8, marginTop: '.8rem' }}>Use these general prompts for reflection. They do not predict a certain event or replace advice from a qualified professional.</p>
         </div>
       </header>
@@ -45,31 +45,37 @@ export default function ToolsPage() {
       <section aria-labelledby="daily-horoscope" className="mx-auto" style={{ maxWidth: 1120, padding: '3.5rem 1.5rem' }}>
         <div className="mb-7">
           <p style={{ color: '#805900', fontSize: '.7rem', letterSpacing: '.13em', textTransform: 'uppercase' }}>{today}</p>
-          <h2 id="daily-horoscope" style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '2.4rem', fontWeight: 500, marginTop: '.25rem' }}>Daily zodiac reflections</h2>
+          <h2 id="daily-horoscope" style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: '2.4rem', fontWeight: 500, marginTop: '.25rem' }}>Daily zodiac reflections</h2>
           <p className="mt-2 max-w-2xl" style={{ color: '#514536', lineHeight: 1.75 }}>A gentle prompt for each sun sign. These short notes are general and not a personal birth chart reading.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {SIGNS.map(([name, sign, prompts]) => <article key={name} className="rounded-xl p-5" style={{ background: '#FFFFFF', border: '1px solid rgba(30,18,8,.1)' }}>
-            <h3 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '1.45rem', fontWeight: 500 }}>{name}</h3>
+            <h3 style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: '1.45rem', fontWeight: 500 }}>{name}</h3>
             <p className="mt-2 text-sm" style={{ color: '#514536', lineHeight: 1.7 }}>{prompts[dayOfYear % prompts.length]}</p>
             <span className="mt-3 inline-flex rounded-full px-2.5 py-1 text-xs" style={{ color: '#62470B', background: '#F7F0E1' }}>{sign} sun sign</span>
           </article>)}
         </div>
       </section>
 
-      <section className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-6" style={{ maxWidth: 1120, padding: '0 1.5rem 5rem' }}>
+      <section aria-labelledby="personal-reading-title" className="mx-auto" style={{ maxWidth: 1120, padding: '0 1.5rem 5rem' }}>
+        <div className="mb-5">
+          <h2 id="personal-reading-title" style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: '2.2rem', fontWeight: 500 }}>Looking for a personal reading?</h2>
+          <p className="mt-2 max-w-2xl text-sm" style={{ color: '#514536', lineHeight: 1.8 }}>These are consultation topics, not automated tools. Ask about the process and available options before you decide.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <article className="rounded-2xl p-7" style={{ background: '#F5F0E6' }}>
-          <h2 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '1.9rem', fontWeight: 500 }}>Request a Kundali overview</h2>
-          <p className="mt-3 text-sm" style={{ color: '#514536', lineHeight: 1.8 }}>Automated chart calculations are not available on this site yet. You can send your birth details and ask the team whether a complimentary overview is available. Your request is not a generated chart or a confirmed booking.</p>
-          <Link href="/consultation" className="mt-5 inline-flex rounded-md px-5 py-3 text-sm font-semibold" style={{ background: '#9A4B0A', color: '#fff', textDecoration: 'none' }}>Ask about a Kundali overview</Link>
+          <h3 style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: '1.9rem', fontWeight: 500 }}>Kundali reading consultation</h3>
+          <p className="mt-3 text-sm" style={{ color: '#514536', lineHeight: 1.8 }}>Automated chart calculations are not available on this site. A personal reading is a consultation request; the team will explain availability and terms before you confirm.</p>
+          <Link href="/consultation" className="mt-5 inline-flex rounded-md px-5 py-3 text-sm font-semibold" style={{ background: '#9A4B0A', color: '#fff', textDecoration: 'none' }}>See consultation options</Link>
         </article>
         <article className="rounded-2xl p-7" style={{ background: '#231A12', color: '#FFFDF8' }}>
-          <h2 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif', fontSize: '1.9rem', fontWeight: 500 }}>Panchang information</h2>
-          <p className="mt-3 text-sm" style={{ color: '#E3D8C8', lineHeight: 1.8 }}>A reliable Panchang depends on the date, location, and a chosen calculation method. This site does not yet have a verified Panchang data source, so we do not show tithi or muhurat values here.</p>
-          <Link href="/contact" className="mt-5 inline-flex rounded-md px-5 py-3 text-sm font-semibold" style={{ background: '#B8860B', color: '#fff', textDecoration: 'none' }}>Ask a Panchang question</Link>
+          <h3 style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: '1.9rem', fontWeight: 500 }}>Panchang and muhurat questions</h3>
+          <p className="mt-3 text-sm" style={{ color: '#E3D8C8', lineHeight: 1.8 }}>This site does not yet show verified Panchang or muhurat calculations. Contact us to ask whether we can discuss your question in a consultation.</p>
+          <Link href="/contact" className="mt-5 inline-flex rounded-md px-5 py-3 text-sm font-semibold" style={{ background: '#B8860B', color: '#fff', textDecoration: 'none' }}>Contact TrueVedik</Link>
         </article>
+        </div>
       </section>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: 'Are the daily sign prompts personal predictions?', acceptedAnswer: { '@type': 'Answer', text: 'No. They are general reflection prompts and are not a personal reading or a guaranteed forecast.' } }, { '@type': 'Question', name: 'Can I generate a Kundali on this site?', acceptedAnswer: { '@type': 'Answer', text: 'Automated birth chart generation is not currently available. You may send a request to ask about a Kundali overview.' } }] }).replace(/</g, '\u003c') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: 'Are the daily sign prompts personal predictions?', acceptedAnswer: { '@type': 'Answer', text: 'No. They are general reflection prompts and are not a personal reading or a guaranteed forecast.' } }, { '@type': 'Question', name: 'Can I generate a Kundali on this site?', acceptedAnswer: { '@type': 'Answer', text: 'Automated birth chart generation is not currently available. A personal Kundali reading is a consultation, and availability is confirmed separately.' } }] }).replace(/</g, '\u003c') }} />
     </main>
   )
 }

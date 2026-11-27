@@ -18,7 +18,7 @@ export function FinalCTA() {
 
         <h2
           style={{
-            fontFamily: 'var(--font-cormorant), Georgia, serif',
+            fontFamily: 'var(--font-display), Georgia, serif',
             fontSize: 'clamp(2rem, 5vw, 3.5rem)',
             fontWeight: 400,
             color: '#1E1208',
@@ -31,7 +31,7 @@ export function FinalCTA() {
 
         <p
           style={{
-            fontFamily: 'var(--font-geist), system-ui, sans-serif',
+            fontFamily: 'var(--font-body), system-ui, sans-serif',
             fontSize: 'clamp(0.9rem, 1.2vw, 1.05rem)',
             lineHeight: 1.8,
             color: '#5A4A36',
@@ -56,7 +56,7 @@ export function FinalCTA() {
 
         <p
           style={{
-            fontFamily: 'var(--font-geist), system-ui, sans-serif',
+            fontFamily: 'var(--font-body), system-ui, sans-serif',
             fontSize: '0.72rem',
             color: '#9A8C7E',
             marginTop: '2rem',

@@ -6,7 +6,6 @@ import type { Metadata } from 'next'
 import { Check, Clock, ShieldCheck, Award } from 'lucide-react'
 import { absoluteSiteUrl } from '@/lib/constants/site'
 import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/StructuredData'
-import { getPaymentSetup } from '@/lib/payments/config'
 
 export const metadata: Metadata = {
   title: 'Consultation with Acharya Ved Prakash | TrueVedik',
@@ -57,7 +56,6 @@ const CONSULTATION_TIERS = [
 ]
 
 export default function ConsultationPage() {
-  const paymentSetup = getPaymentSetup()
   return (
     <main style={{ background: '#FFFDF8', color: '#1E1208' }}>
       <ServiceJsonLd name="Vedic astrology consultation" description="A one-to-one online conversation with Acharya Ved Prakash about a birth chart and the questions the client brings." path="/consultation" />
@@ -86,7 +84,7 @@ export default function ConsultationPage() {
                 <Award size={14} color="#B8860B" />
                 <span
                   style={{
-                    fontFamily: 'var(--font-geist)',
+                    fontFamily: 'var(--font-body)',
                     fontSize: '0.68rem',
                     letterSpacing: '0.15em',
                     textTransform: 'uppercase',
@@ -100,7 +98,7 @@ export default function ConsultationPage() {
 
               <h1
                 style={{
-                  fontFamily: 'var(--font-cormorant), Georgia, serif',
+                  fontFamily: 'var(--font-display), Georgia, serif',
                   fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
                   lineHeight: 1.15,
                   fontWeight: 400,
@@ -112,7 +110,7 @@ export default function ConsultationPage() {
 
               <p
                 style={{
-                  fontFamily: 'var(--font-geist)',
+                  fontFamily: 'var(--font-body)',
                   fontSize: '1rem',
                   lineHeight: 1.8,
                   color: '#5A4A36',
@@ -125,16 +123,16 @@ export default function ConsultationPage() {
               {/* Highlights */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
                 <div className="p-3 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid rgba(184,134,11,0.15)' }}>
-                  <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.5rem', fontWeight: 600, color: '#B8860B' }}>12+ Years</p>
-                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', color: '#6B5B47' }}>Vedic astrology experience</p>
+                  <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 600, color: '#B8860B' }}>12+ Years</p>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: '#6B5B47' }}>Vedic astrology experience</p>
                 </div>
                 <div className="p-3 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid rgba(184,134,11,0.15)' }}>
-                  <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.1rem', fontWeight: 600, color: '#B8860B' }}>One-to-one</p>
-                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', color: '#6B5B47' }}>Personal consultation</p>
+                  <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', fontWeight: 600, color: '#B8860B' }}>One-to-one</p>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: '#6B5B47' }}>Personal consultation</p>
                 </div>
                 <div className="p-3 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid rgba(184,134,11,0.15)' }}>
-                  <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.1rem', fontWeight: 600, color: '#B8860B' }}>Online</p>
-                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.7rem', color: '#6B5B47' }}>Wherever you are</p>
+                  <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', fontWeight: 600, color: '#B8860B' }}>Online</p>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: '#6B5B47' }}>Wherever you are</p>
                 </div>
               </div>
 
@@ -172,10 +170,10 @@ export default function ConsultationPage() {
                     }}
                   />
                   <div className="absolute bottom-4 left-5 right-5 text-white">
-                    <p style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.6rem', fontWeight: 500 }}>
+                    <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 500 }}>
                       Acharya Ved Prakash
                     </p>
-                    <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.75rem', color: '#D4AF37', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: '#D4AF37', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
                       Senior Vedic Astrologer &amp; Vastu Consultant
                     </p>
                   </div>
@@ -184,11 +182,11 @@ export default function ConsultationPage() {
                 <div className="p-5" style={{ background: '#FFFFFF' }}>
                   <div className="flex items-center gap-2 mb-3">
                     <ShieldCheck size={18} color="#B8860B" />
-                    <span style={{ fontFamily: 'var(--font-geist)', fontSize: '0.75rem', fontWeight: 600, color: '#1E1208' }}>
+                    <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', fontWeight: 600, color: '#1E1208' }}>
                       A respectful one-to-one conversation
                     </span>
                   </div>
-                  <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.78rem', lineHeight: 1.6, color: '#6B5B47' }}>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', lineHeight: 1.6, color: '#6B5B47' }}>
                     Choose WhatsApp, phone, or video in your request. We will confirm the available platform and time with you.
                   </p>
                 </div>
@@ -200,10 +198,8 @@ export default function ConsultationPage() {
       </section>
 
       {/* Consultation Options Grid */}
-      <p className="mx-auto max-w-3xl px-6 py-4 text-center text-sm" style={{ color: '#514536' }}>
-        {paymentSetup.checkoutEnabled
-          ? 'Payment options will be shown after your session details are confirmed.'
-          : 'A booking request does not take payment. Any price and payment terms will be shared with you before you confirm a session.'}
+      <p className="mx-auto max-w-3xl px-6 py-4 text-center text-sm" style={{ color: '#514536', lineHeight: 1.7 }}>
+        Sending a request does not reserve a time or take payment. Before you confirm, we’ll share the available time, session length, price, and payment terms so you can decide.
       </p>
       <section style={{ padding: 'clamp(4rem, 6vw, 6rem) clamp(1.5rem, 4vw, 3rem)' }}>
         <div className="mx-auto" style={{ maxWidth: '1200px' }}>
@@ -213,7 +209,7 @@ export default function ConsultationPage() {
             <GoldRule className="mt-2 mb-4 mx-auto" />
             <h2
               style={{
-                fontFamily: 'var(--font-cormorant), Georgia, serif',
+                fontFamily: 'var(--font-display), Georgia, serif',
                 fontSize: 'clamp(2rem, 4vw, 2.8rem)',
                 fontWeight: 400,
                 color: '#1E1208',
@@ -223,7 +219,7 @@ export default function ConsultationPage() {
             </h2>
             <p
               style={{
-                fontFamily: 'var(--font-geist)',
+                fontFamily: 'var(--font-body)',
                 fontSize: '0.9rem',
                 color: '#6B5B47',
                 maxWidth: '600px',
@@ -238,7 +234,7 @@ export default function ConsultationPage() {
             {CONSULTATION_TIERS.map((tier, idx) => (
               <div
                 key={idx}
-                className="flex flex-col justify-between p-6 rounded-xl relative transition-all duration-300 hover:shadow-lg"
+                className="flex flex-col justify-between p-6 rounded-xl relative transition-shadow duration-150 hover:shadow-lg"
                 style={{
                   background: tier.popular ? '#FAF5EB' : '#FFFFFF',
                   border: tier.popular
@@ -259,7 +255,7 @@ export default function ConsultationPage() {
                 <div>
                   <h3
                     style={{
-                      fontFamily: 'var(--font-cormorant)',
+                      fontFamily: 'var(--font-display)',
                       fontSize: '1.5rem',
                       fontWeight: 500,
                       color: '#1E1208',
@@ -270,7 +266,7 @@ export default function ConsultationPage() {
                   </h3>
                   <p
                     style={{
-                      fontFamily: 'var(--font-geist)',
+                      fontFamily: 'var(--font-body)',
                       fontSize: '0.72rem',
                       color: '#B8860B',
                       fontWeight: 600,
@@ -283,7 +279,7 @@ export default function ConsultationPage() {
                   </p>
                   <p
                     style={{
-                      fontFamily: 'var(--font-geist)',
+                      fontFamily: 'var(--font-body)',
                       fontSize: '0.82rem',
                       lineHeight: 1.6,
                       color: '#5A4A36',
@@ -298,7 +294,7 @@ export default function ConsultationPage() {
                     style={{ background: 'rgba(184,134,11,0.08)' }}
                   >
                     <Clock size={14} color="#B8860B" />
-                    <span style={{ fontFamily: 'var(--font-geist)', fontSize: '0.72rem', color: '#5A4A36', fontWeight: 500 }}>
+                    <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: '#5A4A36', fontWeight: 500 }}>
                       {tier.duration}
                     </span>
                   </div>
@@ -337,7 +333,7 @@ export default function ConsultationPage() {
             <GoldRule className="mt-2 mb-4 mx-auto" />
             <h2
               style={{
-                fontFamily: 'var(--font-cormorant), Georgia, serif',
+                fontFamily: 'var(--font-display), Georgia, serif',
                 fontSize: 'clamp(2rem, 4vw, 2.8rem)',
                 fontWeight: 400,
                 color: '#1E1208',
@@ -355,10 +351,10 @@ export default function ConsultationPage() {
               >
                 1
               </div>
-              <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.35rem', fontWeight: 500, marginBottom: '0.5rem' }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', fontWeight: 500, marginBottom: '0.5rem' }}>
                 Share Your Birth Details
               </h3>
-              <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.82rem', lineHeight: 1.7, color: '#5A4A36' }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', lineHeight: 1.7, color: '#5A4A36' }}>
                 Fill out the booking form with your Date, Time, and Place of birth, along with the main topics or questions you want to explore.
               </p>
             </div>
@@ -370,10 +366,10 @@ export default function ConsultationPage() {
               >
                 2
               </div>
-              <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.35rem', fontWeight: 500, marginBottom: '0.5rem' }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', fontWeight: 500, marginBottom: '0.5rem' }}>
                 1-on-1 Call with Acharya Ved Prakash
               </h3>
-              <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.82rem', lineHeight: 1.7, color: '#5A4A36' }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', lineHeight: 1.7, color: '#5A4A36' }}>
                 Meet by WhatsApp, phone, or video. We will confirm the platform and available time with you before the session.
               </p>
             </div>
@@ -385,10 +381,10 @@ export default function ConsultationPage() {
               >
                 3
               </div>
-              <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.35rem', fontWeight: 500, marginBottom: '0.5rem' }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', fontWeight: 500, marginBottom: '0.5rem' }}>
                 Talk through your next steps
               </h3>
-              <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.82rem', lineHeight: 1.7, color: '#5A4A36' }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', lineHeight: 1.7, color: '#5A4A36' }}>
                 Discuss the reading, ask questions, and take time to decide what feels useful for you.
               </p>
             </div>
@@ -408,7 +404,7 @@ export default function ConsultationPage() {
             <GoldRule className="mt-2 mb-4 mx-auto" />
             <h2
               style={{
-                fontFamily: 'var(--font-cormorant), Georgia, serif',
+                fontFamily: 'var(--font-display), Georgia, serif',
                 fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
                 fontWeight: 400,
                 color: '#1E1208',
@@ -444,7 +440,7 @@ export default function ConsultationPage() {
               >
                 <h3
                   style={{
-                    fontFamily: 'var(--font-geist)',
+                    fontFamily: 'var(--font-body)',
                     fontSize: '0.95rem',
                     fontWeight: 600,
                     color: '#1E1208',
@@ -455,7 +451,7 @@ export default function ConsultationPage() {
                 </h3>
                 <p
                   style={{
-                    fontFamily: 'var(--font-geist)',
+                    fontFamily: 'var(--font-body)',
                     fontSize: '0.85rem',
                     lineHeight: 1.7,
                     color: '#5A4A36',

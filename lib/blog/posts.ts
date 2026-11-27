@@ -24,8 +24,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Vedic Astrology',
     publishedAt: '2026-11-12',
     readingTime: '6 min read',
-    image: '/kundali-stars.jpg',
-    imageAlt: 'Night sky with stars, used as a visual for traditional chart matching',
+    image: '/images/astrology-kundali-editorial.webp',
+    imageAlt: 'A hand-drawn Vedic birth chart on handmade paper beside a brass diya',
     keywords: ['Janam Kundali', 'Vedic birth chart', 'Kundali reading', 'birth chart houses'],
     sections: [
       {
@@ -58,8 +58,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Marriage & Relationships',
     publishedAt: '2026-11-12',
     readingTime: '5 min read',
-    image: '/service-kundali.jpg',
-    imageAlt: 'Astrology chart and notes arranged on a desk',
+    image: '/images/kundali-matching-guide.webp',
+    imageAlt: 'Two hand-drawn Vedic charts placed side by side on a study desk',
     keywords: ['Kundali matching', 'Guna Milan', 'marriage compatibility astrology', 'horoscope matching'],
     sections: [
       {
@@ -126,8 +126,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Career & Work',
     publishedAt: '2026-11-18',
     readingTime: '5 min read',
-    image: '/acharya-ved-prakash-study.webp',
-    imageAlt: 'Acharya Ved Prakash in his study, where he meets clients for consultations',
+    image: '/images/career-kundali-guide.webp',
+    imageAlt: 'A Vedic chart and planning notebook on a traditional study desk',
     keywords: ['career astrology', 'career Kundali reading', 'Vedic astrology for work'],
     sections: [
       { heading: 'Use a reading to think, not to decide for you', paragraphs: [
@@ -176,8 +176,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Gemstones',
     publishedAt: '2026-11-18',
     readingTime: '5 min read',
-    image: '/gem-pukhraj.jpg',
-    imageAlt: 'A yellow gemstone shown as an example of traditional gemology',
+    image: '/images/gemstone-pukhraj.webp',
+    imageAlt: 'Faceted yellow sapphire traditionally associated with Jupiter',
     keywords: ['Vedic gemstones', 'astrological gemstone', 'gemstone buying guide'],
     sections: [
       { heading: 'Know the difference between tradition and evidence', paragraphs: [
@@ -226,8 +226,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Vedic Astrology',
     publishedAt: '2026-11-18',
     readingTime: '4 min read',
-    image: '/service-kundali.jpg',
-    imageAlt: 'Traditional birth chart notes prepared for a Kundali discussion',
+    image: '/images/birth-time-kundali-guide.webp',
+    imageAlt: 'A brass desk clock beside a hand-drawn Vedic birth chart',
     keywords: ['birth time for Kundali', 'birth time accuracy', 'Vedic birth chart'],
     sections: [
       { heading: 'Why the time is included', paragraphs: [
@@ -251,8 +251,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Marriage & Relationships',
     publishedAt: '2026-11-18',
     readingTime: '4 min read',
-    image: '/acharya-ved-prakash-study.webp',
-    imageAlt: 'Acharya Ved Prakash in a consultation setting',
+    image: '/images/couples-kundali-guide.webp',
+    imageAlt: 'Two Vedic charts placed together beside a small brass diya',
     keywords: ['marriage Kundali matching', 'couples astrology', 'Guna Milan questions'],
     sections: [
       { heading: 'Make space for the people behind the charts', paragraphs: [

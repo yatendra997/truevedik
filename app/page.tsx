@@ -5,15 +5,11 @@ import { Testimonials } from '@/components/sections/home/Testimonials'
 import { FinalCTA } from '@/components/sections/home/FinalCTA'
 import { BlogHighlights } from '@/components/sections/home/BlogHighlights'
 import { YouTubeSection } from '@/components/sections/home/YouTubeSection'
-import { FreeToolsSection } from '@/components/sections/home/FreeToolsSection'
-
-export const dynamic = 'force-dynamic'
 
 export default function HomePage() {
   return (
     <main>
       <Hero />
-      <FreeToolsSection />
       <AudienceIndex />
       <ArchitectureOfAlignment />
       <BlogHighlights />

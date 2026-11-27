@@ -1,8 +1,5 @@
-'use client'
-
 import Image from 'next/image'
-import { AnimatedGroup, fadeUpItem } from '@/components/ui/AnimatedSection'
-import { motion } from 'framer-motion'
+import { AnimatedGroup } from '@/components/ui/AnimatedSection'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionLabel, GoldRule } from '@/components/ui/SectionLabel'
@@ -11,8 +8,8 @@ import { ShieldCheck, Sparkles, Gem, Award } from 'lucide-react'
 const GEMSTONES = [
   {
     sanskrit: 'Pukhraj (Yellow Sapphire)',
-    image: '/gem-pukhraj.jpg',
-    imageAlt: 'Yellow gemstone set in a gold pendant',
+    image: '/images/gemstone-pukhraj.webp',
+    imageAlt: 'Faceted yellow sapphire resting on warm ivory cloth',
     planet: 'Jupiter (Guru)',
     color: '#D4AF37',
     benefit: 'Traditionally linked with Jupiter',
@@ -33,8 +30,8 @@ const GEMSTONES = [
   },
   {
     sanskrit: 'Panna (Emerald)',
-    image: '/gem-panna.jpg',
-    imageAlt: 'Natural green emerald crystal',
+    image: '/images/gemstone-panna.webp',
+    imageAlt: 'Faceted green emerald resting on warm ivory cloth',
     planet: 'Mercury (Budh)',
     color: '#138808',
     benefit: 'Traditionally linked with Mercury',
@@ -44,8 +41,8 @@ const GEMSTONES = [
   },
   {
     sanskrit: 'Manikya (Ruby)',
-    image: '/gem-manikya.jpg',
-    imageAlt: 'Red ruby-colored mineral crystals',
+    image: '/images/gemstone-manikya.webp',
+    imageAlt: 'Faceted red ruby resting on warm ivory cloth',
     planet: 'Sun (Surya)',
     color: '#C71585',
     benefit: 'Traditionally linked with the Sun',
@@ -93,7 +90,7 @@ export function GemstoneShowcase() {
           <GoldRule className="mt-3 mb-5 mx-auto" />
           <h2
             style={{
-              fontFamily: 'var(--font-cormorant), Georgia, serif',
+              fontFamily: 'var(--font-display), Georgia, serif',
               fontSize: 'clamp(1.8rem, 4vw, 2.75rem)',
               fontWeight: 400,
               color: '#1E1208',
@@ -103,7 +100,7 @@ export function GemstoneShowcase() {
           </h2>
           <p
             style={{
-              fontFamily: 'var(--font-geist), system-ui, sans-serif',
+              fontFamily: 'var(--font-body), system-ui, sans-serif',
               fontSize: '0.9rem',
               color: '#6B5B47',
               maxWidth: '560px',
@@ -117,10 +114,9 @@ export function GemstoneShowcase() {
         {/* Gemstones Grid */}
         <AnimatedGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" stagger={0.08}>
           {GEMSTONES.map((gem) => (
-            <motion.article
+            <article
               key={gem.sanskrit}
-              variants={fadeUpItem}
-              className="p-6 rounded-xl flex flex-col justify-between transition-all duration-300 hover:shadow-lg"
+              className="p-6 rounded-xl flex flex-col justify-between transition-shadow duration-150 hover:shadow-lg"
               style={{
                 background: '#FFFFFF',
                 border: '1px solid rgba(184,134,11,0.15)',
@@ -140,7 +136,7 @@ export function GemstoneShowcase() {
                     <Gem size={14} color="#B8860B" />
                     <span
                       style={{
-                        fontFamily: 'var(--font-geist)',
+                        fontFamily: 'var(--font-body)',
                         fontSize: '0.62rem',
                         fontWeight: 600,
                         letterSpacing: '0.1em',
@@ -156,7 +152,7 @@ export function GemstoneShowcase() {
 
                 <h3
                   style={{
-                    fontFamily: 'var(--font-cormorant), Georgia, serif',
+                    fontFamily: 'var(--font-display), Georgia, serif',
                     fontSize: '1.45rem',
                     fontWeight: 500,
                     color: '#1E1208',
@@ -168,7 +164,7 @@ export function GemstoneShowcase() {
 
                 <p
                   style={{
-                    fontFamily: 'var(--font-geist)',
+                    fontFamily: 'var(--font-body)',
                     fontSize: '0.72rem',
                     fontWeight: 600,
                     color: '#B8860B',
@@ -182,7 +178,7 @@ export function GemstoneShowcase() {
 
                 <p
                   style={{
-                    fontFamily: 'var(--font-geist), system-ui, sans-serif',
+                    fontFamily: 'var(--font-body), system-ui, sans-serif',
                     fontSize: '0.82rem',
                     lineHeight: 1.7,
                     color: '#5A4A36',
@@ -199,7 +195,7 @@ export function GemstoneShowcase() {
                     <span
                       key={app}
                       style={{
-                        fontFamily: 'var(--font-geist)',
+                        fontFamily: 'var(--font-body)',
                         fontSize: '0.65rem',
                         color: '#6B5B47',
                         background: '#FAF7F0',
@@ -215,7 +211,7 @@ export function GemstoneShowcase() {
 
                 <CTAButton label="Ask about this stone" variant="ghost" size="sm" className="w-full justify-center" />
               </div>
-            </motion.article>
+            </article>
           ))}
         </AnimatedGroup>
 
@@ -234,10 +230,10 @@ export function GemstoneShowcase() {
                 <Award size={24} />
               </div>
               <div>
-                <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208' }}>
                   Ask about sourcing
                 </p>
-                <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.75rem', color: '#6B5B47' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: '#6B5B47' }}>
                   Request details about the stone, treatment, measurements, price, and any available lab report.
                 </p>
               </div>
@@ -248,10 +244,10 @@ export function GemstoneShowcase() {
                 <Sparkles size={24} />
               </div>
               <div>
-                <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208' }}>
                   Rituals are optional
                 </p>
-                <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.75rem', color: '#6B5B47' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: '#6B5B47' }}>
                   We explain any proposed prayer practice and its cost before you decide.
                 </p>
               </div>
@@ -262,10 +258,10 @@ export function GemstoneShowcase() {
                 <ShieldCheck size={24} />
               </div>
               <div>
-                <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', fontWeight: 600, color: '#1E1208' }}>
                   Take time before you buy
                 </p>
-                <p style={{ fontFamily: 'var(--font-geist)', fontSize: '0.75rem', color: '#6B5B47' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: '#6B5B47' }}>
                   Compare your options and ask questions before making a purchase.
                 </p>
               </div>
