@@ -7,6 +7,7 @@ import { ModalProvider } from '@/components/modal/ModalProvider'
 import { rootJsonLd } from '@/lib/seo/metadata'
 import { absoluteSiteUrl, SITE_URL } from '@/lib/constants/site'
 import { CookieConsent } from '@/components/privacy/CookieConsent'
+import { IndiaDayRefresh } from '@/components/horoscope/IndiaDayRefresh'
 
 const lora = Lora({
   subsets: ['latin'],
@@ -99,6 +100,7 @@ export default function RootLayout({
       </head>
       <body style={{ fontFamily: 'var(--font-body), system-ui, sans-serif' }}>
         <ModalProvider>
+          <IndiaDayRefresh />
           <Navigation />
           <div id="main-content">{children}</div>
           <Footer />
